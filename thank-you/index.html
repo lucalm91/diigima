@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You - Bootcamp Application</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Preload and load the font -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    /* Base Styles */
+    body {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      margin: 0;
+      color: #fff;
+      background-color: #000;
+    }
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 90vh;
+      background: url('https://diigima.es/images/bg.jpg') center center/cover no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+    /* Container Styled like the Bootcamp Modal */
+    .content-container {
+      background: rgba(0,0,0,0.6);
+      margin: 1rem;
+      padding: 2rem;
+      border-radius: 5px;
+      max-width: 600px;
+      position: relative;
+      z-index: 2;
+    }
+    .content-container h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .content-container p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    /* Urgency Block */
+    .urgency {
+      text-align: center;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 5px;
+    }
+    .urgency h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .seat-icons {
+      display: flex;
+      justify-content: center;
+      gap: 0.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+    .seat-icon {
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) invert(1);
+      opacity: 0.4;
+    }
+    .seat-icon.available {
+      opacity: 1;
+      filter: brightness(0) invert(1) drop-shadow(0 0 5px #0f0);
+    }
+    /* Button Styling */
+    .btn-hero, .section-cta {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #fff;
+      background: transparent;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: none;
+      text-decoration: none;
+    }
+    .btn-hero{margin-bottom:1rem}
+    .btn-hero:hover, .section-cta:hover {
+      background: #fff;
+      color: #000;
+    }
+    .urgency p {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .urgency .last-update {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="content-container">
+      <h1>Secure your Spot</h1>
+      <p>
+        Thank you for applying to our Bootcamp.<br>
+        We can't wait to see you in action, so book your place before it goes!
+      </p>
+      <!-- Urgency Block -->
+      <div class="urgency">
+        <h2>Limited Spaces Available!</h2>
+        <div class="seat-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon available">
+          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon available">
+        </div>
+        <p class="last-update">Last update: <span id="lastUpdate"></span></p>
+        <button class="btn-hero" id="proceedPayment">Proceed with Payment</button>
+      </div>
+
+    </div>
+  </section>
+  
+  <!-- Stripe JS -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    document.getElementById('proceedPayment').addEventListener('click', function() {
+      // Replace with your actual Stripe Checkout URL
+      window.location.href = "YOUR_STRIPE_CHECKOUT_URL";
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set Last Update Date
+      const today = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById('lastUpdate').textContent = today.toLocaleDateString('en-US', options);
+      
+      // Find the first available seat icon and toggle its class every second
+      const firstAvailable = document.querySelector('.seat-icons .seat-icon.available');
+      if (firstAvailable) {
+        setInterval(() => {
+          // Remove the class if present; add it if not present
+          if (firstAvailable.classList.contains('available')) {
+            firstAvailable.classList.remove('available');
+          } else {
+            firstAvailable.classList.add('available');
+          }
+        }, 1000);
+      }
+    });
+  </script>
+</body>
+</html>

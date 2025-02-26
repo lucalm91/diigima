@@ -1,0 +1,17 @@
+# robots.txt for diigima.es
+
+# Allow all user agents to crawl the website
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+
+# Block specific files (e.g., private scripts or configuration files)
+Disallow: /config.php
+Disallow: /private-data.json
+Disallow: /elements.html
+
+# Allow indexing of all other content
+Allow: /
+
+# Specify the location of the sitemap
+Sitemap: https://diigima.es/sitemap.xml

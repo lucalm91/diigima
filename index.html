@@ -2,21 +2,93 @@
 <html lang="en">
 
 <head>
-	<title>Diigima | Look into our eyes</title>
+	<title>Diigima Creative Studio</title>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 	<meta name="description"
-		content="Look into our eyes. We create personalized video stories that mesmerize your audience.">
+		content="Diigima is a Barcelona-based audio-visual company. We merge personalized storytelling and tech know-how to create videos that mesmerize your audience.">
+	<meta name="robots" content="index, follow">
+	<meta name="keywords"
+		content="video production, digital content, creative studio, Diigima, personalized video, storytelling, Barcelona">
+	<meta name="author" content="Diigima Creative Studio">
+
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/site.webmanifest" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+	<link rel="preload" href="assets/css/main.css" as="style">
+	<link rel="preload" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" as="style">
+	<link rel="canonical" href="https://diigima.es/">
+	<script type="text/javascript">
+		(function (c, l, a, r, i, t, y) {
+			c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+			t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+			y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+		})(window, document, "clarity", "script", "p7wncdlwk3");
+	</script>
+    <script defer src="https://umami.lucanor.synology.me/script.js" data-website-id="fa1854a1-17e2-4995-a8af-cca6cf8ae23a"></script>
+	<link rel="stylesheet" href="https://cdn.vidstack.io/player/theme.css" />
+	<link rel="stylesheet" href="https://cdn.vidstack.io/player/video.css" />
+	<link rel="preload" href="images/demo-reel-cover.webp" as="image" type="image/webp"> 
+
+	<script src="https://cdn.vidstack.io/player" type="module" crossorigin="anonymous"></script>
+
+	<!-- Open Graph Meta Tags -->
+	<meta property="og:title" content="Diigima Creative Studio">
+	<meta property="og:description"
+		content="Diigima is a Barcelona-based audio-visual company. We merge personalized storytelling and tech know-how to create videos that mesmerize your audience.">
+	<meta property="og:image" content="https://www.diigima.es/images/diigima.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:url" content="https://www.diigima.es/">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Diigima">
+
+	<!-- Twitter Card Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Diigima Creative Studio">
+	<meta name="twitter:description"
+		content="Diigima is a Barcelona-based audio-visual company. We merge personalized storytelling and tech know-how to create videos that mesmerize your audience.">
+	<meta name="twitter:image" content="https://www.diigima.es/images/diigima.jpg">
+
+	<!-- Social Media Profiles -->
+	<link rel="me" href="https://www.instagram.com/diigima.creativestudio/" type="text/html">
+	<link rel="me" href="https://www.linkedin.com/company/diigima/" type="text/html">
+
+	<!-- Structured Data -->
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@type": "Organization",
+	  "name": "Diigima",
+	  "url": "https://www.diigima.es",
+	  "logo": "https://www.diigima.es/images/diigima.jpg",
+	  "sameAs": [
+	    "https://www.instagram.com/diigima.creativestudio/",
+	    "https://www.linkedin.com/company/diigima/"
+	  ],
+	  "description": "Diigima is a Barcelona-based audio-visual company. We merge personalized storytelling and tech know-how to create videos that mesmerize your audience."
+	}
+	</script>
 
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
+
 	<style>
-		svg {
+		* {
+			user-select: none;
+			/* Prevents text selection */
+			-webkit-user-drag: none;
+			/* Prevents dragging in webkit browsers */
+		}
+
+		/*	svg {
 			margin: auto;
 			width: 65%;
 			padding-bottom: 15px;
@@ -111,29 +183,18 @@
 				animation-timing-function: ease-out;
 			}
 		}
-
+*/
 		::-webkit-scrollbar {
 			width: 1px;
 		}
 
-		.lazy-fade {
-			opacity: 0;
-			/* Start with 0 opacity */
-			transition: opacity 1s ease-out;
-			/* Transition effect, can adjust timing */
-		}
 
-		.lazy-fade.loaded {
-			opacity: 1;
-			/* Full opacity when loaded */
-		}
 
 		.profile-pic {
 			width: 15rem;
 			float: left;
 			padding-right: 20px;
 			padding-bottom: 40px;
-			border-radius: 100%;
 			margin-top: 25px;
 		}
 
@@ -144,14 +205,16 @@
 				width: 60%;
 				margin: 0 20%;
 
-			}}
-
-			*{
-				font-family: "M PLUS Rounded 1c", sans-serif!important;
 			}
-			html {
-		font-size: 14pt;
-	}
+		}
+
+		* {
+			font-family: "M PLUS Rounded 1c", sans-serif !important;
+		}
+
+		html {
+			font-size: 14pt;
+		}
 
 		@media screen and (max-width: 1680px) {
 
@@ -176,6 +239,65 @@
 			}
 
 		}
+
+		.vds-time {
+			display: none;
+		}
+
+		.vds-time-group {
+			display: none;
+		}
+
+		.vds-chapter-title::before {
+			display: none;
+		}
+		.menu ul li a {
+			display: block;
+			min-width: 8rem;
+			height: 2.75rem;
+			line-height: 2.75rem;
+			padding: 0;
+			text-transform: capitalize;
+			letter-spacing: 0.05rem;
+			font-size: 0.8rem;
+			border-bottom: 0;
+			text-align: center;
+		}
+
+		.menu ul li:first-child {
+  		  border-left: 0;
+		}
+		.menu ul li {
+  		  padding-left: 0;
+   		  border-left: solid 1px #ffffff;
+		}
+
+		.menu ul {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+    border: solid 1px #ffffff;
+    border-radius: 4px;
+	margin: 0 0 2rem 0;
+}
+
+.menu {
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.075);
+}
+
+.vds-settings-menu {
+  display: none!important;
+}
 	</style>
 </head>
 
@@ -186,7 +308,7 @@
 
 		<!-- Header -->
 		<header id="header">
-			<img src="/images/Logotext.png" style="width:25%; margin: 20px auto;"> 
+			<img src="/images/logotype.webp" style="width:28%; margin: 20px auto;" alt="Diigima Logotype">
 			<!--<div class="logo">
 				
 				<span class="icon fa-eye"></span>
@@ -209,20 +331,37 @@
 					</g>
 				</svg>
 			</div>-->
-			<h1 style="margin-top: 0px; display: none;">Diigima</h1>
-			<div class="content" style="margin-top: 30px">
+			<h1 style="margin-top: 0px; display: none;">Diigima Creative Studio</h1>
+
+			<div class="content">
 				<div class="inner">
-					
-					<p style="margin-bottom: 19px; font-weight: 600; font-size: .95rem;"><span>Look into our eyes...</span><span></span> </p>
-					<p style="max-width: 380px; ">We merge personalized storytelling and tech know-how to create videos that mesmerize your audience</p>
+					<p style="max-width: 380px; font-weight: 600; margin: 0 auto 2rem auto">We merge personalized
+						storytelling and tech
+						know-how to create audio video stories that mesmerize your audience</p>
+					<div style="max-width: 380px; margin-bottom: 2rem">
+					<media-player controls-delay="1000" preload="metadata" src="https://vz-6fd78b20-24d.b-cdn.net/fd48fe24-26b6-499c-92ad-aeb7b6d98c01/playlist.m3u8">
+						<media-provider>
+							<media-poster class="vds-poster" src="images/demo-reel-cover.webp"
+								alt="Diigima Demo Reel">
+							</media-poster>
+						</media-provider>
+						<media-video-layout></media-video-layout>
+					</media-player>
+				</div>
+
+					<div class="menu">
+						<ul style="margin-bottom:0">
+							<li style="border: solid 1px #ffffff; width: fit-content;"><a href="#contact">    Start your story    </a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<nav>
-				<ul>
-					<li><a href="#your-stories">Your Stories</a></li>
+			<nav style="margin-top: 30px">
+				<ul style="border: none!important;">
 					<li><a href="#our-videos">Our Videos</a></li>
+					<li><a href="#your-stories">Your Stories</a></li>
 					<li><a href="#about-us">About Diigima</a></li>
-					<li><a href="#contact">Contact Us</a></li>
+
 				</ul>
 			</nav>
 		</header>
@@ -232,104 +371,190 @@
 			<!-- Your Stories -->
 			<article id="your-stories">
 				<h2 class="major">Your Stories</h2>
-				<h3 style="margin-top:30px;">Mesmerize your Audience</h3>
-				<p>We merge storytelling & tech know-how to capture emotions on screen, so that you can connect with your desired audience.</p>
-				<h3 style="margin-top:30px;">Accelerate your Videos</h3>
-				<p>With our combined skill-sets and experience, we make high-quality videos ultra-quick, so that you can get them out there faster.</p>
-				<h3 style="margin-top:30px;">Love your Experience</h3>
-				<p>As the Diigima duo, we provide an exhilarating working experience, so that you come away loving what we’ve created together.</p>
-				<img src="images\diigima_experience.jpg" style="max-width: 100%;">
-				<p>Find out more <a href="#about-us">About Diigima</a>, have a look at <a href="#our-videos">Our
-						Videos</a>,
-					and if you’d like us to create your video content, then <a href="#contact">Contact Us</a>.
-				</p>
-				<h2 class="major">What we do for you</h2>
-				<h3 style="margin-top:30px;">Interviews</h3>
-				<p>Whatever your professional passion, we capture it on camera so that you can connect with the people
-					that matter to you. </p>
-				<p style="text-align: center!important; font-style: italic; padding: 0 60px; margin-bottom: 10px">‘Thank you for capturing all my essence. It was great fun, very creative and an amazing job. You guys rock.’</p>
-				<p style="text-align: center;">Ricardo Jovani (Happyologist & COO, Jolu Foods)</p>
+				<img loading="lazy" src="images\diigima_experience.webp" style="max-width: 100%;">
+				<h3 style="margin-top:1rem;">Mesmerize your Audience</h3>
+				<p>We merge storytelling & tech know-how to capture emotions on screen, so that you can connect with
+					your desired audience.</p>
+				<h3 style="margin-top:1rem;">Accelerate your Videos</h3>
+				<p>With our combined skill-sets and experience, we make high-quality videos ultra-quick, so that you can
+					get them out there faster.</p>
+				<h3 style="margin-top:1rem;">Love your Experience</h3>
+				<p>As the Diigima duo, we provide an exhilarating working experience, so that you come away loving what
+					we’ve created together.</p>
 				<hr>
-				<h3 style="margin-top:60px;">Trailers</h3>
+				<div class="menu">
+					<ul style="border: none!important;">
+						<li><a href="#our-videos">Our Videos</a></li>
+						<li><a href="#about-us">About Diigima</a></li>
+						<li><a href="#contact">Contact Us</a></li>
+					</ul>
+				</div>
+				<h2 class="major">What we do for you</h2>
+				<h3 style="margin-top:30px;">Commercials</h3>
+				<img loading="lazy" src="images\commercials.webp" style="max-width: 100%;">
+				<p>From the launch of a new product or service to showcasing an upcoming event, we create video stories
+					that reach your target market.</p>
+				<p style="text-align: center!important; font-style: italic; padding: 0 40px; margin-bottom: 10px">‘Love
+					it! Great job with the video and such a fun experience to be involved with.’</p>
+				<p style="text-align: center;">Kristeen Duboy (Voice-over artist)</p>
+				<hr>
+				<h3 style="margin-top:30px;">Trailers</h3>
+				<img loading="lazy" src="images\trailer.webp" style="max-width: 100%;">
 				<p>Whether it’s a book launch, the opening of a new business or an event promo, we create captivating
 					video trailers for your market audience. </p>
-					<p style="text-align: center!important; font-style: italic; padding: 0 60px; margin-bottom: 10px">‘Really intense but incredibly fun. Thank you so much for your constant encouragement and unwavering support.’</p>
-					<p style="text-align: center;">Adina Nordstrom (Intern, Digital Marketing)</p>
+				<p style="text-align: center!important; font-style: italic; padding: 0 40px; margin-bottom: 10px">
+					‘Really intense but incredibly fun. Thank you so much for your constant encouragement and unwavering
+					support.’</p>
+				<p style="text-align: center;">Adina Nordstrom (Digital Marketing Specialist)</p>
 				<hr>
-					<h3>Events</h3>
-				<p>From one-off, one-night events to annual five-day festivals and congresses, we get it on camera so that you can showcase the event in all its glory. </p>
-					<p style="text-align: center!important; font-style: italic; padding: 0 60px; margin-bottom: 10px">‘You made this so much fun and watching it makes me smile. You’re really good at the tricky job of getting narrative.’</p>
-					<p style="text-align: center;">Jane Oma Onyemenam (Consultant, Human Capital Management)</p>
-					<hr>
-					<h3>Campaigns</h3>
+				<h3>Events</h3>
+				<img loading="lazy" src="images\events.webp" style="max-width: 100%;">
+				<p>From one-night events to annual five-day festivals and congresses, we get it on camera so that you
+					can showcase the event in all its glory. </p>
+				<p style="text-align: center!important; font-style: italic; padding: 0 40px; margin-bottom: 10px">‘Wow.
+					It looks great. Thanks so much for all your work and look forward to future collaboration.’</p>
+				<p style="text-align: center;">Manuel Wotsch (CEO, AURA Silent Disco)</p>
+				<hr>
+				<h3>Corporate</h3>
+				<img loading="lazy" src="images\corporate.webp" style="max-width: 100%;">
 				<p>
-					From filming a set of interviews to a long-running video series, we create eye-catching content for your organization’s campaign.</p>
-					<p style="text-align: center!important; font-style: italic; padding: 0 60px; margin-bottom: 10px">‘It’s been a real co-creative process, Cal bringing my ideas to life with his scripts and Luca with his technical savvy. It’s been a great ride.’</p>
-					<p style="text-align: center;">Monica Rodriguez (Coach & Speaker, Multiplied Potential)
-					</p>
-					<hr>
-					<h3>Workshops</h3>
-				<p>We run workshops on script-writing, podcast & video-making, so if your team is looking to improve their audio-visual skills, we provide the support you need.</p>
-					<p style="text-align: center!important; font-style: italic; padding: 0 60px; margin-bottom: 10px">‘Thank you guys so much. You’re so passionate about what you do and it’s been a great experience to be involved in.’</p>
-					<p style="text-align: center;">Maria Antonietta (Journalist, Creative Europe Media)
-					</p>
-				<h2 class="major">The Diigima Experience</h2>
-				<span class="image main"><img loading="lazy" class="lazy-fade" src="images/interview-2.jpg"
-					alt="" /></span>
-
-				<p>Have you dreamt of being on camera? Experience the excitement of being filmed on location in
-					Barcelona with a professional crew and star in your own movie trailer.</p>
-				<p>Find out more <a href="#about-us">About Diigima</a>, have a look at <a href="#our-videos">Our
-						Videos</a>,
-					and if you’d like us to create your video content, then <a href="#contact">Contact Us</a>.
+					Whether filming a set of interviews or a long-running video series, we create eye-catching content
+					for your corporation.</p>
+				<p style="text-align: center!important; font-style: italic; padding: 0 40px; margin-bottom: 10px">‘It’s
+					been a real co-creative process, Cal bringing my ideas to life with his scripts and Luca with his
+					technical savvy. It’s been a great ride.’</p>
+				<p style="text-align: center;">Monica Rodriguez (Coach & Speaker, Multiplied Potential)
 				</p>
+				<hr>
+				<h3 style="margin-top:30px;">Podcasts</h3>
+				<img loading="lazy" src="images\podcasts.webp" style="max-width: 100%;">
+				<p>We do audio as well as visual. From journalists and authors to life coaches and corporate speakers we
+					record what you have to say.</p>
+				<p style="text-align: center!important; font-style: italic; padding: 0 60px; margin-bottom: 10px">‘Thank
+					you guys so much. You’re so passionate about what you do and it’s been a great experience to be
+					involved in.’</p>
+				<p style="text-align: center;">Maria Antonietta (Journalist, Creative Europe Media)
+				</p>
+				<hr>
+				<h3 style="margin-top:30px;">Interviews</h3>
+				<img loading="lazy" src="images\interview.webp" style="max-width: 100%;">
+				<p>Whatever your professional passion, we capture it on camera so that you can connect with the people
+					that matter to you. </p>
+				<p style="text-align: center!important; font-style: italic; padding: 0 40px; margin-bottom: 10px">‘Thank
+					you for capturing all my essence. It was great fun, very creative and an amazing job. You guys
+					rock.’</p>
+				<p style="text-align: center;">Ricardo Jovani (Happyologist & COO, Jolu Foods)</p>
+				<hr>
+
+				<h3>Workshops</h3>
+				<img loading="lazy" src="images\workshops.webp" style="max-width: 100%;">
+				<p>We run workshops on script-writing, podcasts & video-making, providing the support your team needs to
+					improve their audio-visual skills.</p>
+				<p style="text-align: center!important; font-style: italic; padding: 0 60px; margin-bottom: 10px">‘We
+					still talk about the session. It was phenomenal.’</p>
+				<p style="text-align: center;">Ollie Brook (Curriculum Head, City of Glasgow College)
+				</p>
+				<hr>
+				<div class="menu">
+					<ul style="border: none!important;">
+						<li><a href="#our-videos">Our Videos</a></li>
+						<li><a href="#about-us">About Diigima</a></li>
+						<li><a href="#contact">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="menu">
+					<ul>
+						<li style="border: solid 1px #ffffff; width: fit-content;"><a href="/">    Back to Home    </a></li>
+					</ul>
+				</div>
 			</article>
 
 			<!-- Videos -->
 			<article id="our-videos">
 				<h2 class="major">Our Videos</h2>
-				<h3>Virtualty: Book Trailer</h3>
-				<p>A romantic thriller set in a real and virtual Barcelona. <em>Watch the trailer.</em></p>
-				<div class="youtube" data-embed="1TasJhpQuq4">
-					<div class="play-button"></div>
-					<img loading="lazy" class="lazy-fade" src="images\cover-virtuality.webp">
-				</div>
+				<h3>VERUCCI: HEELS COMMERCIAL </h3>
+				<p>In the streets of Barcelona, these heels aren't just made for walking.</p>
+
+				<media-player controls-delay="1000" preload="metadata" src="https://vz-6fd78b20-24d.b-cdn.net/a888a7c6-25e0-44e0-a62b-c17b334691c8/playlist.m3u8">
+					<media-provider>
+						<media-poster class="vds-poster" src="images/verucci.webp"
+							alt="Verucci - Heels for every occasion">
+						</media-poster>
+					</media-provider>
+					<media-video-layout></media-video-layout>
+				</media-player>
+
 				<hr>
-				<h3>Bouncing Back: Corporate Coaching</h3>
-				<p>How can a corporate life coach help you? <em>Watch and find out.</em></p>
-				<div class="youtube" data-embed="H81iOyVms7M">
-					<div class="play-button"></div>
-					<img loading="lazy" class="lazy-fade" src="images\cover-bouncing-back.jpg">
-				</div>
+				<h3>VIRTUALITY: BOOK TRAILER</h3>
+				<p>A romantic thriller set in a real and virtual Barcelona.</p>
+				<media-player controls-delay="1000" preload="metadata" src="https://vz-6fd78b20-24d.b-cdn.net/2c307b45-e701-459c-9458-c7f4b1395a14/playlist.m3u8">
+					<media-provider>
+						<media-poster class="vds-poster" src="images\cover-virtuality.webp" alt="Virtuality">
+						</media-poster>
+					</media-provider>
+					<media-video-layout></media-video-layout>
+				</media-player>
+
+				<hr>
+				<h3>BOUNCE-BACK: LIFE-COACH STORY</h3>
+				<p>A tale of resilience and recovery from a company meltdown.</p>
+				<media-player controls-delay="1000" preload="metadata" src="https://vz-6fd78b20-24d.b-cdn.net/556f5f24-2a17-4ce0-b55e-5b323e49c0f6/playlist.m3u8">
+					<media-provider>
+						<media-poster class="vds-poster" src="images\cover-bouncing-back.webp" alt="Bouncing Back">
+						</media-poster>
+					</media-provider>
+					<media-video-layout></media-video-layout>
+				</media-player>
 				<hr>
 				<h3>Silent Disco: Event After-Movie</h3>
-				<p>Have you ever been to one?<em> Have a look what it's like.</em></p>
-				<div class="youtube" data-embed="ZFLfd0x3nKQ">
-					<div class="play-button"></div>
-					<img loading="lazy" class="lazy-fade" src="images\silent-disco.jpg">
+				<p>An all-night fest of DJs and headsets, music and dancing.</p>
+				<media-player controls-delay="1000" preload="metadata" src="https://vz-6fd78b20-24d.b-cdn.net/353f5065-a1f0-4305-9f0b-4c7ee92d60a2/playlist.m3u8">
+					<media-provider>
+						<media-poster class="vds-poster" src="images\silent-disco.webp" alt="Virtuality">
+						</media-poster>
+					</media-provider>
+					<media-video-layout></media-video-layout>
+				</media-player>
+				<hr>
+				<div class="menu">
+					<ul style="border: none!important;">
+						<li><a href="#your-stories">Your Stories</a></li>
+						<li><a href="#about-us">About Diigima</a></li>
+						<li><a href="#contact">Contact Us</a></li>
+					</ul>
 				</div>
-				<p>Find out more <a href="#about-us">About Diigima</a>, see how we can create <a
-						href="#your-stories">Your
-						Stories</a>, and if you’d like us to work with you, then <a href="#contact">Contact Us</a></p>
 				<h2 class="major" style="margin-top:60px;"> How we create videos</h2>
 				<h3>Pre-production</h3>
-				<ul>
-					<li>We listen to you. With years of interview experience, we find out what your story is and what you’d like to get across to your audience.</li>
-					<li>Whether it is a one-off trailer or a long-running series, we use our script writing skills to shape the narrative for your video content.</li>
-				</ul>
+				<img loading="lazy" src="images\preproduction.webp" style="max-width: 100%; margin-bottom: .6rem;">
+				<p style="margin-bottom: 1rem;">We listen to you. With years of interview experience, we find out what
+					your story is and what you’d like to get across to your audience.</p>
+				<p>Whether it is a one-off trailer or a long-running series, we use our script writing skills to shape
+					the narrative for your video content.</p>
 				<h3>Filming</h3>
-				<ul>
-					<li>If we need to film on location, we find the right place. If it’s in-house, we come to you. And if it’s studio-based, we arrange that.</li>
-					<li>As the Diigima-duo, we cover every aspect of lights, camera, action to create the right atmosphere and make captivating videos.</li>
-				</ul>
+				<img loading="lazy" src="images\production.webp" style="max-width: 100%; margin-bottom: .6rem;">
+				<p style="margin-bottom: 1rem;">If we need to film on location, we find the right place. If it’s
+					in-house, we come to you. And if it’s studio-based, we arrange that.</p>
+				<p>As the Diigima-duo, we cover every aspect of lights, camera, action to create the right atmosphere
+					and make captivating videos.</p>
 				<h3>Post-production</h3>
-				<ul>
-					<li>Combining our storytelling and tech skill-sets, we make sure the final edits match the original stories as we take on board your feedback.</li>
-					<li>With soundtracks, voice overs and captions in place, we deliver high-quality video content primed to captivate your audience. </li>
-				</ul>
-				<p>Find out more <a href="#about-us">About Diigima</a>, see how we can create <a
-						href="#your-stories">Your
-						Stories</a>, and if you’d like us to work with you, then <a href="#contact">Contact Us</a>.</p>
+				<img loading="lazy" src="images\postproduction.webp" style="max-width: 100%; margin-bottom: .6rem;">
+				<p style="margin-bottom: 1rem;">Combining our storytelling and tech skill-sets, we make sure the final
+					edits match the original stories as we take on board your feedback.</p>
+				<p>With soundtracks, voice overs and captions in place, we deliver high-quality video content primed to
+					captivate your audience. </p>
+				<hr>
+				<div class="menu">
+					<ul style="border: none!important;">
+						<li><a href="#your-stories">Your Stories</a></li>
+						<li><a href="#about-us">About Diigima</a></li>
+						<li><a href="#contact">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="menu">
+					<ul>
+						<li style="border: solid 1px #ffffff; width: fit-content;"><a href="/">    Back to Home    </a></li>
+					</ul>
+				</div>
 			</article>
 
 			<!-- About Diigima -->
@@ -339,7 +564,7 @@
 					know-how to create captivating video content.</p>
 				<h3 class="major">Cal Smyth</h3>
 				<div display:flex; flex-direction: row; align-items: stretch;>
-					<img src="images\cal.webp" class="profile-pic">
+					<img loading="lazy" src="images\cal.webp" class="profile-pic">
 					<p>
 						With five novels published & multiple scripts filmed as trailers, videos and audio stories
 						across
@@ -350,10 +575,10 @@
 						Barcelona.
 					</p>
 				</div>
-	
+
 				<h3 class="major">Luca Lamorte</h3>
 				<div display:flex; flex-direction: row; align-items: stretch;>
-					<img src="images\luca.webp" class="profile-pic">
+					<img loading="lazy" src="images\luca.webp" class="profile-pic">
 					<p>
 						Whether it is filming interviews, events or trailers, Luca isn’t just behind the camera, but
 						also at
@@ -362,36 +587,50 @@
 						create video content. Originally from Italy, Luca has been living in Barcelona for several
 						years.
 					</p>
-				
+
 				</div>
-				<p>Watch <a href="#our-videos">Our Videos</a>, see how we film <a href="#your-stories">Your Stories</a>,
-					and if
-					you’d like to meet up, then <a href="#contact">Contact Us</a>.</p>
+				<hr>
+				<div class="menu">
+					<ul style="border: none!important;">
+						<li><a href="#our-videos">Our Videos</a></li>
+						<li><a href="#your-stories">Your Stories</a></li>
+						<li><a href="#contact">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="menu">
+					<ul>
+						<li style="border: solid 1px #ffffff; width: fit-content;"><a href="/">    Back to Home    </a></li>
+					</ul>
+				</div>
 			</article>
 
 			<!-- Contact -->
 			<article id="contact">
 				<h2 class="major">Contact</h2>
-				<p>Let’s meet and talk about how we can create video stories that mesmerize your audience.</p>
-				<form action="" name="contact-form" method="POST">
+				<p>Let’s meet and talk about how we can create video stories that mesmerize your audience. Send us an
+					email at <a href="mailto:info@diigima.es">info@diigima.es</a> or fill in the form below and we'll
+					get back to you.</p>
+				<form name="contact-form" method="POST">
 					<div class="fields">
 						<div class="field half">
 							<label for="name">Name</label>
 							<input type="text" name="Full Name" id="name" pattern="[A-Za-z\- ]+"
-								title="Name should only contain letters, hyphens, or spaces" required />
+								title="Name should only contain letters, hyphens, or spaces" autocomplete="name"
+								required />
 						</div>
 						<div class="field half">
 							<label for="email">Email</label>
 							<input type="email" name="Email" id="email"
-								pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required />
+								pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" autocomplete="email"
+								required />
 						</div>
 						<div class="field half">
 							<label for="phone">Phone</label>
-							<input type="tel" name="Phone" id="phone" />
+							<input type="tel" name="Phone" id="phone" autocomplete="tel" />
 						</div>
 						<div class="field">
 							<label for="message">Message</label>
-							<textarea name="Message" id="message" rows="4" required></textarea>
+							<textarea name="Message" id="message" rows="4" autocomplete="off" required></textarea>
 						</div>
 					</div>
 					<ul class="actions">
@@ -399,12 +638,25 @@
 						<li><input type="reset" value="Reset" /></li>
 					</ul>
 				</form>
+				<hr>
+<div class="menu">
+	<ul style="border: none!important;">
+		<li><a href="#our-videos">Our Videos</a></li>
+		<li><a href="#your-stories">Your Stories</a></li>
+		<li><a href="#about-us">About Diigima</a></li>
+	</ul>
+</div>
+<div class="menu">
+	<ul>
+		<li style="border: solid 1px #ffffff; width: fit-content;"><a href="/">    Back to Home    </a></li>
+	</ul>
+</div>
 			</article>
 		</div>
 
 		<!-- Footer -->
 		<footer id="footer">
-			<p class="copyright">&copy; Diigima: 2024.</p>
+			<p class="copyright">&copy; Diigima Creative Studio: 2025.</p>
 		</footer>
 
 	</div>
@@ -419,16 +671,36 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/google-sheet.js"> </script>
-	<script src="assets/js/youtube.js"></script>
-	<script>document.addEventListener("DOMContentLoaded", function () {
-			const lazyImages = document.querySelectorAll('img.lazy-fade');
 
-			lazyImages.forEach(img => {
-				img.onload = () => {
-					img.classList.add('loaded');
-				};
-			});
-		});</script>
+
+	<script>
+		document.addEventListener('click', (event) => {
+			// Function to detect if the user is on a mobile device
+			const isMobile = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+			// Apply the functionality only for desktop users
+			if (!isMobile()) {
+				const players = document.querySelectorAll('media-player');
+
+				players.forEach((player) => {
+					// Pause video if clicked outside
+					if (!player.contains(event.target)) {
+						player.pause();
+					}
+
+					// Pause other videos when one starts playing
+					player.addEventListener('play', () => {
+						players.forEach((otherPlayer) => {
+							if (otherPlayer !== player) {
+								otherPlayer.pause();
+							}
+						});
+					});
+				});
+			}
+		});
+	</script>
+
 </body>
 
 </html>
