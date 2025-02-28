@@ -390,3 +390,72 @@ footer {
   /* Fixed background: Make main content background more transparent */
   .main-content { background: rgba(0, 0, 0, 0.5); }
 }
+
+
+.termsfeed-com---nb-simple {
+  right: 0!important;
+  left: 0!important;
+max-width: 100%!important;
+}
+
+.cc-nb-okagree, .cc-nb-reject, .cc-nb-changep, .cc-cp-foot-save
+{
+background-color: white!important;
+color: black!important;
+}
+
+@media (max-width: 480px) {
+  .termsfeed-com---nb .cc-nb-okagree, .termsfeed-com---nb .cc-nb-reject, .termsfeed-com---nb .cc-nb-changep {
+      display: block!important;
+      width: fit-content!important;
+  height: max-content!important;
+  }
+}
+
+.termsfeed-com---nb .cc-nb-okagree, .termsfeed-com---nb .cc-nb-reject, .termsfeed-com---nb .cc-nb-changep, .cc-cp-foot-save {
+height: max-content!important;
+letter-spacing: normal!important;
+}
+
+.cc-nb-buttons-container
+{
+  display: flex!important;
+  max-width: 100%!important;
+  flex-wrap: wrap!important;
+  justify-content: center!important;
+}
+
+.cc-nb-main-container {
+padding: 1rem!important;
+}
+
+.cc-nb-text-content 
+{
+font-size: .8rem!important;
+}
+
+#cc-nb-text
+{
+text-align: center;
+}
+
+.cc-cp-body-tabs-item-link {
+  color: #666 !important;
+height: auto!important;
+letter-spacing: normal!important;
+}
+
+.termsfeed-com---pc-dialog input[type=checkbox].cc-custom-checkbox+label:before {
+
+  background: #212121 !important;
+
+
+}
+
+#cc-nb-title {
+display: none!important;
+}
+
+.termsfeed-com---palette-dark .cc-pc-head-close:active, .termsfeed-com---palette-dark .cc-pc-head-close:focus {
+  border: none!important;
+}

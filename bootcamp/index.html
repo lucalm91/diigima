@@ -16,6 +16,7 @@
   <meta name="author" content="Diigima Creative Studio" />
   <link rel="canonical" href="https://www.diigima.es/bootcamp.html" />
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="/assets/js/cookie-consent.js" charset="UTF-8"></script>
   <script defer src="https://umami.lucanor.synology.me/script.js" data-website-id="fa1854a1-17e2-4995-a8af-cca6cf8ae23a"></script>
   <meta property="og:title" content="Diigima Bootcamp – Storytelling & Video-making" />
   <meta property="og:description" content="Join our Storytelling & Video-making Bootcamp at Diigima Creative Studio in Barcelona." />
@@ -49,6 +50,11 @@
   
 </head>
 <body>
+  <script type="text/javascript" charset="UTF-8">
+    document.addEventListener('DOMContentLoaded', function () {
+    cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palette":"dark","language":"en","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_name":"diigima.es"});
+    });
+    </script>
   <!-- NAVIGATION -->
   <nav id="bootcamp-nav">
     <div class="nav-left">
@@ -289,9 +295,10 @@
 
 
   <!-- FOOTER -->
-  <footer>
-    <p>© Diigima Creative Studio</p>
-  </footer>
+	<footer id="footer">
+		<p class="copyright">&copy; Diigima Creative Studio: 2025.</p>
+		<a href="#" id="open_preferences_center" class="copyright" style="font-weight: initial;	text-transform: capitalize !important; ">Update cookies preferences</a>
+	</footer>
 
   <!-- OPTIONAL MODAL (if you want a popup version, not used for this single-step form) -->
   <div class="modal" id="modal">
