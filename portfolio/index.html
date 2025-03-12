@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Video Portfolio | Diigima Creative Studio</title>
   <meta charset="utf-8" />
@@ -21,7 +22,6 @@
   <script src="https://cdn.vidstack.io/player" type="module" crossorigin="anonymous"></script>
 
   <style>
-    /* Body with solid black, fade-in background image, and 30% dark overlay */
     body {
       margin: 0;
       padding: 0;
@@ -31,6 +31,7 @@
       position: relative;
       min-height: 100vh;
     }
+
     body::before {
       content: "";
       position: fixed;
@@ -40,6 +41,7 @@
       transition: opacity 1s ease;
       z-index: -2;
     }
+
     body::after {
       content: "";
       position: fixed;
@@ -47,8 +49,15 @@
       background: rgba(0, 0, 0, 0.3);
       z-index: -1;
     }
+
     body.bg-loaded::before {
       opacity: 1;
+    }
+
+    @supports (-webkit-overflow-scrolling: touch) {
+      body::before {
+        background-attachment: scroll;
+      }
     }
 
     /* Wrapper with no bottom padding */
@@ -65,6 +74,7 @@
       text-align: center;
       margin-bottom: 2rem;
     }
+
     header img {
       max-width: 150px;
       width: 100%;
@@ -72,21 +82,23 @@
       margin: 20px auto;
       display: block;
     }
+
     header h1 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
+
     @media (max-width: 600px) {
       header img {
         max-width: 100px;
       }
+
       header h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
     }
 
-    /* Engaging header sentence, centered and limited to 620px, 1.1rem font size */
     header p.header-lead {
       font-size: 1rem;
       color: #fff;
@@ -95,19 +107,18 @@
       line-height: 1.4;
     }
 
-    /* Portfolio grid: 2 columns on desktop, 1 column on mobile */
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
     }
+
     @media (max-width: 600px) {
       .portfolio-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    /* Portfolio item styling */
     .portfolio-item {
       background: #222;
       border: 1px solid #333;
@@ -115,15 +126,16 @@
       overflow: hidden;
       transition: transform 0.3s ease;
     }
+
     .portfolio-item:hover {
       transform: scale(1.03);
     }
 
-    /* 16:9 video container */
     .media-wrapper {
       position: relative;
       padding-top: 56.25%;
     }
+
     .media-wrapper media-player {
       position: absolute;
       top: 0;
@@ -132,22 +144,22 @@
       height: 100%;
     }
 
-    /* Info styling */
     .info {
       padding: 1rem;
     }
+
     .info h2 {
       font-size: 1.3rem;
       margin: 0 0 0.5rem;
       text-transform: uppercase;
     }
+
     .info p {
       font-size: 0.9rem;
       color: #ccc;
       margin: 0;
     }
 
-    /* Footer styling */
     footer {
       text-align: center;
       padding: 1rem 0;
@@ -157,6 +169,7 @@
     }
   </style>
 </head>
+
 <body>
   <div id="wrapper">
     <!-- Header -->
@@ -165,7 +178,7 @@
       <h1>Video Portfolio</h1>
       <p class="header-lead">
         Merging storytelling and tech know-how, <br>
-we create videos that reach your audience.
+        we create videos that reach your audience.
       </p>
     </header>
 
@@ -211,7 +224,8 @@ we create videos that reach your audience.
           <media-player preload="metadata"
             src="https://vz-6fd78b20-24d.b-cdn.net/2c307b45-e701-459c-9458-c7f4b1395a14/playlist.m3u8">
             <media-provider>
-              <media-poster class="vds-poster" src="/images/cover-virtuality.webp" alt="VIRTUALITY TRAILER"></media-poster>
+              <media-poster class="vds-poster" src="/images/cover-virtuality.webp"
+                alt="VIRTUALITY TRAILER"></media-poster>
             </media-provider>
             <media-video-layout></media-video-layout>
           </media-player>
@@ -228,7 +242,8 @@ we create videos that reach your audience.
           <media-player preload="metadata"
             src="https://vz-6fd78b20-24d.b-cdn.net/97c0a033-6b4f-47c2-acee-e9d0e003b116/playlist.m3u8">
             <media-provider>
-              <media-poster class="vds-poster" src="/images/female-leaders.jpg" alt="BUSINESS FEMALE LEADERS"></media-poster>
+              <media-poster class="vds-poster" src="/images/female-leaders.jpg"
+                alt="BUSINESS FEMALE LEADERS"></media-poster>
             </media-provider>
             <media-video-layout></media-video-layout>
           </media-player>
@@ -247,7 +262,8 @@ we create videos that reach your audience.
           <media-player preload="metadata"
             src="https://vz-6fd78b20-24d.b-cdn.net/79483d8d-d7c8-444c-82d5-46730669b699/playlist.m3u8">
             <media-provider>
-              <media-poster class="vds-poster" src="/images/Lola and Chloe.jpg" alt="FEMALE LEADERS INTERVIEW"></media-poster>
+              <media-poster class="vds-poster" src="/images/Lola and Chloe.jpg"
+                alt="FEMALE LEADERS INTERVIEW"></media-poster>
             </media-provider>
             <media-video-layout></media-video-layout>
           </media-player>
@@ -281,7 +297,8 @@ we create videos that reach your audience.
           <media-player preload="metadata"
             src="https://vz-6fd78b20-24d.b-cdn.net/353f5065-a1f0-4305-9f0b-4c7ee92d60a2/playlist.m3u8">
             <media-provider>
-              <media-poster class="vds-poster" src="/images/silent-disco.webp" alt="AURA EVENT AFTER-MOVIE"></media-poster>
+              <media-poster class="vds-poster" src="/images/silent-disco.webp"
+                alt="AURA EVENT AFTER-MOVIE"></media-poster>
             </media-provider>
             <media-video-layout></media-video-layout>
           </media-player>
@@ -310,10 +327,8 @@ we create videos that reach your audience.
       </div>
     </section>
   </div>
-
-  <!-- Footer placed after the wrapper -->
   <footer>
-    <p>&copy; Diigima Creative Studio 2025. All rights reserved.</p>
+    <p>&copy; Diigima Creative Studio 2025</p>
   </footer>
 
   <!-- Single-Play Script: Only one video plays at a time -->
@@ -339,10 +354,11 @@ we create videos that reach your audience.
       const bgUrl = 'https://diigima.es/images/bg.jpg';
       const img = new Image();
       img.src = bgUrl;
-      img.onload = function() {
+      img.onload = function () {
         document.body.classList.add('bg-loaded');
       };
     })();
   </script>
 </body>
+
 </html>
