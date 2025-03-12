@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Video Portfolio | Diigima Creative Studio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicon Links -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+
+  <!-- Preload and include Google Font: M PLUS Rounded 1c -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+  <!-- Vidstack assets for HLS support -->
+  <link rel="stylesheet" href="https://cdn.vidstack.io/player/theme.css" />
+  <link rel="stylesheet" href="https://cdn.vidstack.io/player/video.css" />
+  <script src="https://cdn.vidstack.io/player" type="module" crossorigin="anonymous"></script>
+
+  <style>
+    /* Body with solid black, fade-in background image, and 30% dark overlay */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "M PLUS Rounded 1c", sans-serif;
+      color: #fff;
+      background-color: #000;
+      position: relative;
+      min-height: 100vh;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url('https://diigima.es/images/bg.jpg') bottom center/cover no-repeat fixed;
+      opacity: 0;
+      transition: opacity 1s ease;
+      z-index: -2;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: -1;
+    }
+    body.bg-loaded::before {
+      opacity: 1;
+    }
+
+    /* Wrapper with no bottom padding */
+    #wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 2rem 0 2rem;
+      box-sizing: border-box;
+      background: transparent;
+    }
+
+    /* Header styling */
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header img {
+      max-width: 150px;
+      width: 100%;
+      height: auto;
+      margin: 20px auto;
+      display: block;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    @media (max-width: 600px) {
+      header img {
+        max-width: 100px;
+      }
+      header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    }
+
+    /* Engaging header sentence, centered and limited to 620px, 1.1rem font size */
+    header p.header-lead {
+      font-size: 1rem;
+      color: #fff;
+      max-width: 700px;
+      margin: 0 auto 1rem auto;
+      line-height: 1.4;
+    }
+
+    /* Portfolio grid: 2 columns on desktop, 1 column on mobile */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 600px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Portfolio item styling */
+    .portfolio-item {
+      background: #222;
+      border: 1px solid #333;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .portfolio-item:hover {
+      transform: scale(1.03);
+    }
+
+    /* 16:9 video container */
+    .media-wrapper {
+      position: relative;
+      padding-top: 56.25%;
+    }
+    .media-wrapper media-player {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Info styling */
+    .info {
+      padding: 1rem;
+    }
+    .info h2 {
+      font-size: 1.3rem;
+      margin: 0 0 0.5rem;
+      text-transform: uppercase;
+    }
+    .info p {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin: 0;
+    }
+
+    /* Footer styling */
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      border-top: 1px solid #333;
+      margin-top: 2rem;
+      background: rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <!-- Header -->
+    <header>
+      <img src="/images/logotype.webp" alt="Diigima Creative Studio Logo">
+      <h1>Video Portfolio</h1>
+      <p class="header-lead">
+        Merging storytelling and tech know-how, <br>
+we create videos that reach your audience.
+      </p>
+    </header>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-grid">
+      <!-- 1) DEMO REEL -->
+      <div class="portfolio-item">
+        <div class="media-wrapper">
+          <media-player preload="metadata"
+            src="https://vz-6fd78b20-24d.b-cdn.net/fd48fe24-26b6-499c-92ad-aeb7b6d98c01/playlist.m3u8">
+            <media-provider>
+              <media-poster class="vds-poster" src="/images/diigima-thumb.jpg" alt="DEMO REEL"></media-poster>
+            </media-provider>
+            <media-video-layout></media-video-layout>
+          </media-player>
+        </div>
+        <div class="info">
+          <h2>DEMO REEL</h2>
+          <p>An engaging showcase of our creative vision.</p>
+        </div>
+      </div>
+
+      <!-- 2) VERUCCI HEELS COMMERCIAL -->
+      <div class="portfolio-item">
+        <div class="media-wrapper">
+          <media-player preload="metadata"
+            src="https://vz-6fd78b20-24d.b-cdn.net/a888a7c6-25e0-44e0-a62b-c17b334691c8/playlist.m3u8">
+            <media-provider>
+              <media-poster class="vds-poster" src="/images/verucci.webp" alt="VERUCCI HEELS COMMERCIAL"></media-poster>
+            </media-provider>
+            <media-video-layout></media-video-layout>
+          </media-player>
+        </div>
+        <div class="info">
+          <h2>VERUCCI HEELS COMMERCIAL</h2>
+          <p>In the streets of Barcelona, these heels make a statement.</p>
+        </div>
+      </div>
+
+      <!-- 3) VIRTUALITY TRAILER -->
+      <div class="portfolio-item">
+        <div class="media-wrapper">
+          <media-player preload="metadata"
+            src="https://vz-6fd78b20-24d.b-cdn.net/2c307b45-e701-459c-9458-c7f4b1395a14/playlist.m3u8">
+            <media-provider>
+              <media-poster class="vds-poster" src="/images/cover-virtuality.webp" alt="VIRTUALITY TRAILER"></media-poster>
+            </media-provider>
+            <media-video-layout></media-video-layout>
+          </media-player>
+        </div>
+        <div class="info">
+          <h2>VIRTUALITY TRAILER</h2>
+          <p>A romantic thriller set in a real and virtual Barcelona.</p>
+        </div>
+      </div>
+
+      <!-- 4) BUSINESS FEMALE LEADERS -->
+      <div class="portfolio-item">
+        <div class="media-wrapper">
+          <media-player preload="metadata"
+            src="https://vz-6fd78b20-24d.b-cdn.net/97c0a033-6b4f-47c2-acee-e9d0e003b116/playlist.m3u8">
+            <media-provider>
+              <media-poster class="vds-poster" src="/images/female-leaders.jpg" alt="BUSINESS FEMALE LEADERS"></media-poster>
+            </media-provider>
+            <media-video-layout></media-video-layout>
+          </media-player>
+        </div>
+        <div class="info">
+          <h2>BUSINESS FEMALE LEADERS</h2>
+          <p>A snapshot of female leaders at the World Football Summit.</p>
+        </div>
+      </div>
+
+
+
+      <!-- 6) FEMALE LEADERS INTERVIEW -->
+      <div class="portfolio-item">
+        <div class="media-wrapper">
+          <media-player preload="metadata"
+            src="https://vz-6fd78b20-24d.b-cdn.net/79483d8d-d7c8-444c-82d5-46730669b699/playlist.m3u8">
+            <media-provider>
+              <media-poster class="vds-poster" src="/images/Lola and Chloe.jpg" alt="FEMALE LEADERS INTERVIEW"></media-poster>
+            </media-provider>
+            <media-video-layout></media-video-layout>
+          </media-player>
+        </div>
+        <div class="info">
+          <h2>FEMALE LEADERS INTERVIEW</h2>
+          <p>A dynamic double-act fizzing with energy and insight.</p>
+        </div>
+      </div>
+
+      <!-- 5) CORPORATE FUNDRAISING -->
+      <div class="portfolio-item">
+        <div class="media-wrapper">
+          <media-player preload="metadata"
+            src="https://vz-6fd78b20-24d.b-cdn.net/d388b652-61cf-4f6b-a9b8-f1dd4110fb9a/playlist.m3u8">
+            <media-provider>
+              <media-poster class="vds-poster" src="/images/elena.jpg" alt="CORPORATE FUNDRAISING"></media-poster>
+            </media-provider>
+            <media-video-layout></media-video-layout>
+          </media-player>
+        </div>
+        <div class="info">
+          <h2>CORPORATE FUNDRAISING</h2>
+          <p>An entrepreneur energetically shares her expertise.</p>
+        </div>
+      </div>
+
+      <!-- 7) AURA EVENT AFTER-MOVIE -->
+      <div class="portfolio-item">
+        <div class="media-wrapper">
+          <media-player preload="metadata"
+            src="https://vz-6fd78b20-24d.b-cdn.net/353f5065-a1f0-4305-9f0b-4c7ee92d60a2/playlist.m3u8">
+            <media-provider>
+              <media-poster class="vds-poster" src="/images/silent-disco.webp" alt="AURA EVENT AFTER-MOVIE"></media-poster>
+            </media-provider>
+            <media-video-layout></media-video-layout>
+          </media-player>
+        </div>
+        <div class="info">
+          <h2>EVENT AFTER-MOVIE</h2>
+          <p>A vibrant celebration of a live event at Aura Silent Disco.</p>
+        </div>
+      </div>
+
+      <!-- 8) THIS IS NOT AI -->
+      <div class="portfolio-item">
+        <div class="media-wrapper">
+          <media-player preload="metadata"
+            src="https://vz-6fd78b20-24d.b-cdn.net/e0c2d5c4-420c-4b67-8f31-b752f1e8732e/playlist.m3u8">
+            <media-provider>
+              <media-poster class="vds-poster" src="/images/robot.jpg" alt="THIS IS NOT AI"></media-poster>
+            </media-provider>
+            <media-video-layout></media-video-layout>
+          </media-player>
+        </div>
+        <div class="info">
+          <h2>THIS IS NOT AI</h2>
+          <p>The Diigima duo merge storytelling and tech know-how.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer placed after the wrapper -->
+  <footer>
+    <p>&copy; Diigima Creative Studio 2025. All rights reserved.</p>
+  </footer>
+
+  <!-- Single-Play Script: Only one video plays at a time -->
+  <script>
+    const players = document.querySelectorAll('media-player');
+    function pauseAllExcept(currentPlayer = null) {
+      players.forEach(p => {
+        if (p !== currentPlayer) {
+          p.pause();
+        }
+      });
+    }
+    players.forEach(player => {
+      player.addEventListener('play', () => {
+        pauseAllExcept(player);
+      });
+    });
+  </script>
+
+  <!-- Preload background image and fade in when loaded -->
+  <script>
+    (function fadeInBackground() {
+      const bgUrl = 'https://diigima.es/images/bg.jpg';
+      const img = new Image();
+      img.src = bgUrl;
+      img.onload = function() {
+        document.body.classList.add('bg-loaded');
+      };
+    })();
+  </script>
+</body>
+</html>
