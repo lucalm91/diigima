@@ -459,3 +459,9 @@ display: none!important;
 .termsfeed-com---palette-dark .cc-pc-head-close:active, .termsfeed-com---palette-dark .cc-pc-head-close:focus {
   border: none!important;
 }
+
+
+body.loading,
+body.loading * {
+  cursor: wait !important;
+}
