@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Background fade-in
+    (function fadeInBackground() {
+      const bgUrl = 'https://diigima.es/images/bg.jpg';
+      const img = new Image();
+      img.src = bgUrl;
+      img.onload = function () {
+        document.body.classList.add('bg-loaded');
+      };
+    })();
+
     // Sticky Nav: Show when scrolling past the About section
     const bootcampNav = document.getElementById('bootcamp-nav');
     const aboutSection = document.getElementById('about-workshop');
@@ -30,15 +40,27 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 1000);
     }
   
-    // Modal handling (for the optional popup version)
+    // Enhanced Modal handling
     const modal = document.getElementById('modal');
     const openModalBtn = document.getElementById('openModal');
     const closeModalBtn = document.getElementById('closeModal');
-    function openModal() { modal.classList.add('show-modal'); }
-    function closeModal() { modal.classList.remove('show-modal'); }
+
+    function openModal() {
+        modal.classList.add('show-modal');
+        document.body.classList.add('modal-open');
+    }
+
+    function closeModal() {
+        modal.classList.remove('show-modal');
+        document.body.classList.remove('modal-open');
+    }
+
     if (openModalBtn) { openModalBtn.addEventListener('click', openModal); }
     if (closeModalBtn) { closeModalBtn.addEventListener('click', closeModal); }
-    window.addEventListener('click', (event) => { if (event.target === modal) { closeModal(); } });
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) { closeModal(); }
+    });
+
     // Bind CTA buttons to open modal (if using modal version)
     const navCtaBtn = document.getElementById('navCtaBtn');
     if (navCtaBtn) { navCtaBtn.addEventListener('click', openModal); }
@@ -46,7 +68,4 @@ document.addEventListener('DOMContentLoaded', function() {
     if (urgencyCta) { urgencyCta.addEventListener('click', openModal); }
     const ctaButtonNeed = document.getElementById('sectionCtaNeed');
     if (ctaButtonNeed) { ctaButtonNeed.addEventListener('click', openModal); }
-  
-    
   });
-  

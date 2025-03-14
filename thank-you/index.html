@@ -15,39 +15,84 @@
       margin: 0;
       color: #fff;
       background-color: #000;
+      position: relative;
+      min-height: 100vh;
     }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url('https://diigima.es/images/bg.jpg') bottom center/cover no-repeat fixed;
+      opacity: 0;
+      transition: opacity 1s ease;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: -1;
+    }
+
+    body.bg-loaded::before {
+      opacity: 1;
+    }
+
+    @supports (-webkit-overflow-scrolling: touch) {
+      body::before {
+        background-attachment: scroll;
+      }
+    }
+
     /* Hero Section */
     .hero {
       position: relative;
-      height: 90vh;
-      background: url('https://diigima.es/images/bg.jpg') center center/cover no-repeat;
-      background-attachment: fixed;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       overflow: hidden;
     }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.3);
-      z-index: 1;
-    }
-    /* Container Styled like the Bootcamp Modal */
+
+    /* Container Styles */
     .content-container {
       background: rgba(0,0,0,0.6);
-      margin: 1rem;
       padding: 2rem;
-      border-radius: 5px;
       max-width: 600px;
       position: relative;
       z-index: 2;
+      width: 90%;
     }
+
+    @media (max-width: 768px) {
+      .content-container {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        background: rgba(0,0,0,0.5);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 1rem;
+      }
+    }
+
+    /* iOS specific fixes */
+    @supports (-webkit-overflow-scrolling: touch) {
+      body {
+        min-height: -webkit-fill-available;
+      }
+      
+      .content-container {
+        background: rgba(0,0,0,0.5);
+      }
+    }
+
     .content-container h1 {
       font-size: 2rem;
       margin-bottom: 1rem;
@@ -116,6 +161,14 @@
       font-size: 0.9rem;
       margin-top: 0.5rem;
     }
+    /* Add footer styles */
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      border-top: 1px solid #333;
+      background: rgba(0, 0, 0, 0.85);  /* Make footer darker */
+      margin-top: 0;  /* Remove margin */
+    }
   </style>
 </head>
 <body>
@@ -146,6 +199,10 @@
     </div>
   </section>
   
+  <footer>
+    <p>&copy; Diigima Creative Studio 2025</p>
+  </footer>
+
   <!-- Stripe JS -->
   <script src="https://js.stripe.com/v3/"></script>
   <script>
@@ -172,6 +229,16 @@
         }, 1000);
       }
     });
+
+    // Background fade-in
+    (function fadeInBackground() {
+      const bgUrl = 'https://diigima.es/images/bg.jpg';
+      const img = new Image();
+      img.src = bgUrl;
+      img.onload = function () {
+        document.body.classList.add('bg-loaded');
+      };
+    })();
   </script>
 </body>
 </html>
