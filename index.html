@@ -23,18 +23,19 @@
 	<link rel="preload" href="assets/css2.css?family=M+PLUS+Rounded+1c&display=swap" as="style">
 
 	<link rel="preload" href="assets/css/main.css" as="style">
-<!--	<link rel="preload" href="assets/font.woff2" as="font" type="font/woff2" crossorigin>
+	<!--	<link rel="preload" href="assets/font.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 	<link rel="preload" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" as="style"> -->
 	<link rel="canonical" href="https://diigima.es/">
-    <script defer src="https://umami.lucanor.synology.me/script.js" data-website-id="fa1854a1-17e2-4995-a8af-cca6cf8ae23a"></script>
-    <link rel="stylesheet" href="assets/js/vidstack/theme.css" />
-    <link rel="stylesheet" href="assets/js/vidstack/video.css" />
-	<link rel="preload" href="images/demo-reel-cover.webp" as="image" type="image/webp"> 
+	<script defer src="https://umami.lucanor.synology.me/script.js"
+		data-website-id="fa1854a1-17e2-4995-a8af-cca6cf8ae23a"></script>
+	
+		<link rel="stylesheet" href="assets/js/vidstack/theme.css" />
+    	<link rel="stylesheet" href="assets/js/vidstack/video.css" />
+		<script src="assets/js/vidstack/player.js" type="module" crossorigin="anonymous"></script>
 
-<script src="assets/js/vidstack/player.js" type="module" crossorigin="anonymous"></script>
 
 	<!-- Open Graph Meta Tags -->
 	<meta property="og:title" content="Diigima Creative Studio">
@@ -280,6 +281,7 @@
 		.vds-chapter-title::before {
 			display: none;
 		}
+
 		.menu ul li a {
 			display: block;
 			min-width: 8rem;
@@ -294,48 +296,49 @@
 		}
 
 		.menu ul li:first-child {
-  		  border-left: 0;
+			border-left: 0;
 		}
+
 		.menu ul li {
-  		  padding-left: 0;
-   		  border-left: solid 1px #ffffff;
+			padding-left: 0;
+			border-left: solid 1px #ffffff;
 		}
 
 		.menu ul {
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    margin-bottom: 0;
-    list-style: none;
-    padding-left: 0;
-    border: solid 1px #ffffff;
-    border-radius: 4px;
-	margin: 0 0 2rem 0;
-}
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			margin-bottom: 0;
+			list-style: none;
+			padding-left: 0;
+			border: solid 1px #ffffff;
+			border-radius: 4px;
+			margin: 0 0 2rem 0;
+		}
 
-.menu {
-	display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
+		.menu {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+		}
 
-.menu ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.075);
-}
+		.menu ul li a:hover {
+			background-color: rgba(255, 255, 255, 0.075);
+		}
 
-.vds-settings-menu {
-  display: none!important;
-}
+		.vds-settings-menu {
+			display: none !important;
+		}
 	</style>
 </head>
 
 <body class="is-preload">
 	<script type="text/javascript" charset="UTF-8">
 		document.addEventListener('DOMContentLoaded', function () {
-		cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palette":"dark","language":"en","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_name":"diigima.es"});
+			cookieconsent.run({ "notice_banner_type": "simple", "consent_type": "express", "palette": "dark", "language": "en", "page_load_consent_levels": ["strictly-necessary"], "notice_banner_reject_button_hide": false, "preferences_center_close_button_hide": false, "page_refresh_confirmation_buttons": false, "website_name": "diigima.es" });
 		});
-		</script>
+	</script>
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -380,19 +383,22 @@
 						storytelling and tech
 						know-how to create audio video stories that mesmerize your audience</p>
 					<div style="max-width: 560px; margin-bottom: 2rem">
-					<media-player style="width: 100%; aspect-ratio: 16 / 9;" controls-delay="1000" preload="metadata" src="https://vz-6fd78b20-24d.b-cdn.net/fd48fe24-26b6-499c-92ad-aeb7b6d98c01/playlist.m3u8">
-						<media-provider>
-							<media-poster class="vds-poster" src="images/demo-reel-cover.webp"
-								alt="Diigima Demo Reel">
-							</media-poster>
-						</media-provider>
-						<media-video-layout></media-video-layout>
-					</media-player>
-				</div>
+						<media-player style="width: 100%; aspect-ratio: 16 / 9;" controls-delay="1000"
+							preload="metadata"
+							src="https://vz-6fd78b20-24d.b-cdn.net/fd48fe24-26b6-499c-92ad-aeb7b6d98c01/playlist.m3u8">
+							<media-provider>
+								<media-poster class="vds-poster" src="images/demo-reel-cover.webp"
+									alt="Diigima Demo Reel">
+								</media-poster>
+							</media-provider>
+							<media-video-layout></media-video-layout>
+						</media-player>
+					</div>
 
 					<div class="menu">
 						<ul style="margin-bottom:0">
-							<li style="border: solid 1px #ffffff; width: fit-content;"><a href="#contact">    Start your story    </a></li>
+							<li style="border: solid 1px #ffffff; width: fit-content;"><a
+									href="#contact">    Start your story    </a></li>
 						</ul>
 					</div>
 				</div>
@@ -498,7 +504,8 @@
 				</div>
 				<div class="menu">
 					<ul>
-						<li style="border: solid 1px #ffffff; width: fit-content;"><a href="/">    Back to Home    </a></li>
+						<li style="border: solid 1px #ffffff; width: fit-content;"><a href="/">    Back to Home    </a>
+						</li>
 					</ul>
 				</div>
 			</article>
@@ -509,7 +516,8 @@
 				<h3>VERUCCI: HEELS COMMERCIAL </h3>
 				<p>In the streets of Barcelona, these heels aren't just made for walking.</p>
 
-				<media-player controls-delay="1000" preload="metadata" src="https://vz-6fd78b20-24d.b-cdn.net/a888a7c6-25e0-44e0-a62b-c17b334691c8/playlist.m3u8">
+				<media-player controls-delay="1000" preload="metadata"
+					src="https://vz-6fd78b20-24d.b-cdn.net/a888a7c6-25e0-44e0-a62b-c17b334691c8/playlist.m3u8">
 					<media-provider>
 						<media-poster class="vds-poster" src="images/verucci.webp"
 							alt="Verucci - Heels for every occasion">
@@ -521,7 +529,8 @@
 				<hr>
 				<h3>VIRTUALITY: BOOK TRAILER</h3>
 				<p>A romantic thriller set in a real and virtual Barcelona.</p>
-				<media-player controls-delay="1000" preload="metadata" src="https://vz-6fd78b20-24d.b-cdn.net/2c307b45-e701-459c-9458-c7f4b1395a14/playlist.m3u8">
+				<media-player controls-delay="1000" preload="metadata"
+					src="https://vz-6fd78b20-24d.b-cdn.net/2c307b45-e701-459c-9458-c7f4b1395a14/playlist.m3u8">
 					<media-provider>
 						<media-poster class="vds-poster" src="images\cover-virtuality.webp" alt="Virtuality">
 						</media-poster>
@@ -529,11 +538,12 @@
 					<media-video-layout></media-video-layout>
 				</media-player>
 
-				
+
 				<hr>
 				<h3>Tech Barcelona: Event Highlights</h3>
 				<p>Rooftop vibes at Tech Barcelona’s Afterwork event.</p>
-				<media-player controls-delay="1000" preload="metadata" src="https://vz-6fd78b20-24d.b-cdn.net/eaca03e4-c289-4437-b8a7-855099072d33/playlist.m3u8">
+				<media-player controls-delay="1000" preload="metadata"
+					src="https://vz-6fd78b20-24d.b-cdn.net/eaca03e4-c289-4437-b8a7-855099072d33/playlist.m3u8">
 					<media-provider>
 						<media-poster class="vds-poster" src="/images/tech-barcelona.webp" alt="Virtuality">
 						</media-poster>
@@ -543,7 +553,8 @@
 				<hr>
 				<h3>Silent Disco: Event After-Movie</h3>
 				<p>An all-night fest of DJs and headsets, music and dancing.</p>
-				<media-player controls-delay="1000" preload="metadata" src="https://vz-6fd78b20-24d.b-cdn.net/353f5065-a1f0-4305-9f0b-4c7ee92d60a2/playlist.m3u8">
+				<media-player controls-delay="1000" preload="metadata"
+					src="https://vz-6fd78b20-24d.b-cdn.net/353f5065-a1f0-4305-9f0b-4c7ee92d60a2/playlist.m3u8">
 					<media-provider>
 						<media-poster class="vds-poster" src="images\silent-disco.webp" alt="Virtuality">
 						</media-poster>
@@ -554,7 +565,8 @@
 
 				<h3>FEMALE LEADERS: INTERVIEW</h3>
 				<p>A dynamic double-act fizzing with energy and insight.</p>
-				<media-player controls-delay="1000" preload="metadata" src="https://vz-6fd78b20-24d.b-cdn.net/79483d8d-d7c8-444c-82d5-46730669b699/playlist.m3u8">
+				<media-player controls-delay="1000" preload="metadata"
+					src="https://vz-6fd78b20-24d.b-cdn.net/79483d8d-d7c8-444c-82d5-46730669b699/playlist.m3u8">
 					<media-provider>
 						<media-poster class="vds-poster" src="/images/Lola-and-Chloe.webp" alt="Bouncing Back">
 						</media-poster>
@@ -564,7 +576,8 @@
 				<hr>
 				<h3>BOUNCE-BACK: LIFE-COACH STORY</h3>
 				<p>A tale of resilience and recovery from a company meltdown.</p>
-				<media-player controls-delay="1000" preload="metadata" src="https://vz-6fd78b20-24d.b-cdn.net/556f5f24-2a17-4ce0-b55e-5b323e49c0f6/playlist.m3u8">
+				<media-player controls-delay="1000" preload="metadata"
+					src="https://vz-6fd78b20-24d.b-cdn.net/556f5f24-2a17-4ce0-b55e-5b323e49c0f6/playlist.m3u8">
 					<media-provider>
 						<media-poster class="vds-poster" src="images\cover-bouncing-back.webp" alt="Bouncing Back">
 						</media-poster>
@@ -608,7 +621,8 @@
 				</div>
 				<div class="menu">
 					<ul>
-						<li style="border: solid 1px #ffffff; width: fit-content;"><a href="/">    Back to Home    </a></li>
+						<li style="border: solid 1px #ffffff; width: fit-content;"><a href="/">    Back to Home    </a>
+						</li>
 					</ul>
 				</div>
 			</article>
@@ -655,7 +669,8 @@
 				</div>
 				<div class="menu">
 					<ul>
-						<li style="border: solid 1px #ffffff; width: fit-content;"><a href="/">    Back to Home    </a></li>
+						<li style="border: solid 1px #ffffff; width: fit-content;"><a href="/">    Back to Home    </a>
+						</li>
 					</ul>
 				</div>
 			</article>
@@ -695,25 +710,27 @@
 					</ul>
 				</form>
 				<hr>
-<div class="menu">
-	<ul style="border: none!important;">
-		<li><a href="#our-videos">Our Videos</a></li>
-		<li><a href="#your-stories">Your Stories</a></li>
-		<li><a href="#about-us">About Diigima</a></li>
-	</ul>
-</div>
-<div class="menu">
-	<ul>
-		<li style="border: solid 1px #ffffff; width: fit-content;"><a href="/">    Back to Home    </a></li>
-	</ul>
-</div>
+				<div class="menu">
+					<ul style="border: none!important;">
+						<li><a href="#our-videos">Our Videos</a></li>
+						<li><a href="#your-stories">Your Stories</a></li>
+						<li><a href="#about-us">About Diigima</a></li>
+					</ul>
+				</div>
+				<div class="menu">
+					<ul>
+						<li style="border: solid 1px #ffffff; width: fit-content;"><a href="/">    Back to Home    </a>
+						</li>
+					</ul>
+				</div>
 			</article>
 		</div>
 
 		<!-- Footer -->
 		<footer id="footer">
 			<p class="copyright">&copy; Diigima Creative Studio: 2025.</p>
-			<a href="#" id="open_preferences_center" class="copyright" style="font-weight: initial;	text-transform: capitalize !important; ">Update cookies preferences</a>
+			<a href="#" id="open_preferences_center" class="copyright"
+				style="font-weight: initial;	text-transform: capitalize !important; ">Update cookies preferences</a>
 		</footer>
 
 	</div>

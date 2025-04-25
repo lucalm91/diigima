@@ -1,76 +1,128 @@
 ﻿const s = {
-    "accessibility": () => import("./icons/accessibility.js"),
-    "airplay": () => import("./icons/airplay.js"),
-    "camera": () => import("./icons/camera.js"),
-    "caption": () => import("./icons/caption.js"),
-    "chevron-down": () => import("./icons/chevron-down.js"),
-    "chevron-left": () => import("./icons/chevron-left.js"),
-    "chevron-right": () => import("./icons/chevron-right.js"),
-    "chevron-up": () => import("./icons/chevron-up.js"),
-    "fullscreen-exit": () => import("./icons/fullscreen-exit.js"),
-    "fullscreen": () => import("./icons/fullscreen.js"),
-    "heart": () => import("./icons/heart.js"),
-    "pause": () => import("./icons/pause.js"),
-    "picture-in-picture-exit": () => import("./icons/picture-in-picture-exit.js"),
-    "picture-in-picture": () => import("./icons/picture-in-picture.js"),
-    "play": () => import("./icons/play.js"),
-    "replay": () => import("./icons/replay.js"),
-    "settings": () => import("./icons/settings.js"),
-    "volume-high": () => import("./icons/volume-high.js"),
-    "volume-low": () => import("./icons/volume-low.js"),
-    "x-mark": () => import("./icons/x-mark.js")
+  accessibility: () => import("/assets/js/vidstack/icons/accessibility.js"),
+  "add-note": () => import("/assets/js/vidstack/icons/add-note.js"),
+  "add-playlist": () => import("/assets/js/vidstack/icons/add-playlist.js"),
+  "add-user": () => import("/assets/js/vidstack/icons/add-user.js"),
+  add: () => import("/assets/js/vidstack/icons/add.js"),
+  airplay: () => import("/assets/js/vidstack/icons/airplay.js"),
+  "arrow-collapse-in": () => import("/assets/js/vidstack/icons/arrow-collapse-in.js"),
+  "arrow-collapse": () => import("/assets/js/vidstack/icons/arrow-collapse.js"),
+  "arrow-down": () => import("/assets/js/vidstack/icons/arrow-down.js"),
+  "arrow-expand-out": () => import("/assets/js/vidstack/icons/arrow-expand-out.js"),
+  "arrow-expand": () => import("/assets/js/vidstack/icons/arrow-expand.js"),
+  "arrow-left": () => import("/assets/js/vidstack/icons/arrow-left.js"),
+  "arrow-right": () => import("/assets/js/vidstack/icons/arrow-right.js"),
+  "arrow-up": () => import("/assets/js/vidstack/icons/arrow-up.js"),
+  bookmark: () => import("/assets/js/vidstack/icons/bookmark.js"),
+  camera: () => import("/assets/js/vidstack/icons/camera.js"),
+  chapters: () => import("/assets/js/vidstack/icons/chapters.js"),
+  "chat-collapse": () => import("/assets/js/vidstack/icons/chat-collapse.js"),
+  chat: () => import("/assets/js/vidstack/icons/chat.js"),
+  check: () => import("/assets/js/vidstack/icons/check.js"),
+  "chevron-down": () => import("/assets/js/vidstack/icons/chevron-down.js"),
+  "chevron-left": () => import("/assets/js/vidstack/icons/chevron-left.js"),
+  "chevron-right": () => import("/assets/js/vidstack/icons/chevron-right.js"),
+  "chevron-up": () => import("/assets/js/vidstack/icons/chevron-up.js"),
+  chromecast: () => import("/assets/js/vidstack/icons/chromecast.js"),
+  clip: () => import("/assets/js/vidstack/icons/clip.js"),
+  "closed-captions-on": () => import("/assets/js/vidstack/icons/closed-captions-on.js"),
+  "closed-captions": () => import("/assets/js/vidstack/icons/closed-captions.js"),
+  comment: () => import("/assets/js/vidstack/icons/comment.js"),
+  computer: () => import("/assets/js/vidstack/icons/computer.js"),
+  device: () => import("/assets/js/vidstack/icons/device.js"),
+  download: () => import("/assets/js/vidstack/icons/download.js"),
+  episodes: () => import("/assets/js/vidstack/icons/episodes.js"),
+  eye: () => import("/assets/js/vidstack/icons/eye.js"),
+  "fast-backward": () => import("/assets/js/vidstack/icons/fast-backward.js"),
+  "fast-forward": () => import("/assets/js/vidstack/icons/fast-forward.js"),
+  flag: () => import("/assets/js/vidstack/icons/flag.js"),
+  "fullscreen-arrow-exit": () => import("/assets/js/vidstack/icons/fullscreen-arrow-exit.js"),
+  "fullscreen-arrow": () => import("/assets/js/vidstack/icons/fullscreen-arrow.js"),
+  "fullscreen-exit": () => import("/assets/js/vidstack/icons/fullscreen-exit.js"),
+  fullscreen: () => import("/assets/js/vidstack/icons/fullscreen.js"),
+  heart: () => import("/assets/js/vidstack/icons/heart.js"),
+  info: () => import("/assets/js/vidstack/icons/info.js"),
+  language: () => import("/assets/js/vidstack/icons/language.js"),
+  link: () => import("/assets/js/vidstack/icons/link.js"),
+  "lock-closed": () => import("/assets/js/vidstack/icons/lock-closed.js"),
+  "lock-open": () => import("/assets/js/vidstack/icons/lock-open.js"),
+  "menu-horizontal": () => import("/assets/js/vidstack/icons/menu-horizontal.js"),
+  "menu-vertical": () => import("/assets/js/vidstack/icons/menu-vertical.js"),
+  microphone: () => import("/assets/js/vidstack/icons/microphone.js"),
+  mobile: () => import("/assets/js/vidstack/icons/mobile.js"),
+  moon: () => import("/assets/js/vidstack/icons/moon.js"),
+  "music-off": () => import("/assets/js/vidstack/icons/music-off.js"),
+  music: () => import("/assets/js/vidstack/icons/music.js"),
+  mute: () => import("/assets/js/vidstack/icons/mute.js"),
+  next: () => import("/assets/js/vidstack/icons/next.js"),
+  "no-eye": () => import("/assets/js/vidstack/icons/no-eye.js"),
+  notification: () => import("/assets/js/vidstack/icons/notification.js"),
+  odometer: () => import("/assets/js/vidstack/icons/odometer.js"),
+  pause: () => import("/assets/js/vidstack/icons/pause.js"),
+  "picture-in-picture-exit": () => import("/assets/js/vidstack/icons/picture-in-picture-exit.js"),
+  "picture-in-picture": () => import("/assets/js/vidstack/icons/picture-in-picture.js"),
+  play: () => import("/assets/js/vidstack/icons/play.js"),
+  "playback-speed-circle": () => import("/assets/js/vidstack/icons/playback-speed-circle.js"),
+  playlist: () => import("/assets/js/vidstack/icons/playlist.js"),
+  previous: () => import("/assets/js/vidstack/icons/previous.js"),
+  "question-mark": () => import("/assets/js/vidstack/icons/question-mark.js"),
+  "queue-list": () => import("/assets/js/vidstack/icons/queue-list.js"),
+  "radio-button-selected": () => import("/assets/js/vidstack/icons/radio-button-selected.js"),
+  "radio-button": () => import("/assets/js/vidstack/icons/radio-button.js"),
+  "repeat-on": () => import("/assets/js/vidstack/icons/repeat-on.js"),
+  "repeat-square-on": () => import("/assets/js/vidstack/icons/repeat-square-on.js"),
+  "repeat-square": () => import("/assets/js/vidstack/icons/repeat-square.js"),
+  repeat: () => import("/assets/js/vidstack/icons/repeat.js"),
+  replay: () => import("/assets/js/vidstack/icons/replay.js"),
+  rotate: () => import("/assets/js/vidstack/icons/rotate.js"),
+  search: () => import("/assets/js/vidstack/icons/search.js"),
+  "seek-backward-10": () => import("/assets/js/vidstack/icons/seek-backward-10.js"),
+  "seek-backward-15": () => import("/assets/js/vidstack/icons/seek-backward-15.js"),
+  "seek-backward-30": () => import("/assets/js/vidstack/icons/seek-backward-30.js"),
+  "seek-backward": () => import("/assets/js/vidstack/icons/seek-backward.js"),
+  "seek-forward-10": () => import("/assets/js/vidstack/icons/seek-forward-10.js"),
+  "seek-forward-15": () => import("/assets/js/vidstack/icons/seek-forward-15.js"),
+  "seek-forward-30": () => import("/assets/js/vidstack/icons/seek-forward-30.js"),
+  "seek-forward": () => import("/assets/js/vidstack/icons/seek-forward.js"),
+  send: () => import("/assets/js/vidstack/icons/send.js"),
+  "settings-menu": () => import("/assets/js/vidstack/icons/settings-menu.js"),
+  "settings-switch": () => import("/assets/js/vidstack/icons/settings-switch.js"),
+  settings: () => import("/assets/js/vidstack/icons/settings.js"),
+  "share-arrow": () => import("/assets/js/vidstack/icons/share-arrow.js"),
+  share: () => import("/assets/js/vidstack/icons/share.js"),
+  "shuffle-on": () => import("/assets/js/vidstack/icons/shuffle-on.js"),
+  shuffle: () => import("/assets/js/vidstack/icons/shuffle.js"),
+  stop: () => import("/assets/js/vidstack/icons/stop.js"),
+  subtitles: () => import("/assets/js/vidstack/icons/subtitles.js"),
+  sun: () => import("/assets/js/vidstack/icons/sun.js"),
+  "theatre-mode-exit": () => import("/assets/js/vidstack/icons/theatre-mode-exit.js"),
+  "theatre-mode": () => import("/assets/js/vidstack/icons/theatre-mode.js"),
+  "thumbs-down": () => import("/assets/js/vidstack/icons/thumbs-down.js"),
+  "thumbs-up": () => import("/assets/js/vidstack/icons/thumbs-up.js"),
+  timer: () => import("/assets/js/vidstack/icons/timer.js"),
+  transcript: () => import("/assets/js/vidstack/icons/transcript.js"),
+  tv: () => import("/assets/js/vidstack/icons/tv.js"),
+  user: () => import("/assets/js/vidstack/icons/user.js"),
+  "volume-high": () => import("/assets/js/vidstack/icons/volume-high.js"),
+  "volume-low": () => import("/assets/js/vidstack/icons/volume-low.js"),
+  "x-mark": () => import("/assets/js/vidstack/icons/x-mark.js")
 };
 
-const i = function(s) {
-    const i = document.createElement("template");
-    return i.innerHTML = s, i.content
-}('<svg width="100%" height="100%" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"></svg>');
+const i = function(s){const i=document.createElement("template");return i.innerHTML=s,i.content}('<svg width="100%" height="100%" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"></svg>');
 
-class e extends HTMLElement {
-    constructor() {
-        super(...arguments),
-        this.e = this.n(),
-        this.t = null
-    }
-    static get observedAttributes() {
-        return ["type"]
-    }
-    get type() {
-        return this.t
-    }
-    set type(s) {
-        this.t !== s && (s ? this.setAttribute("type", s) : this.removeAttribute("type"),
-        this.i(s))
-    }
-    attributeChangedCallback(s, i, e) {
-        if ("type" === s) {
-            const s = e || null;
-            this.t !== s && this.i(s)
-        }
-    }
-    connectedCallback() {
-        this.classList.add("vds-icon"),
-        this.e.parentNode !== this && this.prepend(this.e)
-    }
-    n() {
-        return i.cloneNode(!0).firstElementChild
-    }
-    a() {
-        const i = this.t;
-        i && s[i] ? s[i]().then(({default: s})=> {
-            i === this.t && this.s(s)
-        }) : this.s("")
-    }
-    i(s) {
-        this.t = s,
-        this.a()
-    }
-    s(s) {
-        this.e.innerHTML = s
-    }
+class e extends HTMLElement{
+  constructor(){super(...arguments),this.e=this.n(),this.t=null}
+  static get observedAttributes(){return["type"]}
+  get type(){return this.t}
+  set type(s){this.t!==s&&(s?this.setAttribute("type",s):this.removeAttribute("type"),this.i(s))}
+  attributeChangedCallback(s,i,e){if("type"===s){const s=e||null;this.t!==s&&this.i(s)}}
+  connectedCallback(){this.classList.add("vds-icon"),this.e.parentNode!==this&&this.prepend(this.e)}
+  n(){return i.cloneNode(!0).firstElementChild}
+  a(){const i=this.t;i&&s[i]?s[i]().then(({default:s})=>{i===this.t&&this.s(s)}):this.s("")}
+  i(s){this.t=s,this.a()}
+  s(s){this.e.innerHTML=s}
 }
 
-e.tagName = "media-icon";
-window.customElements.get(e.tagName) || window.customElements.define(e.tagName, e);
-export {e as MediaIconElement};
+e.tagName="media-icon",window.customElements.get(e.tagName)||window.customElements.define(e.tagName,e);
+export{e as MediaIconElement};
 export default null;
