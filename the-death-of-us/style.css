@@ -1,0 +1,176 @@
+/* The Death of Us - Standalone Landing Page Styles */
+:root {
+  --bg-dark: #07070a;
+  --bg-accent: radial-gradient(circle at 30% 40%, #1e0f17 0%, #07070a 70%);
+  --color-primary: #ff1d4d; /* vibrant romantic thriller accent */
+  --color-primary-glow: #ff4d75;
+  --color-text: #f5f5f7;
+  --color-muted: #a0a0aa;
+  --color-border: #2a2a31;
+  --focus-ring: 0 0 0 3px rgba(255,29,77,0.4);
+  --font-heading: 'Cinzel', "Times New Roman", serif;
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+  --max-width: 1080px;
+  --transition: 180ms cubic-bezier(.4,0,.2,1);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg-accent);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "";
+  position: fixed; inset:0; pointer-events:none;
+  background: linear-gradient(120deg, rgba(255,29,77,0.15), transparent 40%, rgba(255,29,77,0.15));
+  mix-blend-mode: overlay; opacity:.6;
+}
+
+header.hero {
+  position: relative;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: clamp(2rem, 6vh, 4rem) 1.25rem 4rem;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute; inset:0; z-index:-2;
+  /* Desktop/large: cover for drama */
+  background: url('../images/the-death-of-us.jpg') center/cover no-repeat fixed; /* placeholder image */
+  filter: brightness(.55) saturate(1.2) contrast(1.1);
+  animation: heroKen 28s ease-in-out infinite alternate;
+  transform-origin: 50% 50%;
+}
+.hero__overlay {
+  position:absolute; inset:0; background:
+    radial-gradient(circle at 35% 50%, rgba(255,29,77,0.18), transparent 60%),
+    linear-gradient(to bottom, rgba(7,7,10,0.3), #07070a 90%);
+  z-index:-1;
+}
+
+.hero__content { max-width: 760px; text-align: center; }
+.hero__tagline { letter-spacing: .12em; text-transform: uppercase; font-size:.75rem; color:var(--color-muted); margin:0 0 1rem; }
+.hero h1 {
+  font-family: var(--font-heading);
+  font-weight: 600; line-height:1.1; margin:0 0 1.2rem;
+  font-size: clamp(2.4rem, 8vw, 4.2rem);
+  color: #ff1d4d;
+  text-shadow: 0 4px 22px rgba(255,29,77,.35), 0 0 6px rgba(255,29,77,.55);
+}
+.hero__lead { font-size:clamp(1.05rem,2vw,1.35rem); line-height:1.5; margin:0 auto 2.25rem; color: #e8e8ec; }
+
+.actions { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; }
+.actions .btn { --btn-bg: var(--color-primary); position:relative; display:inline-flex; align-items:center; gap:.65em; border:1px solid var(--color-border); font-weight:600; letter-spacing:.5px; text-decoration:none; cursor:pointer; font-size:.95rem; padding:.95rem 1.4rem; border-radius: 999px; background: linear-gradient(135deg,var(--btn-bg),#b6002c); color:#fff; box-shadow:0 4px 18px -4px rgba(255,29,77,.5); transition: var(--transition); }
+.actions .btn:hover, .actions .btn:focus-visible { transform:translateY(-2px); box-shadow:0 6px 26px -6px rgba(255,29,77,.65); }
+.actions .btn--ghost { --btn-bg: #111114; background:#111114; }
+.actions .btn--ghost:hover, .actions .btn--ghost:focus-visible { background:#18181d; }
+
+.scroll-indicator { position:absolute; bottom:1.25rem; left:50%; transform:translateX(-50%); font-size:.7rem; letter-spacing:.35em; text-transform:uppercase; color:var(--color-muted); animation: float 4s ease-in-out infinite; }
+@keyframes float { 0%,100% { transform: translate(-50%,0);} 50% { transform: translate(-50%,-10px);} }
+
+/* Trailer Section */
+section#trailer { position:relative; padding:4rem 1.25rem 3rem; max-width:var(--max-width); margin:0 auto; text-align:center; }
+section#trailer h2 { font-family: var(--font-heading); font-weight:500; margin:0 0 1rem; font-size: clamp(1.9rem,5vw,3rem); }
+section#trailer p.section-intro { margin:0 auto 2.2rem; max-width:720px; line-height:1.55; color:var(--color-muted); }
+
+.trailer-card { position:relative; border:1px solid var(--color-border); border-radius:1.2rem; overflow:hidden; background:linear-gradient(160deg,#121217,#0c0c11 60%); box-shadow:0 10px 40px -12px rgba(0,0,0,.65); }
+.trailer-aspect { position:relative; aspect-ratio:16/9; background:#000; }
+.trailer-aspect media-player { --media-border-radius:0; width:100%; height:100%; display:block; }
+.trailer-meta { padding:1.25rem 1.4rem 1.6rem; text-align:left; }
+.trailer-meta h3 { margin:.2rem 0 1rem; font-size:1.15rem; font-weight:600; letter-spacing:.5px; }
+
+.badges { display:flex; flex-wrap:wrap; gap:.5rem; margin:0 0 1rem; }
+.badge { --badge-bg:#20141b; display:inline-flex; align-items:center; gap:.4em; padding:.45em .75em; font-size:.65rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em; background:var(--badge-bg); border:1px solid #332027; border-radius: 999px; color:#ff8da7; }
+
+/* RSVP Section */
+section#rsvp { padding:4.5rem 1.25rem 5rem; max-width:var(--max-width); margin:0 auto; text-align:center; }
+section#rsvp h2 { font-family: var(--font-heading); font-weight:500; margin:0 0 1.2rem; font-size: clamp(1.9rem,5vw,3rem); }
+section#rsvp p.lead { margin:0 auto 2.4rem; max-width:760px; line-height:1.55; color:var(--color-muted); }
+
+form#rsvp-form { --field-bg:#111115; width:100%; max-width:760px; display:grid; gap:1.25rem; background:linear-gradient(145deg,#121217,#0d0d11 70%); padding:2.2rem clamp(1.25rem,2vw,2.5rem) 2.6rem; border:1px solid var(--color-border); border-radius:1.4rem; box-shadow:0 12px 42px -14px rgba(0,0,0,.7); margin-left:auto; margin-right:auto; text-align:left; }
+
+.field { display:flex; flex-direction:column; gap:.55rem; }
+.field label { font-size:.75rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--color-muted); }
+.field input, .field select, .field textarea { font:inherit; background:var(--field-bg); border:1px solid #1f1f25; border-radius:.85rem; padding:.95rem 1rem; color:var(--color-text); line-height:1.4; resize:vertical; min-height:52px; transition: var(--transition); }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline:none; box-shadow: var(--focus-ring); border-color: var(--color-primary); }
+.field small.hint { font-size:.65rem; color:#6a6a74; }
+
+.inline { display:flex; gap:1rem; flex-wrap:wrap; }
+.inline .field { flex:1 1 220px; }
+
+.agree { display:flex; gap:.75rem; align-items:flex-start; font-size:.75rem; line-height:1.4; color:#c0c0c7; }
+.agree input { margin-top:.2rem; }
+
+button[type=submit] { justify-self:start; --btn-bg: var(--color-primary); position:relative; display:inline-flex; align-items:center; gap:.65em; border:1px solid var(--color-border); font-weight:600; letter-spacing:.5px; text-decoration:none; cursor:pointer; font-size:.95rem; padding:.95rem 1.5rem; border-radius: 999px; background: linear-gradient(135deg,var(--btn-bg),#b6002c); color:#fff; box-shadow:0 4px 18px -4px rgba(255,29,77,.5); transition: var(--transition); }
+button[type=submit]:hover, button[type=submit]:focus-visible { transform:translateY(-2px); box-shadow:0 6px 26px -6px rgba(255,29,77,.65); }
+button[type=submit][disabled] { opacity:.5; cursor:progress; transform:none; }
+
+#form-status { font-size:.8rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color: var(--color-primary-glow); margin-top:.5rem; min-height:1.1rem; }
+.success { color:#4ade80 !important; }
+.error { color:#ff4d75 !important; }
+
+footer { padding:2rem 1rem 3rem; text-align:center; font-size:.7rem; color:#6a6a74; }
+footer a { color: var(--color-primary); text-decoration:none; }
+footer a:hover { text-decoration:underline; }
+
+/* Utilities */
+.visually-hidden { position:absolute !important; width:1px !important; height:1px !important; padding:0 !important; margin:-1px !important; overflow:hidden !important; clip:rect(0 0 0 0) !important; white-space:nowrap !important; border:0 !important; }
+
+/* Responsive tweaks */
+@media (max-width: 780px) {
+  header.hero { min-height: 100svh; padding: 1.5rem 1rem 3rem; }
+  .hero__content { max-width: 640px; backdrop-filter: blur(10px) saturate(1.4); background: rgba(10,10,14,.35); padding:1.4rem 1.1rem 1.8rem; border:1px solid rgba(255,255,255,.06); border-radius:1.2rem; box-shadow:0 8px 30px -12px rgba(0,0,0,.6); }
+  .hero__mobile-poster { margin:0 0 1rem; display:block; }
+  .hero__mobile-poster img { width:100%; height:auto; display:block; border-radius:1rem; box-shadow:0 6px 18px -6px rgba(0,0,0,.55); }
+  .hero__tagline { font-size:.62rem; letter-spacing:.18em; margin-bottom:.75rem; }
+  .hero h1 { font-size: clamp(2.1rem, 10vw, 2.7rem); margin-bottom:.85rem; }
+  .hero__lead { font-size:.95rem; margin-bottom:1.6rem; }
+  .actions { gap:.75rem; }
+  .actions .btn { padding:.8rem 1.15rem; font-size:.82rem; }
+  .scroll-indicator { display:none; }
+  .hero__bg { background: url('../images/the-death-of-us.jpg') center/cover no-repeat; background-attachment: scroll; }
+  .hero__overlay { background: linear-gradient(to bottom, rgba(7,7,10,.55) 0%, rgba(7,7,10,.4) 35%, rgba(7,7,10,.85) 100%), radial-gradient(circle at 50% 65%, rgba(255,29,77,0.15), transparent 60%); }
+  form#rsvp-form { padding:1.8rem 1.2rem 2.2rem; }
+}
+
+/* Tablets (entre 781 y 1100px) refinamos tipografía y mantenemos efecto cinematográfico */
+@media (min-width: 781px) and (max-width: 1100px) {
+  header.hero { min-height: 100dvh; padding: 2.5rem 2rem 4rem; }
+  .hero__content { max-width:700px; padding:2rem 2rem 2.4rem; backdrop-filter: blur(8px) saturate(1.3); background: rgba(10,10,14,.28); border:1px solid rgba(255,255,255,.07); }
+  .hero__mobile-poster { display:none; }
+  .hero h1 { font-size: clamp(2.8rem, 7vw, 3.4rem); }
+  .hero__lead { font-size:1.05rem; margin-bottom:2rem; }
+  .hero__bg { background: url('../images/the-death-of-us.jpg') center/cover no-repeat; background-attachment: scroll; }
+  .hero__overlay { background:
+    linear-gradient(180deg, rgba(7,7,10,.55) 0%, rgba(7,7,10,.35) 40%, rgba(7,7,10,.9) 100%),
+    radial-gradient(circle at 32% 50%, rgba(255,29,77,0.16), transparent 65%); }
+}
+
+/* Hide mobile poster on large screens */
+@media (min-width: 1101px) { .hero__mobile-poster { display:none; } }
+
+/* Ken Burns keyframes (desktop only effectively because mobile disables via prefers-reduced-motion & layering) */
+@keyframes heroKen {
+  0% { transform: scale(1); }
+  55% { transform: scale(1.06); }
+  100% { transform: scale(1.12); }
+}
+
+/* Respectar reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero__bg { animation:none; }
+}
+
+/* Fallback para navegadores sin soporte de svh */
+@supports not (height: 100svh) {
+  header.hero { min-height: 100vh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation:none !important; transition:none !important; }
+}

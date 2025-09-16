@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Death of Us – Official Trailer & Premiere RSVP</title>
+  <meta name="description" content="Official trailer of the romantic thriller 'The Death of Us'. Reserve your seat for the exclusive premiere event." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png" />
+  <meta property="og:title" content="The Death of Us – Official Trailer" />
+  <meta property="og:description" content="Watch the trailer for the romantic thriller 'The Death of Us' and RSVP for the premiere." />
+  <meta property="og:type" content="video.other" />
+  <meta property="og:image" content="/images/the-death-of-us.jpg" />
+  <meta property="og:url" content="https://diigima.com/the-death-of-us/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Death of Us – Official Trailer" />
+  <meta name="twitter:description" content="An intense romantic thriller. Watch now & reserve your seat." />
+  <meta name="twitter:image" content="../images/the-death-of-us.jpg" />
+  <style>/* Critical tiny overrides if needed */</style>
+  <!-- Vidstack assets for HLS support -->
+  <link rel="stylesheet" href="/assets/js/vidstack/theme.css" />
+  <link rel="stylesheet" href="/assets/js/vidstack/video.css" />
+  <script src="/assets/js/vidstack/player.js" type="module" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero__bg" role="presentation" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content" data-animate>
+      <figure class="hero__mobile-poster">
+        <img src="../images/the-death-of-us.jpg" alt="The Death of Us poster" loading="lazy" decoding="async" />
+      </figure>
+      <p class="hero__tagline">AN ORIGINAL ROMANTIC THRILLER</p>
+      <h1>The Death of Us</h1>
+      <p class="hero__lead">Love, betrayal and the thin line between what we hold onto and what we must let go. Experience the tension and raw emotion before anyone else.</p>
+      <div class="actions">
+        <a class="btn" href="#trailer">Watch Trailer</a>
+        <a class="btn btn--ghost" href="#rsvp">Reserve Seat</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="trailer" aria-labelledby="trailer-title">
+      <h2 id="trailer-title">Official Trailer</h2>
+      <p class="section-intro">Immerse yourself in the atmospheric world of <em>The Death of Us</em>. This first look captures the emotional gravity and suspense at the heart of the film.</p>
+      <div class="trailer-card" data-animate>
+        <div class="trailer-aspect">
+          <media-player preload="metadata" src="https://vz-6fd78b20-24d.b-cdn.net/2c307b45-e701-459c-9458-c7f4b1395a14/playlist.m3u8" title="The Death of Us – Official Trailer" crossorigin poster="../images/the-death-of-us.jpg">
+            <media-provider>
+              <media-poster class="vds-poster" src="../images/the-death-of-us.jpg" alt="Poster frame from The Death of Us trailer"></media-poster>
+            </media-provider>
+            <media-video-layout></media-video-layout>
+          </media-player>
+        </div>
+        <div class="trailer-meta">
+          <div class="badges">
+            <span class="badge">Thriller</span>
+            <span class="badge">Romance</span>
+            <span class="badge">Premiere 2025</span>
+          </div>
+          <h3>Intensity meets vulnerability.</h3>
+          <p>Two lives entwined by chance, tested by fear, and remade by consequence. This is a story where love survives in the shadows—and sometimes becomes them.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="rsvp" aria-labelledby="rsvp-title">
+      <h2 id="rsvp-title">Premiere RSVP</h2>
+      <p class="lead">Seats are limited. Complete the form to request an invitation. You will receive a confirmation email if selected for the premiere event.</p>
+      <form id="rsvp-form" novalidate>
+        <div class="inline">
+          <div class="field">
+            <label for="firstName">First Name</label>
+            <input id="firstName" name="firstName" autocomplete="given-name" required />
+          </div>
+          <div class="field">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" name="lastName" autocomplete="family-name" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required />
+            <small class="hint">We'll only use this to send premiere details.</small>
+        </div>
+        <div class="field">
+          <label for="guests">Number of Guests</label>
+          <select id="guests" name="guests" required>
+            <option value="" disabled selected>Select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" rows="4" placeholder="Anything we should know? Accessibility needs, media outlet, etc."></textarea>
+        </div>
+        <div class="agree">
+          <input type="checkbox" id="consent" name="consent" required />
+          <label for="consent">I agree to be contacted regarding this premiere event and understand submission does not guarantee entry.</label>
+        </div>
+        <button type="submit">Request Invitation</button>
+        <div id="form-status" aria-live="polite" role="status"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Diigima Creative Studio.</p>
+  </footer>
+  <script src="./script.js" defer></script>
+</body>
+</html>
