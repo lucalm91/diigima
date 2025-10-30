@@ -1,7 +1,10 @@
 // The Death of Us Landing Page Script
-// Lightweight progressive enhancement: form handling, animation triggers, focus mgmt.
+// Form handling with Google Sheets integration
 
 (function() {
+  // Google Sheets Web App URL - YOU NEED TO REPLACE THIS WITH YOUR ACTUAL SCRIPT URL
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyF7Gp9cSEdEul_uToQwkfk_WlEqdyhlTDQvDKD3wka7nKlTUFadAYakI4-TgvZi91c/exec';
+  
   const form = document.getElementById('rsvp-form');
   const statusEl = document.getElementById('form-status');
   const yearEl = document.getElementById('year');
@@ -40,6 +43,7 @@
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       setStatus('Submitting...');
+      
       const data = new FormData(form);
       const email = (data.get('email') || '').toString().trim();
       const firstName = (data.get('firstName') || '').toString().trim();
@@ -56,25 +60,27 @@
         return;
       }
 
-      // Simulate async submission (replace with fetch POST to backend)
-      form.querySelector('button[type=submit]').disabled = true;
-      setTimeout(() => {
-        try {
-          const submissions = JSON.parse(localStorage.getItem('tdou_rsvps') || '[]');
-          submissions.push({
-            ts: Date.now(),
-            firstName, lastName, email, guests, message: data.get('message') || ''
-          });
-          localStorage.setItem('tdou_rsvps', JSON.stringify(submissions));
-          setStatus('Request received. Check your inbox soon!', 'success');
+      // Disable submit button during submission
+      const submitButton = form.querySelector('button[type=submit]');
+      submitButton.disabled = true;
+      document.body.classList.add('loading');
+
+      // Submit to Google Sheets
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          setStatus('Thanks for accepting our invitation!\nCheck your email for confirmation.', 'success');
           form.reset();
-        } catch (err) {
-          console.error(err);
-          setStatus('An unexpected error occurred. Try again.', 'error');
-        } finally {
-          form.querySelector('button[type=submit]').disabled = false;
-        }
-      }, 900);
+          // Optional: redirect to thank you page after 2 seconds
+          // setTimeout(() => { window.location.href = '/thank-you'; }, 2000);
+        })
+        .catch(error => {
+          console.error('Error!', error.message);
+          setStatus('An error occurred. Please try again or contact us directly.', 'error');
+        })
+        .finally(() => {
+          submitButton.disabled = false;
+          document.body.classList.remove('loading');
+        });
     });
   }
 })();
