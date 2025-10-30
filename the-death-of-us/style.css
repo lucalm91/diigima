@@ -74,10 +74,10 @@ header.hero {
 .scroll-indicator { position:absolute; bottom:1.25rem; left:50%; transform:translateX(-50%); font-size:.7rem; letter-spacing:.35em; text-transform:uppercase; color:var(--color-muted); animation: float 4s ease-in-out infinite; }
 @keyframes float { 0%,100% { transform: translate(-50%,0);} 50% { transform: translate(-50%,-10px);} }
 
-/* Trailer Section */
-section#trailer { position:relative; padding:4rem 1.25rem 3rem; max-width:var(--max-width); margin:0 auto; text-align:center; }
-section#trailer h2 { font-family: var(--font-heading); font-weight:500; margin:0 0 1rem; font-size: clamp(1.9rem,5vw,3rem); }
-section#trailer p.section-intro { margin:0 auto 2.2rem; max-width:720px; line-height:1.55; color:var(--color-muted); }
+/* Teaser Section */
+section#teaser { position:relative; padding:4rem 1.25rem 3rem; max-width:var(--max-width); margin:0 auto; text-align:center; }
+section#teaser h2 { font-family: var(--font-heading); font-weight:500; margin:0 0 1rem; font-size: clamp(1.9rem,5vw,3rem); }
+section#teaser p.section-intro { margin:0 auto 2.2rem; max-width:720px; line-height:1.55; color:var(--color-muted); }
 
 .trailer-card { position:relative; border:1px solid var(--color-border); border-radius:1.2rem; overflow:hidden; background:linear-gradient(160deg,#121217,#0c0c11 60%); box-shadow:0 10px 40px -12px rgba(0,0,0,.65); }
 .trailer-aspect { position:relative; aspect-ratio:16/9; background:#000; }
@@ -137,6 +137,94 @@ footer a:hover { text-decoration:underline; }
   .hero__bg { background: url('../images/the-death-of-us.jpg') center/cover no-repeat; background-attachment: scroll; }
   .hero__overlay { background: linear-gradient(to bottom, rgba(7,7,10,.55) 0%, rgba(7,7,10,.4) 35%, rgba(7,7,10,.85) 100%), radial-gradient(circle at 50% 65%, rgba(255,29,77,0.15), transparent 60%); }
   form#rsvp-form { padding:1.8rem 1.2rem 2.2rem; }
+}
+
+/* New hero elements */
+.hero__production {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin: 0.5rem 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero__invite {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin: 1.5rem 0 1rem;
+  font-weight: 500;
+}
+
+.screening-details {
+  margin: 1.5rem auto 2rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  display: inline-block;
+  text-align: left;
+  max-width: fit-content;
+}
+
+.screening-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.cinema-icon {
+  color: var(--color-primary);
+  width: 100px;
+  height: 100px;
+  opacity: 0.9;
+}
+
+.screening-details p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.screening-details .cinema a,
+.screening-details .address a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.screening-details .cinema a:hover,
+.screening-details .address a:hover {
+  color: var(--color-primary-glow);
+  text-decoration: underline;
+}
+
+/* Mobile responsive adjustments for title */
+@media (max-width: 780px) {
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    line-height: 1.1;
+  }
+  
+  .hero__tagline {
+    font-size: 0.85rem;
+  }
+  
+  .screening-details {
+    padding: 1rem 1.5rem;
+    margin: 1rem auto 1.5rem;
+    max-width: calc(100% - 2rem);
+  }
+  
+  .screening-details p {
+    font-size: 0.9rem;
+  }
+  
+  .cinema-icon {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 /* Tablets (entre 781 y 1100px) refinamos tipografía y mantenemos efecto cinematográfico */
