@@ -108,7 +108,7 @@ form#rsvp-form { --field-bg:#111115; width:100%; max-width:760px; display:grid; 
 .agree { display:flex; gap:.75rem; align-items:flex-start; font-size:.75rem; line-height:1.4; color:#c0c0c7; }
 .agree input { margin-top:.2rem; }
 
-button[type=submit] { justify-self:start; --btn-bg: var(--color-primary); position:relative; display:inline-flex; align-items:center; gap:.65em; border:1px solid var(--color-border); font-weight:600; letter-spacing:.5px; text-decoration:none; cursor:pointer; font-size:.95rem; padding:.95rem 1.5rem; border-radius: 999px; background: linear-gradient(135deg,var(--btn-bg),#b6002c); color:#fff; box-shadow:0 4px 18px -4px rgba(255,29,77,.5); transition: var(--transition); }
+button[type=submit] { justify-self:center; margin-top: 1rem; --btn-bg: var(--color-primary); position:relative; display:inline-flex; align-items:center; gap:.65em; border:1px solid var(--color-border); font-weight:600; letter-spacing:.5px; text-decoration:none; cursor:pointer; font-size:.95rem; padding:.95rem 1.5rem; border-radius: 999px; background: linear-gradient(135deg,var(--btn-bg),#b6002c); color:#fff; box-shadow:0 4px 18px -4px rgba(255,29,77,.5); transition: var(--transition); }
 button[type=submit]:hover, button[type=submit]:focus-visible { transform:translateY(-2px); box-shadow:0 6px 26px -6px rgba(255,29,77,.65); }
 button[type=submit][disabled] { opacity:.5; cursor:progress; transform:none; }
 
