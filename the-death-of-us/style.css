@@ -19,7 +19,8 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: var(--font-body);
-  background: var(--bg-accent);
+  background-color: #07070a; /* solid base for Safari/iOS UI tint */
+  background-image: var(--bg-accent);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
 }
