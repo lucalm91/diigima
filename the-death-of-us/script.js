@@ -39,6 +39,25 @@
     if (type === 'error') statusEl.classList.add('error');
   }
 
+  // Convert names to Title Case, preserving hyphens and apostrophes
+  function toTitleCase(str) {
+    if (!str) return '';
+    // Normalize whitespace
+    const normalized = str.trim().replace(/\s+/g, ' ').toLowerCase();
+    // Split by spaces, then within each token preserve separators - and '
+    return normalized
+      .split(' ')
+      .map(token => token
+        .split(/(['’\-])/)
+        .map(part => {
+          if (part === '-' || part === "'" || part === '’') return part; // keep separators
+          return part ? part.charAt(0).toUpperCase() + part.slice(1) : part;
+        })
+        .join('')
+      )
+      .join(' ');
+  }
+
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -46,8 +65,10 @@
       
       const data = new FormData(form);
       const email = (data.get('email') || '').toString().trim();
-      const firstName = (data.get('firstName') || '').toString().trim();
-      const lastName = (data.get('lastName') || '').toString().trim();
+      const firstNameRaw = (data.get('firstName') || '').toString();
+      const lastNameRaw = (data.get('lastName') || '').toString();
+      const firstName = toTitleCase(firstNameRaw);
+      const lastName = toTitleCase(lastNameRaw);
       const guests = data.get('guests');
       const consent = data.get('consent');
 
@@ -60,7 +81,11 @@
         return;
       }
 
-      // Disable submit button during submission
+  // Write cleaned values back to the form so they are submitted
+  if (form.elements['firstName']) form.elements['firstName'].value = firstName;
+  if (form.elements['lastName']) form.elements['lastName'].value = lastName;
+
+  // Disable submit button during submission
       const submitButton = form.querySelector('button[type=submit]');
       submitButton.disabled = true;
       document.body.classList.add('loading');
