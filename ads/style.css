@@ -40,7 +40,7 @@ header.hero {
 
 .container { width:100%; max-width: 780px; text-align:center; }
 .brand { width: 140px; height:auto; opacity:.95; margin:0 auto 1.25rem; display:block; }
-.title { color: var(--brand); font-family: var(--font-heading); font-weight:600; font-size: clamp(1.8rem, 5vw, 2.6rem); line-height:1.2; margin:0 0 1.2rem; }
+.title { color: var(--brand); font-family: var(--font-heading); font-weight:700; font-size: clamp(1.6rem, 7.2vw + 0.2rem, 2.6rem); line-height:1.15; letter-spacing:-0.015em; text-wrap: balance; max-width: 22ch; margin:0 auto 1.2rem; }
 .title span { color: var(--brand); text-shadow: 0 2px 12px rgba(27,170,217,.25); }
 
 .qr-card { margin: 0 auto; padding: 1.5rem; border:1px solid var(--border); border-radius: 16px; background: #fff; box-shadow: var(--shadow); max-width: 420px; }
@@ -51,7 +51,7 @@ header.hero {
 .btn:hover, .btn:focus-visible { transform: translateY(-2px); box-shadow:0 10px 26px -8px var(--cta-shadow); }
 
 main { padding: 2rem 1rem 3rem; }
-section#lead { max-width: var(--max-width); margin: 0 auto; text-align:center; }
+section#lead { max-width: var(--max-width); margin: 0 auto; text-align:center; scroll-margin-top: clamp(64px, 12vh, 112px); }
 #lead-title { color: var(--brand); font-family: var(--font-heading); font-weight:600; font-size: clamp(1.6rem, 4.5vw, 2.2rem); margin:0 0 1.25rem; }
 section#lead p.lead { margin:0 auto 2.2rem; max-width: 640px; color: var(--muted); }
 
