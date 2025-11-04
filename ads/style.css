@@ -121,6 +121,8 @@ button[type=submit][disabled] { opacity:.6; cursor:progress; transform:none; }
 .error { color:#d7263d !important; }
 
 footer { padding:2rem 1rem 3rem; text-align:center; font-size:.75rem; color:#7a8392; }
+.footer a, footer a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.footer a:hover, footer a:hover { color: var(--brand); }
 .footer-logo { width: 120px; height: auto; margin: 0 auto 1rem; display:block; opacity:.9; }
 
 @media (max-width: 780px) {
