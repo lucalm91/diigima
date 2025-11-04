@@ -51,7 +51,7 @@ header.hero {
 .btn:hover, .btn:focus-visible { transform: translateY(-2px); box-shadow:0 10px 26px -8px var(--cta-shadow); }
 
 main { padding: 2rem 1rem 3rem; }
-section#lead { max-width: var(--max-width); margin: 0 auto; text-align:center; scroll-margin-top: clamp(64px, 12vh, 112px); }
+section#lead { max-width: var(--max-width); margin: 0 auto; text-align:center; scroll-margin-top: clamp(32px, 8vh, 72px); }
 #lead-title { color: var(--brand); font-family: var(--font-heading); font-weight:600; font-size: clamp(1.6rem, 4.5vw, 2.2rem); margin:0 0 1.25rem; }
 section#lead p.lead { margin:0 auto 2.2rem; max-width: 640px; color: var(--muted); }
 
@@ -69,6 +69,8 @@ section#lead p.lead { margin:0 auto 2.2rem; max-width: 640px; color: var(--muted
   position: relative;
   overflow: hidden;
 }
+.offer-media { margin: -1.5rem -1.5rem .9rem; }
+.offer-media img { width:100%; height:auto; display:block; aspect-ratio: 16 / 9; object-fit: cover; }
 .offer-card::before {
   content: "";
   position: absolute;
