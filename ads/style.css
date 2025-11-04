@@ -46,7 +46,7 @@ header.hero {
 
 .qr-card { margin: 0 auto; padding: 1.5rem; border:1px solid var(--border); border-radius: 16px; background: #fff; box-shadow: var(--shadow); max-width: 420px; }
 .qr { display:flex; align-items:center; justify-content:center; padding: .75rem; background:#f2f6fb; border-radius: 12px; border:1px solid var(--border); }
-.qr img { width: 260px; max-width: 70vw; height:auto; display:block; }
+.qr img { width: 290px; max-width: 70vw; height:auto; display:block; }
 .hint { color: var(--muted); margin:.9rem 0 1.1rem; }
 .btn { display:inline-flex; align-items:center; gap:.6em; padding:.9rem 1.3rem; border-radius:5px; border:1px solid var(--border); text-decoration:none; font-weight:700; letter-spacing:.4px; color:#fff; background: linear-gradient(135deg, var(--cta), var(--cta-dark)); box-shadow:0 6px 20px -6px var(--cta-shadow); transition: var(--transition); }
 .btn:hover, .btn:focus-visible { transform: translateY(-2px); box-shadow:0 10px 26px -8px var(--cta-shadow); }
