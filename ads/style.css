@@ -94,7 +94,7 @@ section#lead p.lead { margin:0 auto 2.2rem; max-width: 640px; color: var(--muted
   .offer-points li { grid-template-columns:22px 1fr; }
 }
 
-form#lead-form { --field-bg:#fff; width:100%; max-width:700px; display:grid; gap:1.1rem; background:#fff; padding:2rem 1.2rem 2.3rem; border:1px solid var(--border); border-radius:1rem; box-shadow: var(--shadow); margin:0 auto; text-align:left; }
+form#lead-form { --field-bg:#fff; width:100%; max-width:700px; display:grid; gap:1.1rem; background:#fff; padding:2rem 1.2rem 2.3rem;  border:1px solid var(--border); border-radius:1rem; box-shadow: var(--shadow); margin:140px auto;  text-align:left; }
 .field { display:flex; flex-direction:column; gap:.5rem; }
 .field label { font-size:.75rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
 .field input,
