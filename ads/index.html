@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  
+  <!-- Theme Color for Mobile Browsers -->
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#124C7C" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="msapplication-navbutton-color" content="#07070a" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <title>Studio D’Uggento – Kit omaggio + 20% sconto</title>
+  <meta name="description" content="Scansiona il QR e ricevi il tuo kit omaggio + 20% di sconto da Studio Odontoiatrico D’Uggento. Compila il form per ricevere l'offerta via email." />
+
+  <!-- Fonts (fallback to Google until WOFF2 self-hosted available) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    html { background:#ffffff; }
+    :root { color-scheme: light dark; }
+  </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="container" data-animate>
+  <img class="brand" src="https://www.studioduggento.it/wp-content/uploads/2022/03/Logo.png" alt="Studio Odontoiatrico D’Uggento" />
+  <h1 class="title">Scansiona il QR e ricevi il tuo<br><span>Kit omaggio + 20% di sconto</span></h1>
+
+      <div class="qr-card">
+        <div class="qr">
+          <!-- Sostituisci l'immagine qui sotto con il QR reale -->
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=185x185&ecc=L&qzone=1&data=http%3A%2F%2Fwww.example.net%2Ffoo%2Fbar.html" alt="QR per ricevere il kit omaggio e lo sconto" />
+        </div>
+  <p class="hint">Apri la fotocamera e scansiona il QR, oppure premi il pulsante qui sotto.</p>
+        <a class="btn" href="#lead">Ottieni il kit + sconto</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="lead" aria-labelledby="lead-title">
+  <h2 id="lead-title">Richiedi l’offerta</h2>
+  <p class="lead">Compila il form per ricevere il kit omaggio<br>e il codice sconto del 20% direttamente via email.</p>
+
+      <div class="offer-card" aria-labelledby="offer-title">
+  <span class="badge">Offerta speciale</span>
+  <h3 id="offer-title">Kit omaggio + 20% di sconto</h3>
+  <p class="offer-subtitle">Solo per un periodo limitato · Riservata ai nuovi pazienti</p>
+        <ul class="offer-points">
+          <li>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 20.6 7.4 19.2 6z"/></svg>
+            Kit di igiene orale in omaggio
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 20.6 7.4 19.2 6z"/></svg>
+            20% di sconto sulla prima seduta
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 20.6 7.4 19.2 6z"/></svg>
+            Valutazione iniziale gratuita
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 20.6 7.4 19.2 6z"/></svg>
+            Prenotazione prioritaria entro 14 giorni
+          </li>
+        </ul>
+        <p class="offer-terms">Offerta valida fino al 31/12/2025.<br>Non cumulabile con altre promozioni. Riservata ai nuovi pazienti.</p>
+        <div class="offer-cta">
+          <a class="btn btn-lg" href="#lead-form">Richiedi ora
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-left:.35em">
+              <path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <form id="lead-form" novalidate>
+        <div class="inline">
+          <div class="field">
+            <label for="firstName">Nome</label>
+            <input id="firstName" name="firstName" autocomplete="given-name" required />
+          </div>
+          <div class="field">
+            <label for="lastName">Cognome</label>
+            <input id="lastName" name="lastName" autocomplete="family-name" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required />
+        </div>
+        <div class="inline">
+          <div class="field">
+            <label for="phone">Telefono</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="es. 333 123 4567" required />
+          </div>
+          <div class="field">
+            <label for="city">Città</label>
+            <input id="city" name="city" autocomplete="address-level2" placeholder="es. Torino" />
+          </div>
+        </div>
+        <div class="inline">
+          <div class="field">
+            <label for="treatment">Trattamento di interesse</label>
+            <select id="treatment" name="treatment" required>
+              <option value="" selected disabled>Seleziona…</option>
+              <option>Igiene e prevenzione</option>
+              <option>Sbiancamento</option>
+              <option>Ortodonzia</option>
+              <option>Implantologia</option>
+              <option>Visita di controllo</option>
+              <option>Altro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="contactTime">Preferenza oraria</label>
+            <select id="contactTime" name="contactTime">
+              <option value="" selected>Indifferente</option>
+              <option>Mattina</option>
+              <option>Pomeriggio</option>
+              <option>Sera</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="contactMethod">Preferenza contatto</label>
+          <select id="contactMethod" name="contactMethod">
+            <option value="" selected>Indifferente</option>
+            <option>Telefono</option>
+            <option>Email</option>
+            <option>WhatsApp</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="notes">Note</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Scrivi qui eventuali richieste o dettagli…"></textarea>
+        </div>
+        <div class="agree">
+          <input type="checkbox" id="consent" name="consent" required />
+          <label for="consent">Acconsento al trattamento dei dati per ricevere l'offerta.</label>
+        </div>
+        <button type="submit">Invia</button>
+        <div id="form-status" aria-live="polite" role="status"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+  <img src="https://www.studioduggento.it/wp-content/uploads/2022/03/Logo.png" alt="Studio Odontoiatrico D’Uggento" class="footer-logo" />
+  <p>&copy; <span id="year"></span> Studio Odontoiatrico D’Uggento.</p>
+  </footer>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
