@@ -1,7 +1,7 @@
 // Diigima Ads - Lead capture form (Google Sheets integration)
 (function() {
-  // TODO: Replace with your deployed Google Apps Script Web App URL
-  const scriptURL = 'https://script.google.com/macros/s/REPLACE_WITH_YOUR_SCRIPT_ID/exec';
+  // Google Apps Script Web App URL (deployed)
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyf_XHG8FjlqdyyIpsLhFrqsUl9KYb3cYafc_z9KAGDhIlK-HH7aZon72LA38v7NoEUDw/exec';
 
   const form = document.getElementById('lead-form');
   const statusEl = document.getElementById('form-status');
@@ -47,14 +47,19 @@
       const firstNameRaw = (data.get('firstName') || '').toString();
       const lastNameRaw = (data.get('lastName') || '').toString();
       const cityRaw = (data.get('city') || '').toString();
-      const phone = (data.get('phone') || '').toString().trim();
-      const treatment = (data.get('treatment') || '').toString();
+  const phone = (data.get('phone') || '').toString().trim();
+  const treatment = (data.get('treatment') || '').toString();
+  const postalCodeRaw = (data.get('postalCode') || '').toString();
+  const postalDigits = postalCodeRaw.replace(/\D+/g, '');
+  const contactTime = (data.get('contactTime') || '').toString();
+  const contactMethod = (data.get('contactMethod') || '').toString();
+  const notes = (data.get('notes') || '').toString().trim();
       const firstName = toTitleCase(firstNameRaw);
       const lastName = toTitleCase(lastNameRaw);
       const city = toTitleCase(cityRaw);
       const consent = data.get('consent');
 
-      if (!firstName || !lastName || !email || !phone || !treatment || !consent) {
+      if (!firstName || !lastName || !email || !phone || !treatment || !consent || !city || !postalDigits || postalDigits.length !== 5 || !contactTime || !contactMethod || !notes) {
         setStatus('Per favore, completa tutti i campi obbligatori.', 'error');
         return;
       }
@@ -76,10 +81,28 @@
       submitButton.disabled = true;
       document.body.classList.add('loading');
 
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      // Prepara payload con metadati utili (tracking)
+      const payload = new FormData(form);
+      // CAP: invia come testo forzando l'interpretazione in Google Sheet (preserva zeri iniziali)
+      try {
+        if (postalDigits) payload.set('postalCode', "'" + postalDigits);
+      } catch {}
+  // UTM predefiniti richiesti
+  payload.append('utm_source', 'Fiera');
+  payload.append('utm_medium', 'QR');
+  payload.append('utm_campaign', 'Sconto20');
+    payload.append('timestamp', new Date().toISOString());
+
+      fetch(scriptURL, { method: 'POST', body: payload })
         .then(() => {
-          setStatus('Grazie! Controlla la tua email per il kit e il codice sconto.', 'success');
+          setStatus('Richiesta inviata! Controlla la tua email per il kit e il codice sconto.', 'success');
           form.reset();
+          // Torna all'inizio della pagina (senza redirect)
+          try {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } catch {
+            window.scrollTo(0, 0);
+          }
         })
         .catch((err) => {
           console.error(err);

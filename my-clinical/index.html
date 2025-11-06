@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#b97623" />
+  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#b97623" media="(prefers-color-scheme: light)" />
+  <meta name="color-scheme" content="dark light" />
+
+  <title>My Clinical – Offerte estetica e benessere</title>
+  <meta name="description" content="My Clinical: Filler labbra a 189€ (anziché 350€), Botox a 199€ (anziché 370€), PRP viso/capelli 3x2. Compila il form per ricevere i dettagli e bloccare l'offerta in fiera." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+
+  <link rel="stylesheet" href="./style.css" />
+  <style> html { background:#b97623; } :root { color-scheme: light dark; } </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container">
+  <img class="brand" src="./myclinical.png" alt="My Clinical" />
+      <h1 class="title">Scopri le offerte My Clinical</h1>
+  <p class="subtitle">Trattamenti di medicina estetica a condizioni speciali, valida per acquisto in fiera.</p>
+  <a class="btn" href="#lead">Richiedi l'offerta</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="lead" aria-labelledby="lead-title">
+      <h2 id="lead-title">Offerta speciale</h2>
+      <div class="offers-highlight">
+        <figure class="lead-visual">
+          <img src="./estetica.png" alt="Medicina estetica – My Clinical" loading="lazy" decoding="async" />
+        </figure>
+        <div class="lead-copy" aria-label="Perché scegliere My Clinical">
+          <h3 class="section-title">Solo per la fiera</h3>
+          <p>Condizioni esclusive riservate ai visitatori. Scopri come valorizzare il tuo viso con la nostra équipe di medici estetici.</p>
+          <ul class="selling-points">
+            <li>Equipe medica certificata e protocolli sicuri</li>
+            <li>Materiali e filler di qualità certificata</li>
+            <li>Posti limitati e appuntamenti prioritari</li>
+            <li>Consulenza gratuita allo stand</li>
+          </ul>
+        </div>
+
+        <div class="offers-grid" aria-label="Promozioni attive in fiera">
+        <!-- Filler -->
+        <article class="promo-card">
+          <div class="promo-media">
+            <img src="./filler.jpg" alt="Filler labbra – risultato naturale" loading="lazy" decoding="async" />
+            <span class="badge-floating">Solo in fiera</span>
+          </div>
+          <div class="promo-body">
+            <h3 class="promo-title">Filler labbra</h3>
+            <p class="promo-sub">Volume naturale e definizione</p>
+            <div class="price-row">
+              <span class="price">189€</span>
+              <span class="old">350€</span>
+              <span class="save">-46%</span>
+            </div>
+            <a class="btn btn-block" href="#lead-form" aria-label="Richiedi l'offerta Filler labbra">Richiedi l'offerta</a>
+          </div>
+        </article>
+
+        <!-- Botox -->
+        <article class="promo-card">
+          <div class="promo-media">
+            <img src="./botox.jpg" alt="Botox – effetto distensivo" loading="lazy" decoding="async" />
+            <span class="badge-floating">Solo in fiera</span>
+          </div>
+          <div class="promo-body">
+            <h3 class="promo-title">Botox</h3>
+            <p class="promo-sub">Linee distese, sguardo fresco</p>
+            <div class="price-row">
+              <span class="price">199€</span>
+              <span class="old">370€</span>
+              <span class="save">-46%</span>
+            </div>
+            <a class="btn btn-block" href="#lead-form" aria-label="Richiedi l'offerta Botox">Richiedi l'offerta</a>
+          </div>
+        </article>
+
+        <!-- PRP -->
+        <article class="promo-card">
+          <div class="promo-media">
+            <img src="./prp.jpg" alt="PRP viso o capelli – rigenerazione" loading="lazy" decoding="async" />
+            <span class="badge-floating">3×2</span>
+          </div>
+          <div class="promo-body">
+            <h3 class="promo-title">PRP viso o capelli</h3>
+            <p class="promo-sub">Rigenerazione e stimolo naturale</p>
+            <div class="price-row">
+              <span class="deal">3 sedute al prezzo di 2</span>
+            </div>
+            <a class="btn btn-block" href="#lead-form" aria-label="Richiedi l'offerta PRP">Richiedi l'offerta</a>
+          </div>
+        </article>
+        </div>
+        <p class="offer-terms">Offerte valide solo in fiera e soggette a valutazione medica. Non cumulabili con altre promozioni.</p>
+      </div>
+
+      <form id="lead-form" novalidate>
+        <h3 class="form-title">Richiedi l'offerta in fiera</h3>
+        <div class="inline">
+          <div class="field">
+            <label for="firstName">Nome</label>
+            <input id="firstName" name="firstName" autocomplete="given-name" required />
+          </div>
+          <div class="field">
+            <label for="lastName">Cognome</label>
+            <input id="lastName" name="lastName" autocomplete="family-name" required />
+          </div>
+        </div>
+        <div class="inline">
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required />
+          </div>
+          <div class="field">
+            <label for="phone">Telefono</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="es. 333 123 4567" required />
+          </div>
+        </div>
+        <div class="inline">
+          <div class="field">
+            <label for="city">Città</label>
+            <input id="city" name="city" autocomplete="address-level2" placeholder="es. Milano" required />
+          </div>
+          <div class="field">
+            <label for="postalCode">CAP</label>
+            <input id="postalCode" name="postalCode" inputmode="numeric" pattern="\d{5}" maxlength="5" placeholder="es. 20121" required />
+          </div>
+        </div>
+        <div class="inline">
+          <div class="field">
+            <label for="treatment">Trattamento di interesse</label>
+            <select id="treatment" name="treatment" required>
+              <option value="" selected disabled>Seleziona…</option>
+              <option>Filler labbra</option>
+              <option>Botox</option>
+              <option>PRP viso</option>
+              <option>PRP capelli</option>
+              <option>Altro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="contactTime">Preferenza oraria</label>
+            <select id="contactTime" name="contactTime" required>
+              <option value="" selected disabled>Seleziona…</option>
+              <option>Mattina</option>
+              <option>Pomeriggio</option>
+              <option>Sera</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="contactMethod">Preferenza contatto</label>
+          <select id="contactMethod" name="contactMethod" required>
+            <option value="" selected disabled>Seleziona…</option>
+            <option>Telefono</option>
+            <option>Email</option>
+            <option>WhatsApp</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="notes">Note</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Scrivi qui eventuali richieste o dettagli…" required></textarea>
+        </div>
+        <div class="agree">
+          <input type="checkbox" id="consent" name="consent" required />
+          <label for="consent">Acconsento al trattamento dei dati per ricevere l'offerta.</label>
+        </div>
+        <button type="submit">Invia</button>
+        <div id="form-status" aria-live="polite" role="status"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+  <img src="./myclinical.png" alt="My Clinical" class="footer-logo" />
+    <p>&copy; <span id="year"></span> My Clinical · <a href="#" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
+  </footer>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>

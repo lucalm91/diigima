@@ -71,14 +71,14 @@
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 20.6 7.4 19.2 6z"/></svg>
-            Valutazione iniziale gratuita
+            Check-up gratuito
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 20.6 7.4 19.2 6z"/></svg>
-            Prenotazione prioritaria entro 14 giorni
+            Prenotazione prioritaria
           </li>
         </ul>
-        <p class="offer-terms">Offerta valida fino al 31/12/2025.<br>Non cumulabile con altre promozioni.</p>
+        <p class="offer-terms">Offerta valida fino al 28/2/2026.<br>Non cumulabile con altre promozioni.<br>20% no applicabile a implantologia,<br>protesi dentaria e convenzioni assicurative.</p>
         <div class="offer-cta">
           <a class="btn btn-lg" href="#lead-form">Richiedi ora
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-left:.35em">
@@ -100,18 +100,24 @@
             <input id="lastName" name="lastName" autocomplete="family-name" required />
           </div>
         </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required />
-        </div>
         <div class="inline">
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required />
+          </div>
           <div class="field">
             <label for="phone">Telefono</label>
             <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="es. 333 123 4567" required />
           </div>
+        </div>
+        <div class="inline">
           <div class="field">
             <label for="city">Città</label>
-            <input id="city" name="city" autocomplete="address-level2" placeholder="es. Torino" />
+            <input id="city" name="city" autocomplete="address-level2" placeholder="es. Torino" required />
+          </div>
+          <div class="field">
+            <label for="postalCode">CAP</label>
+            <input id="postalCode" name="postalCode" inputmode="numeric" pattern="\d{5}" maxlength="5" placeholder="es. 10121" required />
           </div>
         </div>
         <div class="inline">
@@ -124,13 +130,15 @@
               <option>Ortodonzia</option>
               <option>Implantologia</option>
               <option>Visita di controllo</option>
+              <option>Check-up</option>
+              <option>Estetica</option>              
               <option>Altro</option>
             </select>
           </div>
           <div class="field">
             <label for="contactTime">Preferenza oraria</label>
-            <select id="contactTime" name="contactTime">
-              <option value="" selected>Indifferente</option>
+            <select id="contactTime" name="contactTime" required>
+              <option value="" selected disabled>Seleziona…</option>
               <option>Mattina</option>
               <option>Pomeriggio</option>
               <option>Sera</option>
@@ -139,8 +147,8 @@
         </div>
         <div class="field">
           <label for="contactMethod">Preferenza contatto</label>
-          <select id="contactMethod" name="contactMethod">
-            <option value="" selected>Indifferente</option>
+          <select id="contactMethod" name="contactMethod" required>
+            <option value="" selected disabled>Seleziona…</option>
             <option>Telefono</option>
             <option>Email</option>
             <option>WhatsApp</option>
@@ -148,7 +156,7 @@
         </div>
         <div class="field">
           <label for="notes">Note</label>
-          <textarea id="notes" name="notes" rows="3" placeholder="Scrivi qui eventuali richieste o dettagli…"></textarea>
+          <textarea id="notes" name="notes" rows="3" placeholder="Scrivi qui eventuali richieste o dettagli…" required></textarea>
         </div>
         <div class="agree">
           <input type="checkbox" id="consent" name="consent" required />
