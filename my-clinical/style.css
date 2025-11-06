@@ -1,15 +1,15 @@
 /* My Clinical - Styles (fresh/young, black + red palette) */
 :root {
   --brand: #111111; /* black brand */
-  --accent: #b97623; /* primary accent (prezzi, deal) */
+  --accent: #ba9931; /* primary accent (prezzi, deal) */
   --text: #16181c;
   --muted: #60636b;
-  --bg: #b97623; /* solid warm orange background */
+  --bg: #ba9931; /* solid warm gold background */
   --surface: #ffffff;
   --border: #e9e3e3;
   --shadow: 0 10px 28px rgba(17, 17, 17, 0.10);
-  --cta-outline: #b97623; /* outline color (match bg) */
-  --ring: rgba(185, 118, 35, 0.35); /* warm orange focus ring */
+  --cta-outline: #ba9931; /* outline color (match bg) */
+  --ring: rgba(186, 153, 49, 0.35); /* warm focus ring */
 }
 
 * { box-sizing: border-box; }
@@ -39,7 +39,7 @@ h3 { margin-top: 2rem; }
   border: 2px solid var(--cta-outline);
   font-weight: 800; letter-spacing: .01em; transition: transform .15s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
 }
-.btn:hover { transform: translateY(-1px); background-color: rgba(185,118,35,0.08); }
+.btn:hover { transform: translateY(-1px); background-color: rgba(186,153,49,0.08); }
 .btn:active { transform: translateY(0); }
 .btn:focus-visible { outline: 0; box-shadow: 0 0 0 4px var(--ring); }
 
@@ -71,19 +71,25 @@ main { padding: 24px; }
 .promo-card:hover { transform: translateY(-2px); box-shadow: 0 18px 46px rgba(0,0,0,0.28); border-color: #f0e0e0; }
 .promo-media { position: relative; }
 .promo-media img { width: 100%; height: auto; display: block; aspect-ratio: 16/9; object-fit: cover; }
-.badge-floating { position: absolute; bottom: 10px; left: 10px; background: #ffffffcc; backdrop-filter: blur(6px); color: #b97623; border: 1px solid #ffffff; border-radius: 999px; font-weight: 800; font-size: 12px; padding: 4px 10px; }
+.badge-floating { position: absolute; bottom: 10px; left: 10px; background: #ffffffcc; backdrop-filter: blur(6px); color: #ba9931; border: 1px solid #ffffff; border-radius: 999px; font-weight: 800; font-size: 12px; padding: 4px 10px; }
 .promo-body { padding: 14px 14px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .promo-title { margin: 0; font-size: clamp(18px, 2.6vw, 22px); color: var(--brand); letter-spacing: -.01em; }
 .promo-sub { margin: 0; color: var(--muted); font-size: 14px; }
 .price-row { display: flex; align-items: center; gap: 10px; margin-top: 4px; }
 .price-row .price { font-size: 24px; font-weight: 900; color: var(--accent); }
 .price-row .old { color: var(--muted); text-decoration: line-through; }
-.price-row .save { background: #fff1e5; color: #b97623; font-weight: 800; font-size: 12px; padding: 2px 8px; border-radius: 999px; }
+.price-row .save { background: #fff1e5; color: #ba9931; font-weight: 800; font-size: 12px; padding: 2px 8px; border-radius: 999px; }
 .price-row .deal { font-weight: 800; color: var(--accent); }
 .btn.btn-block { display: block; width: 100%; text-align: center; }
 .promo-body .btn { margin-top: auto; }
 
-.offer-terms { color: #ffefe3; font-size: 14px; margin: 6px 0 16px; text-align: left; }
+.offer-terms { color: #5a3b0e; font-size: 14px; line-height: 1.5; margin: 8px 0 16px; text-align: left; }
+
+/* Inline gift voucher note in marketing area */
+.gift-inline { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 800; margin: 10px 0; }
+.gift-inline svg { width: 18px; height: 18px; display: inline-block; }
+.gift-center { display: inline-flex; align-items: center; justify-content: center; gap: 10px; color: var(--accent); font-weight: 900; margin: 10px 0 12px; width: 100%; }
+.gift-center svg { width: 20px; height: 20px; display: inline-block; }
 
 form { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px; box-shadow: var(--shadow); margin-top: 36px; margin-bottom: 24px; }
 /* Offset anche quando si scrolla direttamente al form dalle card */

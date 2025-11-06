@@ -59,7 +59,7 @@
       const city = toTitleCase(cityRaw);
       const consent = data.get('consent');
 
-      if (!firstName || !lastName || !email || !phone || !treatment || !consent || !city || !postalDigits || postalDigits.length !== 5 || !contactTime || !contactMethod || !notes) {
+      if (!firstName || !lastName || !email || !phone || !treatment || !consent || !city || !postalDigits || postalDigits.length !== 5 || !contactTime || !contactMethod) {
         setStatus('Per favore, completa tutti i campi obbligatori.', 'error');
         return;
       }

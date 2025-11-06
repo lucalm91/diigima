@@ -1,6 +1,6 @@
 // My Clinical - Lead capture form (Google Sheets integration placeholder)
 (function() {
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbyf_XHG8FjlqdyyIpsLhFrqsUl9KYb3cYafc_z9KAGDhIlK-HH7aZon72LA38v7NoEUDw/exec';
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwWfgGllwul8yVaG4LHomMIdVcQLS8yRXMwuCQ-2ea0dhwAM0MlRWE5K4dNybOttiti/exec';
 
   const form = document.getElementById('lead-form');
   const statusEl = document.getElementById('form-status');
@@ -31,7 +31,7 @@
       const treatment = (data.get('treatment')||'').toString();
       const contactTime = (data.get('contactTime')||'').toString();
       const contactMethod = (data.get('contactMethod')||'').toString();
-      const notes = (data.get('notes')||'').toString().trim();
+  const notes = (data.get('notes')||'').toString().trim();
       const postalCodeRaw = (data.get('postalCode')||'').toString();
       const postalDigits = postalCodeRaw.replace(/\D+/g,'');
 
@@ -40,7 +40,7 @@
       const city = toTitleCase(cityRaw);
       const consent = data.get('consent');
 
-      if (!firstName || !lastName || !email || !phone || !treatment || !consent || !city || !postalDigits || postalDigits.length !== 5 || !contactTime || !contactMethod || !notes) {
+      if (!firstName || !lastName || !email || !phone || !treatment || !consent || !city || !postalDigits || postalDigits.length !== 5 || !contactTime || !contactMethod) {
         setStatus('Per favore, completa tutti i campi obbligatori.', 'error');
         return;
       }
@@ -58,7 +58,7 @@
       const payload = new FormData(form);
       if (postalDigits) payload.set('postalCode', "'" + postalDigits);
       payload.append('utm_source', 'Fiera');
-      payload.append('utm_medium', 'QR');
+      payload.append('utm_medium', 'Landing Page');
   payload.append('utm_campaign', 'MyClinical');
       payload.append('timestamp', new Date().toISOString());
 

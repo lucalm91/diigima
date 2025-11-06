@@ -6,9 +6,9 @@
   <meta name="robots" content="noindex, nofollow" />
   
   <!-- Theme Color -->
-  <meta name="theme-color" content="#b97623" />
+  <meta name="theme-color" content="#ba9931" />
   <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#b97623" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#ba9931" media="(prefers-color-scheme: light)" />
   <meta name="color-scheme" content="dark light" />
 
   <title>My Clinical – Offerte estetica e benessere</title>
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
 
   <link rel="stylesheet" href="./style.css" />
-  <style> html { background:#b97623; } :root { color-scheme: light dark; } </style>
+  <style> html { background:#ba9931; } :root { color-scheme: light dark; } </style>
 </head>
 <body>
   <header class="hero" id="top">
@@ -42,7 +42,14 @@
         </figure>
         <div class="lead-copy" aria-label="Perché scegliere My Clinical">
           <h3 class="section-title">Solo per la fiera</h3>
-          <p>Condizioni esclusive riservate ai visitatori. Scopri come valorizzare il tuo viso con la nostra équipe di medici estetici.</p>
+ 
+          <p class="lead-paragraph">Condizioni esclusive riservate ai visitatori della fiera. Valutazione personalizzata con i nostri medici, materiali certificati e tecniche aggiornate per risultati naturali e sicuri. Conferma l’offerta e riceverai tutti i dettagli via email.</p>
+         <div class="gift-center" style="margin-bottom: 30px;" role="note" aria-label="Disponibile anche come buono regalo">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M20 7h-2.18A3 3 0 0 0 15 2a2.998 2.998 0 0 0-3 3c0-1.657-1.343-3-3-3a3 3 0 0 0-2.82 5H4a2 2 0 0 0-2 2v3h9V7h2v5h9V9a2 2 0 0 0-2-2Zm-9-3a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2h2Zm6 0a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2h2ZM2 20a2 2 0 0 0 2 2h6v-8H2v6Zm12 2h6a2 2 0 0 0 2-2v-6h-8v8Z"/>
+            </svg>
+            <span>Disponibile anche come buono regalo</span>
+          </div>         
           <ul class="selling-points">
             <li>Equipe medica certificata e protocolli sicuri</li>
             <li>Materiali e filler di qualità certificata</li>
@@ -104,11 +111,11 @@
           </div>
         </article>
         </div>
-        <p class="offer-terms">Offerte valide solo in fiera e soggette a valutazione medica. Non cumulabili con altre promozioni.</p>
+        <p class="offer-terms">Offerte valide solo in fiera valide fino al 31/12/2025. Soggette a valutazione medica. Non cumulabili con altre promozioni.</p>
       </div>
 
       <form id="lead-form" novalidate>
-        <h3 class="form-title">Richiedi l'offerta in fiera</h3>
+        <h3 class="form-title" style="margin-bottom: 40px;">Richiedi l'offerta in fiera</h3>
         <div class="inline">
           <div class="field">
             <label for="firstName">Nome</label>
@@ -132,11 +139,11 @@
         <div class="inline">
           <div class="field">
             <label for="city">Città</label>
-            <input id="city" name="city" autocomplete="address-level2" placeholder="es. Milano" required />
+            <input id="city" name="city" autocomplete="address-level2" placeholder="es. Torino" required />
           </div>
           <div class="field">
             <label for="postalCode">CAP</label>
-            <input id="postalCode" name="postalCode" inputmode="numeric" pattern="\d{5}" maxlength="5" placeholder="es. 20121" required />
+            <input id="postalCode" name="postalCode" inputmode="numeric" pattern="\d{5}" maxlength="5" placeholder="es. 10125" required />
           </div>
         </div>
         <div class="inline">
@@ -171,8 +178,8 @@
           </select>
         </div>
         <div class="field">
-          <label for="notes">Note</label>
-          <textarea id="notes" name="notes" rows="3" placeholder="Scrivi qui eventuali richieste o dettagli…" required></textarea>
+          <label for="notes">Note (opzionale)</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Scrivi qui eventuali richieste o dettagli…"></textarea>
         </div>
         <div class="agree">
           <input type="checkbox" id="consent" name="consent" required />
