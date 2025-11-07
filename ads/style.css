@@ -70,6 +70,10 @@ section#lead p.lead { margin:0 auto 2.2rem; max-width: 640px; color: var(--muted
   position: relative;
   overflow: hidden;
 }
+.offer-card.alt-offer {
+  /* Slight warm background to differentiate the alternative offer */
+  background: linear-gradient(#fffdf7,#fffdf7) padding-box, linear-gradient(135deg, var(--brand), var(--accent)) border-box;
+}
 .offer-media { margin: -1.5rem -1.5rem .9rem; }
 .offer-media img { width:100%; height:auto; display:block; aspect-ratio: 16 / 9; object-fit: cover; }
 .offer-card::before {
@@ -81,6 +85,9 @@ section#lead p.lead { margin:0 auto 2.2rem; max-width: 640px; color: var(--muted
 .offer-card .badge { display:inline-block; padding:.4rem .75rem; border-radius:999px; background: linear-gradient(135deg, var(--brand), var(--accent)); color:#fff; font-weight:700; letter-spacing:.04em; font-size:.8rem; }
 .offer-card h3 { margin:.55rem 0 .35rem; font-size: var(--h3-fluid); color: var(--brand); font-weight:800; }
 .offer-subtitle { color: var(--muted); margin:.1rem 0 .7rem; }
+.offer-price { color: var(--text); font-weight: 800; margin:.2rem 0 .3rem; }
+.offer-price .compare { color:#7a8392; font-weight:600; }
+.offer-code { color: var(--brand); font-weight: 800; letter-spacing:.02em; margin:.2rem 0 .4rem; font-size:.95rem; }
 .offer-points { list-style:none; padding:0; margin:.8rem auto .3rem; display:inline-grid; row-gap:.6rem; column-gap:0; width:max-content; max-width:min(90vw, 680px); text-align:left; }
 .offer-points li { display:grid; grid-template-columns:22px 1fr; align-items:start; gap:.6rem; color:var(--text); }
 .offer-points svg { width:20px; height:20px; color: var(--accent); margin-top:.12rem; }

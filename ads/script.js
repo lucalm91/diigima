@@ -38,6 +38,18 @@
   }
 
   if (form) {
+    // If user clicks whitening CTA, pre-select treatment = Sbiancamento
+    const whiteningCTA = document.getElementById('whitening-cta');
+    if (whiteningCTA) {
+      whiteningCTA.addEventListener('click', () => {
+        try {
+          const treatmentSelect = form.querySelector('#treatment');
+          if (treatmentSelect) {
+            treatmentSelect.value = 'Sbiancamento';
+          }
+        } catch {}
+      });
+    }
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       setStatus('Invio in corso...');
