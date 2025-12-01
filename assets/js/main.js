@@ -24,6 +24,17 @@
 			xxsmall:  [ null,      '360px'  ]
 		});
 
+	// Lazy load fade-in
+		$('img[loading="lazy"]').each(function() {
+			if (this.complete) {
+				$(this).addClass('loaded');
+			} else {
+				$(this).on('load', function() {
+					$(this).addClass('loaded');
+				});
+			}
+		});
+
 	// Play initial animations on page load.
 		$window.on('load', function() {
 			window.setTimeout(function() {
