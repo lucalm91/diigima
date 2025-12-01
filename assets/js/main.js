@@ -29,6 +29,36 @@
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
+
+			// Show delayed content on user interaction
+			var $delayedContent = $('#delayed-content');
+			var contentShown = false;
+
+			var showContent = function(event) {
+				// Prevent showing content if clicking on the video player
+				if (event.type === 'click' || event.type === 'touchstart') {
+					if ($(event.target).closest('media-player').length > 0) {
+						return;
+					}
+				}
+
+				if (contentShown) return;
+				contentShown = true;
+				$delayedContent.css('opacity', 0).slideDown(1000).animate({ opacity: 1 }, { queue: false, duration: 1000 });
+				
+				// Remove listeners
+				$window.off('scroll', showContent);
+				$window.off('wheel', showContent);
+				$body.off('click', showContent);
+				$body.off('touchstart', showContent);
+				$body.off('touchmove', showContent);
+			};
+
+			$window.on('scroll', showContent);
+			$window.on('wheel', showContent);
+			$body.on('click', showContent);
+			$body.on('touchstart', showContent);
+			$body.on('touchmove', showContent);
 		});
 
 	// Fix: Flexbox min-height bug on IE.
@@ -78,6 +108,10 @@
 					if ($article.length == 0)
 						return;
 
+				// Update Desktop Nav Active State
+				$('#desktop-nav ul li a').removeClass('active');
+				$('#desktop-nav ul li a[href="#' + id + '"]').addClass('active');
+
 				// Handle lock.
 
 					// Already locked? Speed through "show" steps w/o delays.
@@ -88,6 +122,7 @@
 
 							// Mark as visible.
 								$body.addClass('is-article-visible');
+								$body.addClass('is-layout-ready');
 
 							// Deactivate all articles (just in case one's already active).
 								$main_articles.removeClass('active');
@@ -165,6 +200,8 @@
 
 						// Show article.
 							setTimeout(function() {
+								
+								$body.addClass('is-layout-ready');
 
 								// Hide header, footer.
 									$header.hide();
@@ -205,6 +242,9 @@
 					if (!$body.hasClass('is-article-visible'))
 						return;
 
+				// Remove Desktop Nav Active State
+				$('#desktop-nav ul li a').removeClass('active');
+
 				// Add state?
 					if (typeof addState != 'undefined'
 					&&	addState === true)
@@ -231,6 +271,7 @@
 
 							// Unmark as visible.
 								$body.removeClass('is-article-visible');
+								$body.removeClass('is-layout-ready');
 
 							// Unlock.
 								locked = false;
@@ -268,6 +309,7 @@
 							setTimeout(function() {
 
 								$body.removeClass('is-article-visible');
+								$body.removeClass('is-layout-ready');
 
 								// Window stuff.
 									$window
@@ -292,11 +334,13 @@
 				var $this = $(this);
 
 				// Close.
+				/*
 					$('<div class="close">Close</div>')
 						.appendTo($this)
 						.on('click', function() {
 							location.hash = '';
 						});
+				*/
 
 				// Prevent clicks from inside article from bubbling.
 					$this.on('click', function(event) {
@@ -384,6 +428,46 @@
 					});
 
 			}
+
+		// --- New Navigation Logic ---
+
+		// Desktop Top Bar Scroll Effect
+		$window.on('scroll', function() {
+			if ($window.scrollTop() > 50) {
+				$('#desktop-nav').addClass('scrolled');
+			} else {
+				$('#desktop-nav').removeClass('scrolled');
+			}
+		});
+
+		// Prevent clicks on desktop nav from bubbling to body (which would close the article)
+		$('#desktop-nav').on('click', function(event) {
+			event.stopPropagation();
+		});
+
+		// Mobile Menu Toggle
+		var $mobileMenuToggle = $('#mobile-menu-toggle');
+		var $mobileMenuOverlay = $('#mobile-menu-overlay');
+		var $mobileMenuClose = $('.close-menu-bottom');
+		var $mobileMenuLinks = $('#mobile-menu-overlay ul li a');
+
+		$mobileMenuToggle.on('click', function() {
+			if ($mobileMenuOverlay.hasClass('active')) {
+				$mobileMenuOverlay.removeClass('active');
+			} else {
+				$mobileMenuOverlay.addClass('active');
+			}
+		});
+
+		$mobileMenuClose.on('click', function() {
+			$mobileMenuOverlay.removeClass('active');
+		});
+
+		// Close mobile menu when a link is clicked
+		$mobileMenuLinks.on('click', function() {
+			$mobileMenuOverlay.removeClass('active');
+			// The default hashchange event will handle the rest
+		});
 
 		// Initialize.
 
