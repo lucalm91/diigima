@@ -111,6 +111,9 @@
 				// Update Desktop Nav Active State
 				$('#desktop-nav ul li a').removeClass('active');
 				$('#desktop-nav ul li a[href="#' + id + '"]').addClass('active');
+				
+				// Set Desktop Nav to compact state
+				$('#desktop-nav').addClass('scrolled');
 
 				// Handle lock.
 
@@ -283,6 +286,9 @@
 								$window
 									.scrollTop(0)
 									.triggerHandler('resize.flexbox-fix');
+							
+							// Trigger scroll event to update nav bar
+							$window.trigger('scroll');
 
 							return;
 
@@ -315,6 +321,9 @@
 									$window
 										.scrollTop(0)
 										.triggerHandler('resize.flexbox-fix');
+								
+								// Trigger scroll event to update nav bar
+								$window.trigger('scroll');
 
 								// Unlock.
 									setTimeout(function() {
@@ -433,7 +442,7 @@
 
 		// Desktop Top Bar Scroll Effect
 		$window.on('scroll', function() {
-			if ($window.scrollTop() > 50) {
+			if ($body.hasClass('is-article-visible') || $window.scrollTop() > 50) {
 				$('#desktop-nav').addClass('scrolled');
 			} else {
 				$('#desktop-nav').removeClass('scrolled');

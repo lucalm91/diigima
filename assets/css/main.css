@@ -2010,6 +2010,25 @@ color: black!important;
     border-color: #fff;
 }
 
+/* Intermediate Desktop Breakpoint to prevent wrapping */
+@media screen and (min-width: 981px) and (max-width: 1350px) {
+    #desktop-nav {
+        padding: 1rem 1rem;
+    }
+    #desktop-nav ul {
+        gap: 1rem;
+    }
+    #desktop-nav .nav-logo {
+        margin: 0 1rem;
+    }
+    #desktop-nav ul li a {
+        font-size: 0.9rem;
+    }
+    #desktop-nav.scrolled ul li a {
+        font-size: 0.75rem;
+    }
+}
+
 /* Responsive Breakpoints */
 @media screen and (max-width: 980px) {
     #desktop-nav {
@@ -2030,7 +2049,7 @@ body.is-article-visible #desktop-nav {
 /* Add extra padding to wrapper when article is visible to prevent overlap with fixed header */
 @media screen and (min-width: 981px) {
     body.is-layout-ready #wrapper {
-        padding-top: 12rem !important;
+        padding-top: 6rem !important;
         justify-content: flex-start; /* Align to top instead of center */
     }
 }
