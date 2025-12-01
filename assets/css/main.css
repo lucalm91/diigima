@@ -2013,7 +2013,10 @@ color: black!important;
 /* Intermediate Desktop Breakpoint to prevent wrapping */
 @media screen and (min-width: 981px) and (max-width: 1350px) {
     #desktop-nav {
-        padding: 1rem 1rem;
+        padding: 0.8rem 1rem;
+    }
+    #desktop-nav .nav-logo img {
+        height: 70px;
     }
     #desktop-nav ul {
         gap: 1rem;
@@ -2022,10 +2025,13 @@ color: black!important;
         margin: 0 1rem;
     }
     #desktop-nav ul li a {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     #desktop-nav.scrolled ul li a {
-        font-size: 1rem;
+        font-size: 0.85rem;
+    }
+    #wrapper {
+        padding-top: 5rem !important;
     }
 }
 
