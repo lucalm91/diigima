@@ -1,0 +1,231 @@
+/* Custom Styles */
+
+* {
+    user-select: none;
+    /* Prevents text selection */
+    -webkit-user-drag: none;
+    /* Prevents dragging in webkit browsers */
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+.profile-pic {
+    width: 15rem;
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 40px;
+    margin-top: 25px;
+}
+
+@media screen and (max-width: 736px) {
+    .profile-pic {
+        padding-right: 0;
+        width: 60%;
+        margin: 0 20%;
+    }
+}
+
+* {
+    font-family: "M PLUS Rounded 1c", sans-serif !important;
+}
+
+html {
+    font-size: 14pt;
+}
+
+@media screen and (max-width: 1680px) {
+    html {
+        font-size: 12pt;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    html {
+        font-size: 11pt;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    html {
+        font-size: 9pt;
+    }
+}
+
+.vds-time {
+    display: none;
+}
+
+.vds-time-group {
+    display: none;
+}
+
+.vds-chapter-title::before {
+    display: none;
+}
+
+.menu ul li a {
+    display: block;
+    min-width: 8rem;
+    height: 2.75rem;
+    line-height: 2.75rem;
+    padding: 0;
+    text-transform: capitalize;
+    letter-spacing: 0.05rem;
+    font-size: 0.8rem;
+    border-bottom: 0;
+    text-align: center;
+}
+
+.menu ul li:first-child {
+    border-left: 0;
+}
+
+.menu ul li {
+    padding-left: 0;
+    border-left: solid 1px #ffffff;
+}
+
+.menu ul {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+    border: solid 1px #ffffff;
+    border-radius: 4px;
+    margin: 0 0 2rem 0;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.075);
+}
+
+.vds-settings-menu {
+    display: none !important;
+}
+
+h3 {
+    text-align: center;
+}
+
+/* Social icons under Video Portfolio */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.social-links a {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.28);
+}
+
+.social-links svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    display: block;
+}
+
+/* Personal LinkedIn buttons alignment: left on desktop, centered on mobile */
+.person-social {
+    justify-content: flex-start;
+}
+
+@media screen and (max-width: 736px) {
+    .person-social {
+        justify-content: center;
+    }
+}
+
+/* Bio Section */
+.bio-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.bio-section img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin-top: 3.8rem;
+}
+
+.bio-section .bio-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.bio-section h3.major {
+    margin: 0 0 1.5rem 0;
+    text-align: left;
+    width: 100%;
+}
+
+@media screen and (max-width: 736px) {
+    .bio-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .bio-section img {
+        margin-top: 0;
+    }
+    
+    .bio-section .bio-content {
+        align-items: center;
+    }
+    
+    .bio-section h3.major {
+        margin: 0 auto 1.5rem auto;
+        width: -moz-fit-content;
+        width: -webkit-fit-content;
+        width: -ms-fit-content;
+        width: fit-content;
+        text-align: center;
+    }
+}
+
+
+#delayed-content:before {
+    height: 2.5rem !important;
+}
+
+@media screen and (max-width: 736px) {
+    #delayed-content:before {
+        height: 1.5rem !important;
+    }
+}

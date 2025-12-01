@@ -18,9 +18,11 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 	<link rel="manifest" href="/site.webmanifest" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/navbar.css" />
+	<link rel="stylesheet" href="assets/css/custom.css" />
 	<script type="text/javascript" src="/assets/js/cookie-consent.js" charset="UTF-8" defer></script>
-	<link href="assets/css2.css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
-	<link rel="preload" href="assets/css2.css?family=M+PLUS+Rounded+1c&display=swap" as="style">
+	<link href="assets/css2.css?family=M+PLUS+Rounded+1c&display=block" rel="stylesheet">
+	<link rel="preload" href="assets/css2.css?family=M+PLUS+Rounded+1c&display=block" as="style">
 
 	<link rel="preload" href="assets/css/main.css" as="style">
 	<!--	<link rel="preload" href="assets/font.woff2" as="font" type="font/woff2" crossorigin>
@@ -110,239 +112,6 @@
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
 
-	<style>
-		* {
-			user-select: none;
-			/* Prevents text selection */
-			-webkit-user-drag: none;
-			/* Prevents dragging in webkit browsers */
-		}
-
-		/*	svg {
-			margin: auto;
-			width: 65%;
-			padding-bottom: 15px;
-		}
-
-		@media (max-width: 736px) {
-			svg {
-				padding-bottom: 30px;
-			}
-		}
-
-		@media (min-width: 1681px) {
-			svg {
-				padding-bottom: 0px;
-			}
-		}
-
-		#lid {
-			-webkit-animation: blink 2.4s infinite;
-			animation: blink 2.4s infinite;
-		}
-
-		#eye {
-			-webkit-animation: squeeze 2.4s infinite;
-			animation: squeeze 2.4s infinite;
-		}
-
-		@-webkit-keyframes blink {
-			90% {
-				transform: none;
-				-webkit-animation-timing-function: ease-in;
-				animation-timing-function: ease-in;
-			}
-
-			93% {
-				transform: translateY(15px) scaleY(0);
-			}
-
-			100% {
-				-webkit-animation-timing-function: ease-out;
-				animation-timing-function: ease-out;
-			}
-		}
-
-		@keyframes blink {
-			90% {
-				transform: none;
-				-webkit-animation-timing-function: ease-in;
-				animation-timing-function: ease-in;
-			}
-
-			93% {
-				transform: translateY(15px) scaleY(0);
-			}
-
-			100% {
-				-webkit-animation-timing-function: ease-out;
-				animation-timing-function: ease-out;
-			}
-		}
-
-		@-webkit-keyframes squeeze {
-			90% {
-				transform: none;
-				-webkit-animation-timing-function: ease-in;
-				animation-timing-function: ease-in;
-			}
-
-			93% {
-				transform: translateY(3px) scaleY(0.8);
-			}
-
-			100% {
-				-webkit-animation-timing-function: ease-out;
-				animation-timing-function: ease-out;
-			}
-		}
-
-		@keyframes squeeze {
-			90% {
-				transform: none;
-				-webkit-animation-timing-function: ease-in;
-				animation-timing-function: ease-in;
-			}
-
-			93% {
-				transform: translateY(3px) scaleY(0.8);
-			}
-
-			100% {
-				-webkit-animation-timing-function: ease-out;
-				animation-timing-function: ease-out;
-			}
-		}
-*/
-		::-webkit-scrollbar {
-			width: 1px;
-		}
-
-
-
-		.profile-pic {
-			width: 15rem;
-			float: left;
-			padding-right: 20px;
-			padding-bottom: 40px;
-			margin-top: 25px;
-		}
-
-		@media screen and (max-width: 736px) {
-
-			.profile-pic {
-				padding-right: 0;
-				width: 60%;
-				margin: 0 20%;
-
-			}
-		}
-
-		* {
-			font-family: "M PLUS Rounded 1c", sans-serif !important;
-		}
-
-		html {
-			font-size: 14pt;
-		}
-
-		@media screen and (max-width: 1680px) {
-
-			html {
-				font-size: 12pt;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			html {
-				font-size: 11pt;
-			}
-
-		}
-
-		@media screen and (max-width: 360px) {
-
-			html {
-				font-size: 9pt;
-			}
-
-		}
-
-		.vds-time {
-			display: none;
-		}
-
-		.vds-time-group {
-			display: none;
-		}
-
-		.vds-chapter-title::before {
-			display: none;
-		}
-
-		.menu ul li a {
-			display: block;
-			min-width: 8rem;
-			height: 2.75rem;
-			line-height: 2.75rem;
-			padding: 0;
-			text-transform: capitalize;
-			letter-spacing: 0.05rem;
-			font-size: 0.8rem;
-			border-bottom: 0;
-			text-align: center;
-		}
-
-		.menu ul li:first-child {
-			border-left: 0;
-		}
-
-		.menu ul li {
-			padding-left: 0;
-			border-left: solid 1px #ffffff;
-		}
-
-		.menu ul {
-			display: -moz-flex;
-			display: -webkit-flex;
-			display: -ms-flex;
-			display: flex;
-			margin-bottom: 0;
-			list-style: none;
-			padding-left: 0;
-			border: solid 1px #ffffff;
-			border-radius: 4px;
-			margin: 0 0 2rem 0;
-		}
-
-		.menu {
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-		}
-
-		.menu ul li a:hover {
-			background-color: rgba(255, 255, 255, 0.075);
-		}
-
-		.vds-settings-menu {
-			display: none !important;
-		}
-
-		h3 {    text-align: center;}
-
-		/* Social icons under Video Portfolio */
-		.social-links { display:flex; justify-content:center; gap:12px; margin-top:12px; }
-		.social-links a { width:42px; height:42px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); color:#fff; transition: transform .18s ease, background .18s ease, border-color .18s ease; }
-		.social-links a:hover { transform: translateY(-2px); background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.28); }
-		.social-links svg { width:20px; height:20px; fill: currentColor; display:block; }
-
-		/* Personal LinkedIn buttons alignment: left on desktop, centered on mobile */
-		.person-social { justify-content: flex-start; }
-		@media screen and (max-width: 736px) { .person-social { justify-content: center; } }
-	</style>
 </head>
 
 <body class="is-preload">
@@ -365,7 +134,7 @@
 	</nav>
 	<script>
 		// Immediately check if we should show the compact nav to prevent layout jump
-		if (window.location.hash && window.location.hash !== '#' && window.location.hash !== '') {
+		if ((window.location.hash && window.location.hash !== '#' && window.location.hash !== '') || window.scrollY > 50) {
 			document.getElementById('desktop-nav').classList.add('scrolled');
 		}
 	</script>
