@@ -108,10 +108,18 @@
 
 	// Main.
 		var	delay = 325,
-			locked = false;
+			locked = false,
+			hideTimeout = null,
+			articleTimeout = null,
+			unlockTimeout = null;
 
 		// Methods.
 			$main._show = function(id, initial) {
+
+				// Clear pending timeouts
+				clearTimeout(hideTimeout);
+				clearTimeout(articleTimeout);
+				clearTimeout(unlockTimeout);
 
 				var $article = $main_articles.filter('#' + id);
 
@@ -140,6 +148,7 @@
 
 							// Deactivate all articles (just in case one's already active).
 								$main_articles.removeClass('active');
+								$main_articles.hide();
 
 							// Hide header, footer.
 								$header.hide();
@@ -176,7 +185,7 @@
 							$currentArticle.removeClass('active');
 
 						// Show article.
-							setTimeout(function() {
+							hideTimeout = setTimeout(function() {
 
 								// Hide current article.
 									$currentArticle.hide();
@@ -185,7 +194,7 @@
 									$article.show();
 
 								// Activate article.
-									setTimeout(function() {
+									articleTimeout = setTimeout(function() {
 
 										$article.addClass('active');
 
@@ -195,7 +204,7 @@
 												.triggerHandler('resize.flexbox-fix');
 
 										// Unlock.
-											setTimeout(function() {
+											unlockTimeout = setTimeout(function() {
 												locked = false;
 											}, delay);
 
@@ -213,7 +222,7 @@
 								.addClass('is-article-visible');
 
 						// Show article.
-							setTimeout(function() {
+							hideTimeout = setTimeout(function() {
 								
 								$body.addClass('is-layout-ready');
 
@@ -226,7 +235,7 @@
 									$article.show();
 
 								// Activate article.
-									setTimeout(function() {
+									articleTimeout = setTimeout(function() {
 
 										$article.addClass('active');
 
@@ -236,7 +245,7 @@
 												.triggerHandler('resize.flexbox-fix');
 
 										// Unlock.
-											setTimeout(function() {
+											unlockTimeout = setTimeout(function() {
 												locked = false;
 											}, delay);
 
@@ -249,6 +258,11 @@
 			};
 
 			$main._hide = function(addState) {
+
+				// Clear pending timeouts
+				clearTimeout(hideTimeout);
+				clearTimeout(articleTimeout);
+				clearTimeout(unlockTimeout);
 
 				var $article = $main_articles.filter('.active');
 
@@ -312,7 +326,7 @@
 					$article.removeClass('active');
 
 				// Hide article.
-					setTimeout(function() {
+					hideTimeout = setTimeout(function() {
 
 						// Hide article, main.
 							$article.hide();
@@ -323,7 +337,7 @@
 							$header.show();
 
 						// Unmark as visible.
-							setTimeout(function() {
+							articleTimeout = setTimeout(function() {
 
 								$body.removeClass('is-article-visible');
 								$body.removeClass('is-layout-ready');
@@ -337,7 +351,7 @@
 								$window.trigger('scroll');
 
 								// Unlock.
-									setTimeout(function() {
+									unlockTimeout = setTimeout(function() {
 										locked = false;
 									}, delay);
 
