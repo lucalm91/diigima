@@ -1215,7 +1215,7 @@ input, select, textarea {
 
 		@media screen and (min-width: 981px) {
 			#wrapper {
-				padding-top: 14rem !important;
+				padding-top: 10rem !important;
 			}
 			#header > img {
 				display: none !important;
@@ -2022,10 +2022,10 @@ color: black!important;
         margin: 0 1rem;
     }
     #desktop-nav ul li a {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     #desktop-nav.scrolled ul li a {
-        font-size: 0.75rem;
+        font-size: 1rem;
     }
 }
 
@@ -2109,3 +2109,13 @@ body.is-article-visible #desktop-nav {
     }
 }
 
+
+#delayed-content:before {
+    height: 2.5rem !important;
+}
+
+@media screen and (max-width: 736px) {
+    #delayed-content:before {
+        height: 1.5rem !important;
+    }
+}
