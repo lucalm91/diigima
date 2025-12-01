@@ -90,6 +90,16 @@
 	</script>
     
   <style>
+    /* Global Box Sizing */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    /* Scrollbar styling to match home page */
+    ::-webkit-scrollbar {
+      width: 1px;
+    }
+
     body {
       margin: 0;
       padding: 0;
@@ -213,13 +223,17 @@
         padding: 0;
         gap: 2rem;
         align-items: center;
-        flex: 1;
+        flex: 1 1 0%; /* Ensure equal width distribution */
     }
     #desktop-nav .nav-left {
         justify-content: flex-end;
     }
     #desktop-nav .nav-right {
         justify-content: flex-start;
+    }
+    #desktop-nav ul li {
+        padding: 0;
+        margin: 0;
     }
     #desktop-nav ul li a {
         color: #fff;
@@ -357,10 +371,35 @@
 
     @media (min-width: 981px) {
         #wrapper {
-            padding-top: 12rem;
+            padding-top: 8rem;
         }
         header img {
             display: none;
+        }
+    }
+
+    /* Intermediate Desktop Breakpoint to prevent wrapping */
+    @media screen and (min-width: 981px) and (max-width: 1350px) {
+        #desktop-nav {
+            padding: 0.8rem 1rem;
+        }
+        #desktop-nav .nav-logo img {
+            height: 70px;
+        }
+        #desktop-nav ul {
+            gap: 1rem;
+        }
+        #desktop-nav .nav-logo {
+            margin: 0 1rem;
+        }
+        #desktop-nav ul li a {
+            font-size: 0.9rem;
+        }
+        #desktop-nav.scrolled ul li a {
+            font-size: 0.85rem;
+        }
+        #wrapper {
+            padding-top: 5rem !important;
         }
     }
 
@@ -440,14 +479,14 @@
   <nav id="desktop-nav" class="scrolled">
     <div class="nav-content">
       <ul class="nav-left">
-        <li><a href="/">Home</a></li>
+        <li><a href="/">Home Page</a></li>
         <li><a href="/#our-videos">Our Videos</a></li>
-        <li><a href="/#how-we-work">How We Work</a></li>
+        <li><a href="/#your-stories">Your Stories</a></li>
       </ul>
       <a href="/" class="nav-logo"><img src="/images/logotype.webp" alt="Diigima"></a>
       <ul class="nav-right">
-        <li><a href="/#your-stories">Your Stories</a></li>
         <li><a href="/#about-us">About Diigima</a></li>
+        <li><a href="/#how-we-work">How We Work</a></li>
         <li><a href="/#contact">Contact Us</a></li>
       </ul>
     </div>
