@@ -1799,3 +1799,13 @@ color: black!important;
     border: none!important;
 }
 
+
+/* Lazy Loading Fade In */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
