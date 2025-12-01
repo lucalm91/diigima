@@ -442,7 +442,11 @@
 
 		// Desktop Top Bar Scroll Effect
 		$window.on('scroll', function() {
-			if ($body.hasClass('is-article-visible') || $window.scrollTop() > 50) {
+			// Keep nav compact if:
+			// 1. An article is visible
+			// 2. User has scrolled down
+			// 3. There is a hash in the URL (implies we are navigating to/in an article)
+			if ($body.hasClass('is-article-visible') || $window.scrollTop() > 50 || (window.location.hash && window.location.hash !== '#' && window.location.hash !== '')) {
 				$('#desktop-nav').addClass('scrolled');
 			} else {
 				$('#desktop-nav').removeClass('scrolled');
@@ -486,9 +490,12 @@
 
 			// Initial article.
 				if (location.hash != ''
-				&&	location.hash != '#')
+				&&	location.hash != '#') {
+					// Pre-emptively set nav to scrolled to avoid jump
+					$('#desktop-nav').addClass('scrolled');
 					$window.on('load', function() {
 						$main._show(location.hash.substr(1), true);
 					});
+				}
 
 })(jQuery);
