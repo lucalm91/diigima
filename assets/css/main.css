@@ -1215,7 +1215,7 @@ input, select, textarea {
 
 		@media screen and (min-width: 981px) {
 			#wrapper {
-				padding-top: 12rem;
+				padding-top: 14rem !important;
 			}
 			#header > img {
 				display: none !important;
@@ -1344,7 +1344,7 @@ input, select, textarea {
 				letter-spacing: 0.1rem;
 				font-size: 0.9rem;
 				line-height: inherit;
-				max-width: 550px;
+				max-width: 100%;
 			}
 
 		#header nav ul {
