@@ -488,23 +488,37 @@
 		var $mobileMenuOverlay = $('#mobile-menu-overlay');
 		var $mobileMenuClose = $('.close-menu-bottom');
 		var $mobileMenuLinks = $('#mobile-menu-overlay ul li a');
+		var $mobileMenuLogo = $('#mobile-menu-overlay .mobile-nav-logo');
 
-		$mobileMenuToggle.on('click', function() {
+		$mobileMenuToggle.on('click', function(event) {
+			event.stopPropagation();
 			if ($mobileMenuOverlay.hasClass('active')) {
 				$mobileMenuOverlay.removeClass('active');
+				$body.css('overflow', '');
 			} else {
 				$mobileMenuOverlay.addClass('active');
+				$body.css('overflow', 'hidden');
 			}
 		});
 
 		$mobileMenuClose.on('click', function() {
 			$mobileMenuOverlay.removeClass('active');
+			$body.css('overflow', '');
 		});
 
 		// Close mobile menu when a link is clicked
 		$mobileMenuLinks.on('click', function() {
 			$mobileMenuOverlay.removeClass('active');
+			$body.css('overflow', '');
 			// The default hashchange event will handle the rest
+		});
+
+		// Mobile Logo: Go to home, close menu
+		$mobileMenuLogo.on('click', function(event) {
+			event.stopPropagation();
+			$mobileMenuOverlay.removeClass('active');
+			$body.css('overflow', '');
+			// Default action (href="#") will trigger hashchange -> close article.
 		});
 
 		// Initialize.
