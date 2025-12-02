@@ -34,7 +34,8 @@
     display: flex;
     align-items: center;
     line-height: 0;
-    margin: 0 3rem; /* Space around logo */
+    margin: 0; /* Removed margin */
+    margin-right: auto; /* Push links to the right */
     transition: all 0.1s ease;
 }
 
@@ -56,16 +57,10 @@
     padding: 0;
     gap: 2rem;
     align-items: center;
-    flex: 1;
+    flex: 0 1 auto; /* Don't take up all space */
 }
 
-#desktop-nav .nav-left {
-    justify-content: flex-end;
-}
-
-#desktop-nav .nav-right {
-    justify-content: flex-start;
-}
+/* Removed .nav-left and .nav-right styles as they are no longer used */
 
 #desktop-nav ul li {
     padding: 0;
