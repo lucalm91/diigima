@@ -8,6 +8,6 @@ form.addEventListener('submit', e => {
   formData.append("Page URL", window.location.href);
   fetch(scriptURL, { method: 'POST', body: formData})
   .then(response => alert("Thank you! your form is submitted successfully." ))
-  .then(() => { window.location.reload(); })
+  .then(() => { window.location.href = 'https://diigima.es'; })
   .catch(error => console.error('Error!', error.message))
 })
