@@ -199,6 +199,7 @@
 										$article.addClass('active');
 
 										// Window stuff.
+											window.scrollTo(0, 0);
 											$window
 												.scrollTop(0)
 												.triggerHandler('resize.flexbox-fix');
@@ -240,6 +241,7 @@
 										$article.addClass('active');
 
 										// Window stuff.
+											window.scrollTo(0, 0);
 											$window
 												.scrollTop(0)
 												.triggerHandler('resize.flexbox-fix');
@@ -510,6 +512,13 @@
 		$mobileMenuLinks.on('click', function() {
 			$mobileMenuOverlay.removeClass('active');
 			$body.css('overflow', '');
+			
+			// Force scroll to top when navigating from menu
+			if ($body.hasClass('is-article-visible')) {
+				window.scrollTo(0, 0);
+				setTimeout(function() { window.scrollTo(0, 0); }, 50);
+			}
+
 			// The default hashchange event will handle the rest
 		});
 
