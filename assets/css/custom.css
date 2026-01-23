@@ -301,3 +301,8 @@ h3 {
         height: 1.5rem !important;
     }
 }
+@media screen and (min-width: 981px) {
+    #wrapper {
+        padding-top: 6rem !important;
+    }
+}

@@ -1323,7 +1323,7 @@ input, select, textarea {
 
 		#header .content {
 			border-style: solid;
-			border-color: #ffffff;
+			border-color: transparent;
 			border-top-width: 1px;
 			border-bottom-width: 1px;
 			max-width: 100%;
@@ -1350,7 +1350,7 @@ input, select, textarea {
 			#header .content p {
 				text-transform: initial;
 				letter-spacing: 0.1rem;
-				font-size: 0.9rem;
+				font-size: 1rem;
 				line-height: inherit;
 				max-width: 100%;
 			}
