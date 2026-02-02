@@ -185,6 +185,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             padding-top: 177.77%; /* 9:16 Aspect Ratio */
         }
         
+        .media-wrapper.vertical media-player {
+             position: absolute;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+        }
+
+        .media-wrapper.vertical media-provider, 
+        .media-wrapper.vertical video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
         .link-item.vertical img {
              aspect-ratio: 9/16;
         }
@@ -257,6 +272,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</ul>
 		</div>
 	</nav>
+
+	<!-- Mobile Menu Toggle -->
+	<div id="mobile-menu-toggle">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+
+	<!-- Mobile Menu Overlay -->
+	<div id="mobile-menu-overlay">
+		<div class="mobile-menu-content">
+			<a href="/" class="mobile-nav-logo"><img src="../images/logotype.webp" alt="Diigima"></a>
+			<ul>
+				<li><a href="/#our-videos">Our Videos</a></li>
+				<li><a href="/#your-stories">Your Stories</a></li>
+				<li><a href="/#about-us">About Diigima</a></li>
+				<li><a href="/#how-we-work">How We Work</a></li>
+				<li><a href="/#contact">Contact Us</a></li>
+			</ul>
+			<div class="close-menu-bottom">
+				<span style="font-size: 1.5em; line-height: 0.8;">&times;</span> Close Menu
+			</div>
+		</div>
+	</div>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -358,10 +397,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <!-- Sleep -->
                     <div class="portfolio-item">
                         <div class="media-wrapper vertical">
-                            <video controls playsinline loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-                                <source src="../videos/sleep.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            <media-player class="vds-player" aspect-ratio="9/16" playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; aspect-ratio: 9 / 16;" preload="metadata" src="https://vz-6fd78b20-24d.b-cdn.net/005b0559-7340-497c-bef6-0ee44b5a8d05/playlist.m3u8">
+                                <media-provider></media-provider>
+                                <media-video-layout></media-video-layout>
+                            </media-player>
                         </div>
                         <div class="info">
                             <h2>Sleep</h2>
@@ -371,10 +410,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <!-- Steps -->
                     <div class="portfolio-item">
                         <div class="media-wrapper vertical">
-                             <video controls playsinline loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-                                <source src="../videos/steps.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            <media-player class="vds-player" aspect-ratio="9/16" playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; aspect-ratio: 9 / 16;" preload="metadata" src="https://vz-6fd78b20-24d.b-cdn.net/8b624a64-dd01-42bb-8492-6f071524671e/playlist.m3u8">
+                                <media-provider></media-provider>
+                                <media-video-layout></media-video-layout>
+                            </media-player>
                         </div>
                         <div class="info">
                             <h2>Steps</h2>
@@ -535,6 +574,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 link.addEventListener('click', toggleMobileMenu);
             });
         }
+
+        // Video Player Management (Single Play & Click Outside) - Adapted from home page
+        document.addEventListener('DOMContentLoaded', () => {
+             const isMobile = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+             if (!isMobile()) {
+                 const players = document.querySelectorAll('media-player');
+
+                 // Ensure only one video plays at a time
+                 players.forEach((player) => {
+                     player.addEventListener('play', () => {
+                         players.forEach((otherPlayer) => {
+                             if (otherPlayer !== player) {
+                                 otherPlayer.pause();
+                             }
+                         });
+                     });
+                 });
+
+                 // Pause video if clicked outside
+                 document.addEventListener('click', (event) => {
+                     players.forEach((player) => {
+                         if (!player.contains(event.target)) {
+                             player.pause();
+                         }
+                     });
+                 });
+             }
+        });
     </script>
 
 </body>
