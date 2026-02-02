@@ -180,11 +180,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             position: relative;
         }
 
-        /* Support for vertical media */
+        /* Support for vertical media (Videos) */
         .media-wrapper.vertical {
-            padding-top: 177.77%; /* 9:16 Aspect Ratio */
+            padding-top: 0;
+            width: 100%;
+            /* No max-width here, we constrain the parent */
+            aspect-ratio: 9 / 16;
+            position: relative;
         }
-        
+
+        /* Constrain the Container for Vertical Items (Video & Images) */
+        .portfolio-item:has(.media-wrapper.vertical),
+        .link-item.vertical {
+            max-width: 33.75vh; /* 60vh * (9/16) */
+            width: 100%;
+            margin: 0 auto; /* Center in grid */
+        }
+
+        /* Override padding-top hack from generic media-wrapper if needed */
+        .media-wrapper.vertical.media-wrapper {
+             padding-top: 0;
+        }
+
         .media-wrapper.vertical media-player {
              position: absolute;
              top: 0;
@@ -200,8 +217,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             object-fit: cover;
         }
         
+        /* Vertical Images (Books) */
         .link-item.vertical img {
+             width: 100%;
+             height: auto;
              aspect-ratio: 9/16;
+             object-fit: cover;
         }
 
         /* Ensure videos fill wrapper */
