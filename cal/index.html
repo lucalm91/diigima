@@ -180,6 +180,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             position: relative;
         }
 
+        /* Support for vertical media */
+        .media-wrapper.vertical {
+            padding-top: 177.77%; /* 9:16 Aspect Ratio */
+        }
+        
+        .link-item.vertical img {
+             aspect-ratio: 9/16;
+        }
+
         /* Ensure videos fill wrapper */
         media-player, video, iframe {
             width: 100% !important;
@@ -259,12 +268,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h2>Video Director & Content Lead<br>
             Script Writer, Creative Copywriter & Novelist<br>
             Interactive Storyteller</h2>
-            
-            <p>
-                As a Video Director & Script Writer, I’m driven by creative collaborations. As a Content Lead, I have mentored teams of researchers and writers.<br>
-                As a UX and Creative Copywriter, I’ve crafted copy for websites and blogs in a range of sectors, from health tech to SaaS.<br>
-                With over 20 years experience in education, media, tech and marketing, I have co-produced videos, animations, and audio stories across digital platforms.
-            </p>
         </section>
 
 		<!-- Main Content -->
@@ -354,10 +357,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="portfolio-grid">
                     <!-- Sleep -->
                     <div class="portfolio-item">
-                        <div class="media-wrapper" style="background:#000;">
-                             <!-- Placeholder for animation -->
-                             <img src="../images/bg.jpg" alt="Sleep Animation" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.7;">
-                             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-weight: bold; font-size: 1.2rem; z-index: 2;">Coming Soon</div>
+                        <div class="media-wrapper vertical">
+                            <video controls playsinline loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                                <source src="../videos/sleep.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <div class="info">
                             <h2>Sleep</h2>
@@ -366,10 +370,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <!-- Steps -->
                     <div class="portfolio-item">
-                        <div class="media-wrapper" style="background:#000;">
-                             <!-- Placeholder for animation -->
-                             <img src="../images/bg.jpg" alt="Steps Animation" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.7;">
-                             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-weight: bold; font-size: 1.2rem; z-index: 2;">Coming Soon</div>
+                        <div class="media-wrapper vertical">
+                             <video controls playsinline loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                                <source src="../videos/steps.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <div class="info">
                             <h2>Steps</h2>
@@ -396,8 +401,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                     <div class="link-item">
                         <a href="https://www.scilife.io/" target="_blank">
-                            <!-- Placeholder image for Scilife -->
-                            <img src="../images/bg.jpg" alt="Scilife QMS">
+                            <img src="../images/scilife.jpg" alt="Scilife QMS">
                             <div class="info">
                                 <h3>Scilife QMS</h3>
                             </div>
@@ -416,8 +420,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="link-grid">
                     <div class="link-item">
                         <a href="https://gbsge.com/newsroom/digital-transformation/" target="_blank">
-                            <!-- Placeholder image -->
-                            <img src="../images/bg.jpg" alt="Geneva Business School">
+                            <img src="../images/gbs.jpg" alt="Geneva Business School">
                             <div class="info">
                                 <h3>Geneva Business School</h3>
                             </div>
@@ -425,8 +428,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                     <div class="link-item">
                         <a href="https://crime.cymru/2023/12/15/barcelona-noir-darkness-virtuality-the-possibility-of-love-cal-smyth/" target="_blank">
-                            <!-- Placeholder image -->
-                            <img src="../images/bg.jpg" alt="Crime Cymru">
+                            <img src="../images/crime.jpg" alt="Crime Cymru">
                             <div class="info">
                                 <h3>Crime Cymru</h3>
                             </div>
@@ -443,19 +445,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 
                 <div class="link-grid">
-                    <div class="link-item">
+                    <div class="link-item vertical">
                         <a href="https://www.fahrenheit-press.com/authors_cal_smyth.html" target="_blank">
-                            <!-- Placeholder image -->
-                            <img src="../images/bg.jpg" alt="The Balkan Route">
+                            <img src="../images/the-balkan-route.jpg" alt="The Balkan Route">
                             <div class="info">
                                 <h3>The Balkan Route</h3>
                             </div>
                         </a>
                     </div>
-                    <div class="link-item">
+                    <div class="link-item vertical">
                         <a href="https://www.amazon.com/Transhumanity-C-S-Myth-ebook/dp/B0DWT34Q6J" target="_blank"> 
-                            <!-- Placeholder image -->
-                            <img src="../images/bg.jpg" alt="Transhumanity">
+                            <img src="../images/transhumanity.jpg" alt="Transhumanity">
                             <div class="info">
                                 <h3>Transhumanity</h3>
                             </div>
@@ -475,8 +475,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="link-grid" style="display: flex; justify-content: center; max-width: 500px;">
                     <div class="link-item">
                         <a href="https://questoapp.com/experiences/bristol/street-art-bristol-banksy-and-graffiti-walking-tour-and-escape-game" target="_blank">
-                            <!-- Placeholder image -->
-                            <img src="../images/bg.jpg" alt="Questo">
+                            <img src="../images/questo.jpg" alt="Questo">
                             <div class="info">
                                 <h3>Questo</h3>
                             </div>
