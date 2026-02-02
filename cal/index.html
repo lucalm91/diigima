@@ -562,14 +562,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div>
 
 	<!-- Scripts -->
-	<script src="../assets/js/jquery.min.js"></script>
-	<script src="../assets/js/browser.min.js"></script>
-	<script src="../assets/js/breakpoints.min.js"></script>
-	<script src="../assets/js/util.js"></script>
-	<script src="../assets/js/main.js"></script>
 
     <!-- Preload background image and fade in when loaded -->
     <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.body.classList.remove('is-preload');
+            }, 100);
+        });
+
         (function fadeInBackground() {
         const bgUrl = '../images/bg.jpg';
         const img = new Image();
