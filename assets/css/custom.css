@@ -475,3 +475,50 @@ h3 {
         padding-top: 6rem !important;
     }
 }
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	bottom: 40px;
+	right: 40px;
+	background-color: #25d366;
+	color: #FFF !important;
+	border-radius: 50px;
+	text-align: center;
+	font-size: 30px;
+	box-shadow: 2px 2px 3px #999;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.whatsapp-float:hover {
+	background-color: #128c7e;
+	transform: scale(1.1);
+	color: #FFF !important;
+}
+
+.whatsapp-float i {
+	margin-top: 2px;
+}
+
+@media screen and (max-width: 768px) {
+	.whatsapp-float {
+		width: 50px;
+		height: 50px;
+		bottom: 20px;
+		right: 20px;
+		font-size: 25px;
+	}
+}
+
+/* Hide mobile nav CTA as per request */
+.nav-cta-mobile {
+    display: none !important;
+}

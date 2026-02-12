@@ -253,7 +253,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 0.8rem;
     max-height: 90vh;
     overflow-y: auto;
     padding: 20px;
@@ -261,8 +261,8 @@
 }
 
 .mobile-nav-logo img {
-    width: 120px;
-    margin-bottom: 1rem;
+    width: 80px;
+    margin-bottom: 0.5rem;
 }
 
 #mobile-menu-overlay ul {
@@ -271,13 +271,13 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0.8rem;
     align-items: center;
 }
 
 #mobile-menu-overlay ul li a {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
     border-bottom: none;
@@ -288,7 +288,7 @@
 /* Specific override to add space below "OUR SERVICES" text in mobile menu */
 .mobile-menu-content ul li.dropdown > a {
     display: block;
-    margin-bottom: 1rem !important; /* Force space below the title */
+    margin-bottom: 0.5rem !important; /* Force space below the title */
 }
 
 /* Mobile Dropdown Styling */
@@ -306,7 +306,7 @@
     display: flex;
     flex-direction: column;
     align-items: center !important;
-    gap: 0.8rem !important; /* Reduced gap */
+    gap: 0.5rem !important; /* Reduced gap */
 }
 
 .mobile-menu-content ul li.dropdown ul.dropdown-menu li {
