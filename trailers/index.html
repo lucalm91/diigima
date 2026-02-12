@@ -50,44 +50,74 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
     <!-- Navbar -->
-    <nav id="desktop-nav" class="scrolled">
-		<div class="nav-content">
-			<a href="https://diigima.es/" class="nav-logo"><img src="/images/logotype.webp" alt="Diigima"></a>
-			<ul class="nav-links">
-				<li><a href="https://diigima.es/#our-videos">Our Videos</a></li>
-				<li><a href="https://diigima.es/#your-stories">Your Stories</a></li>
-				<li><a href="https://diigima.es/#about-us">About Diigima</a></li>
-				<li><a href="https://diigima.es/#how-we-work">How We Work</a></li>
-				<li><a href="#contact">Contact Us</a></li>
-			</ul>
-		</div>
-	</nav>
 
-    <!-- Mobile Menu Toggle -->
-	<div id="mobile-menu-toggle">
+    <nav id="desktop-nav" class="scrolled">
+        <div class="nav-content">
+            <a href="https://diigima.es/" class="nav-logo"><img src="/images/logotype.webp" alt="Diigima"></a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="https://diigima.es/#our-services">OUR SERVICES</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/trailers">TRAILERS</a></li>
+                        <li><a href="/films">FILMS</a></li>
+                        <li><a href="/plays">PLAYS</a></li>
+                        <li><a href="/events">EVENTS</a></li>
+                        <li><a href="/interviews">INTERVIEWS</a></li>
+                        <li><a href="/brand">BRAND</a></li>
+                        <li><a href="/podcasts">PODCASTS</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://diigima.es/#success-stories">SUCCESS STORIES</a></li>
+                <li><a href="https://diigima.es/#how-we-work">HOW WE WORK</a></li>
+                <li><a href="https://diigima.es/#about-us">ABOUT DIIGIMA</a></li>
+                <li><a href="https://diigima.es/#contact">CONTACT US</a></li>
+            </ul>
+            <a href="/Diigima-Brochure.pdf" target="_blank" class="nav-cta-desktop">Download Brochure</a>
+        </div>
+    </nav>
+    
+<!-- Mobile Controls -->
+	<div id="mobile-controls">
+		<!-- Mobile Menu Toggle -->
+	<a href="/Diigima-Brochure.pdf" target="_blank" class="nav-cta-mobile">Download Brochure</a>
+
+		<div id="mobile-menu-toggle">
 		<span></span>
 		<span></span>
 		<span></span>
+	</div>
 	</div>
 
 	<!-- Mobile Menu Overlay -->
-	<div id="mobile-menu-overlay">
-		<div class="mobile-menu-content">
-			<a href="https://diigima.es/" class="mobile-nav-logo"><img src="/images/logotype.webp" alt="Diigima"></a>
-			<ul>
-				<li><a href="https://diigima.es/#our-videos">Our Videos</a></li>
-				<li><a href="https://diigima.es/#your-stories">Your Stories</a></li>
-				<li><a href="https://diigima.es/#about-us">About Diigima</a></li>
-				<li><a href="https://diigima.es/#how-we-work">How We Work</a></li>
-				<li><a href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); document.getElementById('mobile-menu-overlay').classList.remove('active'); document.body.style.overflow = ''; return false;">Contact Us</a></li>
-			</ul>
-			<div class="close-menu-bottom">
-				<span style="font-size: 1.5em; line-height: 0.8;">&times;</span> Close Menu
-			</div>
-		</div>
-	</div>
 
-	<div id="wrapper">
+    <div id="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <a href="https://diigima.es/" class="mobile-nav-logo"><img src="/images/logotype.webp" alt="Diigima"></a>
+            <ul>
+                <li class="dropdown">
+                    <a href="https://diigima.es/#our-services">OUR SERVICES</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/trailers">TRAILERS</a></li>
+                        <li><a href="/films">FILMS</a></li>
+                        <li><a href="/plays">PLAYS</a></li>
+                        <li><a href="/events">EVENTS</a></li>
+                        <li><a href="/interviews">INTERVIEWS</a></li>
+                        <li><a href="/brand">BRAND</a></li>
+                        <li><a href="/podcasts">PODCASTS</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://diigima.es/#success-stories">SUCCESS STORIES</a></li>
+                <li><a href="https://diigima.es/#how-we-work">HOW WE WORK</a></li>
+                <li><a href="https://diigima.es/#about-us">ABOUT DIIGIMA</a></li>
+                <li><a href="https://diigima.es/#contact">CONTACT US</a></li>
+            </ul>
+            <div class="close-menu-bottom">
+                <span style="font-size: 1.5em; line-height: 0.8;">&times;</span> Close Menu
+            </div>
+        </div>
+    </div>
+    
+<div id="wrapper">
 
 		<!-- Main -->
 		<div id="main">
@@ -133,8 +163,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 			<!-- Contact -->
 			<article id="contact" class="active" style="display:block; margin-top: 3rem; border-top: solid 2px rgba(255, 255, 255, 0.125); padding-top: 3rem;">
-				<h2 class="major">Contact Us</h2>
-				<p>Ready to create amazing trailers? Fill out the form below and we'll get back to you.</p>
+				<h2 class="major">Get Your Quote</h2>
+				<p>Every great trailer starts with a conversation. Tell us about your project and we'll craft a personalized quote tailored to your vision and budget.</p>
 				<form name="contact-form" method="POST">
 					<div class="fields">
 						<div class="field half">
@@ -155,8 +185,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						</div>
 					</div>
 					<ul class="actions">
-						<li><input type="submit" value="Send Message" class="primary" /></li>
-                        <li><a href="https://diigima.es/" class="button">Back to Home</a></li>
+						<li><input type="submit" value="Ask for a Quote" class="primary" /></li>
 					</ul>
 				</form>
 			</article>

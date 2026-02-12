@@ -7,7 +7,9 @@ form.addEventListener('submit', e => {
   const formData = new FormData(form);
   formData.append("Page URL", window.location.href);
   fetch(scriptURL, { method: 'POST', body: formData})
-  .then(response => alert("Thank you! your form is submitted successfully." ))
-  .then(() => { window.location.href = 'https://diigima.es'; })
+  .then(response => {
+      // alert("Thank you! your form is submitted successfully." ) // Removed alert for smoother redirect
+      window.location.href = '/thank-you'; 
+  })
   .catch(error => console.error('Error!', error.message))
 })

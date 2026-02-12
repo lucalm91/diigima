@@ -1,6 +1,8 @@
-/* Navigation Styles */
+/* Navigation Styles - Integrated */
 
-/* Desktop Top Bar */
+/* =========================================
+   Desktop Top Bar
+   ========================================= */
 #desktop-nav {
     position: fixed;
     top: 0;
@@ -9,15 +11,15 @@
     z-index: 10000;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
-    padding: 1.5rem 2rem; /* Initial larger padding */
+    padding: 1.5rem 2rem;
     transition: all 0.1s ease;
     transform: translateY(0);
     opacity: 1;
 }
 
 #desktop-nav.scrolled {
-    padding: 0.4rem 2rem; /* Smaller padding on scroll */
-    background: rgba(0, 0, 0, 0.8); /* Darker background on scroll */
+    padding: 0.4rem 2rem;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 #desktop-nav .nav-content {
@@ -34,20 +36,20 @@
     display: flex;
     align-items: center;
     line-height: 0;
-    margin: 0; /* Removed margin */
-    margin-right: auto; /* Push links to the right */
+    margin: 0;
+    margin-right: auto;
     transition: all 0.1s ease;
 }
 
 #desktop-nav .nav-logo img {
-    height: 100px; /* Big initial logo */
+    height: 100px;
     width: auto;
     display: block;
     transition: all 0.1s ease;
 }
 
 #desktop-nav.scrolled .nav-logo img {
-    height: 50px; /* Smaller logo on scroll */
+    height: 50px;
 }
 
 #desktop-nav ul {
@@ -57,10 +59,8 @@
     padding: 0;
     gap: 2rem;
     align-items: center;
-    flex: 0 1 auto; /* Don't take up all space */
+    flex: 0 1 auto;
 }
-
-/* Removed .nav-left and .nav-right styles as they are no longer used */
 
 #desktop-nav ul li {
     padding: 0;
@@ -71,7 +71,7 @@
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem; /* Slightly larger font initially */
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     border-bottom: none;
@@ -81,7 +81,7 @@
 }
 
 #desktop-nav.scrolled ul li a {
-    font-size: 0.9rem; /* Smaller font on scroll */
+    font-size: 0.9rem;
 }
 
 #desktop-nav ul li a::after {
@@ -95,8 +95,9 @@
     transition: width 0.3s ease;
 }
 
-#desktop-nav ul li a:hover::after,
-#desktop-nav ul li a.active::after {
+/* Hover effects for main links */
+#desktop-nav ul li a:not(.nav-cta-desktop):hover::after,
+#desktop-nav ul li a.active:not(.nav-cta-desktop)::after {
     width: 100%;
 }
 
@@ -104,13 +105,97 @@
     color: #fff;
 }
 
-/* Mobile Menu Toggle (Hamburger) */
-#mobile-menu-toggle {
-    display: none; /* Hidden on desktop */
+/* =========================================
+   Desktop Dropdown Menu
+   ========================================= */
+#desktop-nav ul li.dropdown {
+    position: relative;
+    padding-bottom: 20px; /* Bridge the gap for hover */
+    margin-bottom: -20px;
+}
+
+.dropdown-menu {
+    display: flex; /* Changed from block to flex to support gap and align-items */
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1.5rem 1rem !important; /* Slight reduction for desktop */
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+    min-width: 200px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    align-items: center !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    z-index: 10001;
+}
+
+/* Show dropdown on hover */
+#desktop-nav ul li.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li a {
+    font-size: 0.8rem !important; /* Smaller font for desktop submenu */
+    white-space: nowrap;
+    text-transform: uppercase !important;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    opacity: 1;
+}
+
+.dropdown-menu li a::after {
+    display: none !important; /* No underline for submenu items */
+}
+
+/* =========================================
+   Desktop CTA Button
+   ========================================= */
+.nav-cta-desktop {
+    background-color: #fff;
+    color: #000 !important;
+    padding: 0.5rem 1.2rem !important;
+    border-radius: 4px; /* Minimum border-radius */
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    margin-left: 2rem;
+    display: inline-block;
+}
+
+.nav-cta-desktop:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+}
+
+.nav-cta-desktop::after {
+    display: none !important;
+}
+
+/* =========================================
+   Mobile Elements (Hidden by default)
+   ========================================= */
+#mobile-controls {
+    display: none;
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 10002;
+    align-items: center;
+    gap: 15px;
+}
+
+#mobile-menu-toggle {
+    display: none;
     cursor: pointer;
     width: 30px;
     height: 25px;
@@ -127,6 +212,20 @@
     transition: all 0.3s ease;
 }
 
+.nav-cta-mobile {
+    display: none;
+    background-color: #fff;
+    color: #000 !important;
+    padding: 0.4rem 1rem;
+    border-radius: 4px; /* Minimum border-radius */
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    line-height: normal;
+}
+
 /* Mobile Menu Overlay */
 #mobile-menu-overlay {
     position: fixed;
@@ -134,12 +233,12 @@
     right: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.98);
     z-index: 10001;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateX(100%); /* Hidden to the right */
+    transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
@@ -152,12 +251,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px;
+    width: 100%;
 }
 
 .mobile-nav-logo img {
     width: 120px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 #mobile-menu-overlay ul {
@@ -167,6 +270,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    align-items: center;
 }
 
 #mobile-menu-overlay ul li a {
@@ -177,6 +281,40 @@
     border-bottom: none;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+}
+
+/* Specific override to add space below "OUR SERVICES" text in mobile menu */
+.mobile-menu-content ul li.dropdown > a {
+    display: block;
+    margin-bottom: 1rem !important; /* Force space below the title */
+}
+
+/* Mobile Dropdown Styling */
+.mobile-menu-content ul li.dropdown ul.dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0 !important; /* Force reset padding */
+    margin-top: 0; /* Reset margin since we use margin-bottom on the link */
+    margin-bottom: 0.5rem;
+    min-width: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    gap: 0.8rem !important; /* Reduced gap */
+}
+
+.mobile-menu-content ul li.dropdown ul.dropdown-menu li {
+    margin: 0;
+}
+
+.mobile-menu-content ul li.dropdown ul.dropdown-menu li a {
+    font-size: 1rem !important; /* REDUCED FONT SIZE for mobile submenu */
+    opacity: 0.7;
+    font-weight: 500;
 }
 
 .close-menu-bottom {
@@ -200,7 +338,11 @@
     border-color: #fff;
 }
 
-/* Intermediate Desktop Breakpoint to prevent wrapping */
+/* =========================================
+   Media Queries
+   ========================================= */
+
+/* Intermediate Tablet/Desktop */
 @media screen and (min-width: 981px) and (max-width: 1350px) {
     #desktop-nav {
         padding: 0.8rem 1rem;
@@ -220,29 +362,41 @@
     #desktop-nav.scrolled ul li a {
         font-size: 0.85rem;
     }
+    .nav-cta-desktop {
+        padding: 0.5rem 1.2rem !important;
+        font-size: 0.9rem !important;
+        margin-left: 0.5rem;
+    }
 }
 
-/* Responsive Breakpoints */
+/* Mobile/Tablet Breakpoint */
 @media screen and (max-width: 980px) {
     #desktop-nav {
-        display: none; /* Hide desktop nav on tablet/mobile */
+        display: none;
+    }
+    
+    #mobile-controls {
+        display: flex;
     }
     
     #mobile-menu-toggle {
-        display: flex; /* Show hamburger on tablet/mobile */
+        display: flex;
+    }
+    
+    .nav-cta-mobile {
+        display: block;
     }
 }
 
-/* Ensure desktop nav is always visible when an article is open */
+/* Layout Utilities */
 body.is-article-visible #desktop-nav {
     transform: translateY(0) !important;
     opacity: 1 !important;
 }
 
-/* Add extra padding to wrapper when article is visible to prevent overlap with fixed header */
 @media screen and (min-width: 981px) {
     body.is-layout-ready #wrapper {
         padding-top: 6rem !important;
-        justify-content: flex-start; /* Align to top instead of center */
+        justify-content: flex-start;
     }
 }

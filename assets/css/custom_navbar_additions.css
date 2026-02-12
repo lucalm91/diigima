@@ -1,0 +1,119 @@
+/* Append to w:\diigima\assets\css\navbar.css */
+
+/* Dropdown Styles */
+#desktop-nav ul li.dropdown {
+    position: relative;
+    padding-bottom: 20px; /* Bridge the gap */
+    margin-bottom: -20px;
+}
+
+.dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    min-width: 200px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    align-items: center !important; /* Centered items */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    z-index: 10001; /* Above other things */
+}
+
+#desktop-nav ul li.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li a {
+    font-size: 0.85rem !important;
+    white-space: nowrap;
+    text-transform: capitalize !important;
+}
+
+/* CTA Button - Desktop */
+.nav-cta-desktop {
+    background-color: #fff;
+    color: #000 !important;
+    padding: 0.6rem 1.8rem !important;
+    border-radius: 50px;
+    font-weight: 700 !important;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    margin-left: 1rem;
+}
+
+.nav-cta-desktop:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+}
+
+.nav-cta-desktop::after {
+    display: none !important;
+}
+
+/* CTA Button - Mobile */
+.nav-cta-mobile {
+    display: none; /* Hidden by default */
+    background-color: #fff;
+    color: #000 !important;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    position: fixed;
+    top: 20px;
+    right: 65px; /* Position left of the hamburger (right: 20px + width ~30px + gap) */
+    z-index: 10002;
+    transition: all 0.3s ease;
+    border: none;
+    line-height: normal;
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 980px) { /* Assuming 980px is breaking point, standard main.css breakpoint */
+    .nav-links, .nav-cta-desktop {
+        display: none !important;
+    }
+    
+    #mobile-menu-toggle {
+        display: flex; /* Show hamburger */
+    }
+
+    .nav-cta-mobile {
+        display: block; /* Show mobile CTA */
+    }
+
+    /* Mobile Dropdown - Expanded */
+    .mobile-menu-content ul li.dropdown ul.dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        min-width: unset;
+        align-items: center !important;
+        display: flex;
+    }
+
+    .mobile-menu-content ul li.dropdown ul.dropdown-menu li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .mobile-menu-content ul li.dropdown ul.dropdown-menu li a {
+        font-size: 1.1rem !important; /* Larger for touch */
+        opacity: 0.8;
+    }
+}

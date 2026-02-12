@@ -9,7 +9,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-TVF8S6FP');</script>
 <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
-  <title>Thank You - Bootcamp Application</title>
+  <title>Thank You - Diigima Creative Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Preload and load the font -->
   <link rel="stylesheet" href="/assets/css/fonts.css">
@@ -20,16 +20,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-family: 'M PLUS Rounded 1c', sans-serif;
       margin: 0;
       color: #fff;
-      background-color: #000;
+      background-color: #1b1f22;
       position: relative;
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      background: url('https://diigima.es/images/bg.jpg') bottom center/cover no-repeat fixed;
+      background: url('/images/bg.jpg') bottom center/cover no-repeat fixed;
       opacity: 0;
       transition: opacity 1s ease;
       z-index: -2;
@@ -39,7 +41,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       content: "";
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.5); /* Dark overlay */
       z-index: -1;
     }
 
@@ -47,212 +49,127 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       opacity: 1;
     }
 
-    @supports (-webkit-overflow-scrolling: touch) {
-      body::before {
-        background-attachment: scroll;
-      }
-    }
-
     /* Hero Section */
     .hero {
       position: relative;
-      height: 100vh;
+      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      overflow: hidden;
+      padding: 2rem;
     }
 
     /* Container Styles */
     .content-container {
       background: rgba(0,0,0,0.6);
-      padding: 2rem;
+      padding: 3rem 2rem;
       max-width: 600px;
       position: relative;
       z-index: 2;
       width: 90%;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: #fff;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn:hover {
+      background-color: #e0e0e0;
+      transform: translateY(-2px);
+    }
+
+    .back-link {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+    }
+    
+    .back-link:hover {
+        color: #fff;
+        text-decoration: underline;
     }
 
     @media (max-width: 768px) {
+      .hero {
+        padding: 0;
+        align-items: stretch;
+      }
+      
       .content-container {
         width: 100%;
         margin: 0;
         border-radius: 0;
         background: rgba(0,0,0,0.5);
-        min-height: 100vh;
+        min-height: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 1rem;
-      }
-    }
-
-    /* iOS specific fixes */
-    @supports (-webkit-overflow-scrolling: touch) {
-      body {
-        min-height: -webkit-fill-available;
+        align-items: center;
+        padding: 2rem 1.5rem;
+        box-sizing: border-box;
       }
       
-      .content-container {
-        background: rgba(0,0,0,0.5);
+      h1 {
+          font-size: 2rem;
       }
-    }
-
-    .content-container h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-    .content-container p {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-    /* Urgency Block */
-    .urgency {
-      text-align: center;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: rgba(255,255,255,0.1);
-      border-radius: 5px;
-    }
-    .urgency h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .seat-icons {
-      display: flex;
-      justify-content: center;
-      gap: 0.2rem;
-      flex-wrap: wrap;
-      margin-bottom: 0.5rem;
-    }
-    .seat-icon {
-      width: 30px;
-      height: 30px;
-      filter: brightness(0) invert(1);
-      opacity: 0.4;
-    }
-    .seat-icon.available {
-      opacity: 1;
-      filter: brightness(0) invert(1) drop-shadow(0 0 5px #0f0);
-    }
-    /* Button Styling */
-    .btn-hero, .section-cta {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      border: 2px solid #fff;
-      background: transparent;
-      color: #fff;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: none;
-      text-decoration: none;
-    }
-    .btn-hero{margin-bottom:1rem}
-    .btn-hero:hover, .section-cta:hover {
-      background: #fff;
-      color: #000;
-    }
-    .urgency p {
-      text-align: center;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #fff;
-    }
-    .urgency .last-update {
-      font-size: 0.9rem;
-      margin-top: 0.5rem;
-    }
-    /* Add footer styles */
-    footer {
-      text-align: center;
-      padding: 1rem 0;
-      border-top: 1px solid #333;
-      background: rgba(0, 0, 0, 0.85);  /* Make footer darker */
-      margin-top: 0;  /* Remove margin */
     }
   </style>
 </head>
-<body>
+<body class="is-preload">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVF8S6FP"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
   <section class="hero">
     <div class="content-container">
-      <h1>Secure your Spot</h1>
-      <p>
-        Thank you for applying to our Bootcamp.<br>
-        You´ll receive an email with payment details to book your spot.
-      </p>
-      <!-- Urgency Block -->
-      <div class="urgency">
-        <h2>Limited Spaces Available!</h2>
-        <div class="seat-icons">
-          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon available">
-          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon available">
-          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon available">
-          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon available">
-          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon available">
-          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon available">
-          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Seat" class="seat-icon available">
-        </div>
-        <p class="last-update">Last update: <span id="lastUpdate"></span></p>
-<!--         <button class="btn-hero" id="proceedPayment">Proceed with Payment</button> -->
-      </div>
-
-      <div class="cta-row" style="margin-top: 2rem;">
-        <a href="https://diigima.es" class="btn-hero">Back to Home</a>
-      </div>
-
+      <img src="/images/logotype.webp" alt="Diigima Creative Studio" style="width: 140px; margin-bottom: 1.5rem; display: block; margin-left: auto; margin-right: auto;">
+      <h1>Message Received</h1>
+      <p>We’re excited to hear your story. One of us will be in touch shortly to discuss how we can bring your vision to the screen.</p> 
+      <p>In the meantime, your exclusive guide is ready. Dive into our process and see what’s possible.</p>
+      
+      <a href="/Diigima-Brochure.pdf" target="_blank" class="btn">Download Brochure</a>
+      <br>
+      <a href="/" class="back-link">Return to Homepage</a>
     </div>
   </section>
-  
-  <footer>
-    <p>&copy; Diigima Creative Studio 2026</p>
-  </footer>
 
-  <!-- Stripe JS -->
-  <script src="https://js.stripe.com/v3/"></script>
   <script>
- //   document.getElementById('proceedPayment').addEventListener('click', function() {
-   //   window.location.href = "YOUR_STRIPE_CHECKOUT_URL";
-   // });
-    
-    document.addEventListener('DOMContentLoaded', function() {
-      // Set Last Update Date
-      const today = new Date();
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      document.getElementById('lastUpdate').textContent = today.toLocaleDateString('en-US', options);
-      
-      // Find the first available seat icon and toggle its class every second
-      const firstAvailable = document.querySelector('.seat-icons .seat-icon.available');
-      if (firstAvailable) {
-        setInterval(() => {
-          // Remove the class if present; add it if not present
-          if (firstAvailable.classList.contains('available')) {
-            firstAvailable.classList.remove('available');
-          } else {
-            firstAvailable.classList.add('available');
-          }
-        }, 1000);
-      }
+    window.addEventListener('load', () => {
+      document.body.classList.add('bg-loaded');
+      document.body.classList.remove('is-preload');
     });
-
-    // Background fade-in
-    (function fadeInBackground() {
-      const bgUrl = 'https://diigima.es/images/bg.jpg';
-      const img = new Image();
-      img.src = bgUrl;
-      img.onload = function () {
-        document.body.classList.add('bg-loaded');
-      };
-    })();
   </script>
 </body>
 </html>
