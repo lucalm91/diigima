@@ -420,7 +420,9 @@ h3 {
     transform: scale(1.15);
 }
 
-/* Icon accent colors */
+/* Icon accent colors - All White request */
+.service-card .service-icon { color: #ffffff; }
+/*
 .service-card[data-service="trailers"] .service-icon { color: #ff9a00; }
 .service-card[data-service="films"] .service-icon    { color: #58a6ff; }
 .service-card[data-service="plays"] .service-icon    { color: #bb6bd9; }
@@ -428,6 +430,7 @@ h3 {
 .service-card[data-service="brand"] .service-icon    { color: #4caf50; }
 .service-card[data-service="podcasts"] .service-icon { color: #f44336; }
 .service-card[data-service="interviews"] .service-icon { color: #00bcd4; }
+*/
 
 .service-card .service-label {
     position: relative;
