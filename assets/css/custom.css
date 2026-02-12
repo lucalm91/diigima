@@ -139,7 +139,7 @@
     }
 }
 
-* {
+*:not(.fas):not(.far):not(.fab):not(.fa) {
     font-family: "M PLUS Rounded 1c", sans-serif !important;
 }
 
@@ -332,6 +332,134 @@ h3 {
     }
 }
 
+
+/* --- Services Overview Grid --- */
+.services-overview {
+    margin: 2rem 0 2.5rem;
+}
+
+.services-overview .overview-intro {
+    text-align: center;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.service-card {
+    flex: 0 1 calc(25% - 0.75rem);
+    min-width: 120px;
+}
+
+.services-grid > .service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.6rem 0.8rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+/* Each card gets a unique accent gradient on hover */
+.service-card[data-service="trailers"]::before { background: linear-gradient(135deg, rgba(229,89,52,0.25), rgba(255,154,0,0.15)); }
+.service-card[data-service="films"]::before    { background: linear-gradient(135deg, rgba(88,166,255,0.25), rgba(0,200,255,0.15)); }
+.service-card[data-service="plays"]::before    { background: linear-gradient(135deg, rgba(187,107,217,0.25), rgba(255,110,199,0.15)); }
+.service-card[data-service="events"]::before   { background: linear-gradient(135deg, rgba(255,193,7,0.25), rgba(255,235,59,0.15)); }
+.service-card[data-service="brand"]::before    { background: linear-gradient(135deg, rgba(76,175,80,0.25), rgba(129,199,132,0.15)); }
+.service-card[data-service="podcasts"]::before { background: linear-gradient(135deg, rgba(244,67,54,0.25), rgba(255,138,128,0.15)); }
+.service-card[data-service="interviews"]::before { background: linear-gradient(135deg, rgba(0,188,212,0.25), rgba(128,222,234,0.15)); }
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    border-color: rgba(255,255,255,0.35);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35), 0 0 20px rgba(255,255,255,0.06);
+}
+
+.service-card .service-icon {
+    position: relative;
+    z-index: 1;
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    transition: transform 0.3s ease;
+    line-height: 1;
+}
+
+
+
+.service-card:hover .service-icon {
+    transform: scale(1.15);
+}
+
+/* Icon accent colors */
+.service-card[data-service="trailers"] .service-icon { color: #ff9a00; }
+.service-card[data-service="films"] .service-icon    { color: #58a6ff; }
+.service-card[data-service="plays"] .service-icon    { color: #bb6bd9; }
+.service-card[data-service="events"] .service-icon   { color: #ffc107; }
+.service-card[data-service="brand"] .service-icon    { color: #4caf50; }
+.service-card[data-service="podcasts"] .service-icon { color: #f44336; }
+.service-card[data-service="interviews"] .service-icon { color: #00bcd4; }
+
+.service-card .service-label {
+    position: relative;
+    z-index: 1;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Responsive: 2 columns on narrow screens */
+@media screen and (max-width: 480px) {
+    .service-card {
+        flex: 0 1 calc(50% - 0.5rem);
+        padding: 1.2rem 0.5rem;
+    }
+    .service-card .service-icon {
+        font-size: 1.6rem;
+    }
+
+    .service-card .service-label {
+        font-size: 0.65rem;
+    }
+}
+
+/* Divider line after overview */
+.services-overview-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    margin: 2.5rem 0;
+}
 
 #delayed-content:before {
     height: 2.5rem !important;

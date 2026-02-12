@@ -530,6 +530,26 @@
 			// Default action (href="#") will trigger hashchange -> close article.
 		});
 
+		// Smooth Scrolling for Internal Links (non-article anchors)
+		$('a[href^="#"]').on('click', function(event) {
+			var targetId = this.getAttribute('href');
+			
+			// Ignore generic '#' or empty
+			if (!targetId || targetId === '#') return;
+			
+			// If target is one of the main articles, let the existing logic handle it
+			if ($main_articles.filter(targetId).length > 0) return;
+
+			// Otherwise, if element exists, smooth scroll to it
+			var $target = $(targetId);
+			if ($target.length) {
+				event.preventDefault();
+				$('html, body').stop().animate({
+					scrollTop: $target.offset().top - 100 // Offset for sticky header
+				}, 1000, 'swing'); 
+			}
+		});
+
 		// Initialize.
 
 			// Hide main, articles.
