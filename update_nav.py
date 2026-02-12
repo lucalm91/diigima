@@ -46,7 +46,7 @@ def update_file(filepath):
 			<li><a href="/interviews">INTERVIEWS</a></li>
 		</ul>
 	</li>
-	<li><a href="https://diigima.es/#success-stories">SUCCESS STORIES</a></li>
+	<li><a href="https://diigima.es/#projects">PROJECTS</a></li>
 	<li><a href="https://diigima.es/#how-we-work">HOW WE WORK</a></li>
 	<li><a href="https://diigima.es/#about-us">ABOUT DIIGIMA</a></li>
 	<li><a href="{contact_href}">CONTACT US</a></li>
@@ -95,7 +95,7 @@ def update_file(filepath):
 						<li><a href="/interviews">INTERVIEWS</a></li>
 					</ul>
 				</li>
-				<li><a href="https://diigima.es/#success-stories">SUCCESS STORIES</a></li>
+				<li><a href="https://diigima.es/#projects">PROJECTS</a></li>
 				<li><a href="https://diigima.es/#how-we-work">HOW WE WORK</a></li>
 				<li><a href="https://diigima.es/#about-us">ABOUT DIIGIMA</a></li>
 				<li><a href="{contact_href}">CONTACT US</a></li>
