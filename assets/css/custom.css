@@ -408,7 +408,7 @@ h3 {
 .service-card .service-icon {
     position: relative;
     z-index: 1;
-    font-size: 2rem;
+    font-size: 2.rem;
     margin-bottom: 0.8rem;
     transition: transform 0.3s ease;
     line-height: 1;
@@ -619,4 +619,9 @@ h3 {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+}
+
+/* Disable initial black fade for content pages */
+body.no-fade-in.is-preload #bg:before {
+    background-color: transparent !important;
 }
