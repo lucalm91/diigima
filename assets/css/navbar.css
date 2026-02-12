@@ -11,7 +11,7 @@
     z-index: 10000;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
-    padding: 1.5rem 2rem;
+    padding: 0.8rem 2rem;
     transition: all 0.1s ease;
     transform: translateY(0);
     opacity: 1;
@@ -42,7 +42,7 @@
 }
 
 #desktop-nav .nav-logo img {
-    height: 100px;
+    height: 80px;
     width: auto;
     display: block;
     transition: all 0.1s ease;

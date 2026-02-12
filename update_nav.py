@@ -20,64 +20,69 @@ def update_file(filepath):
     contact_href = get_contact_href(content)
 
     # 1. Update Desktop Nav
-    # We strip previous indentation in replacement, handled by regex group if we want precise
-    # But for HTML, strict whitespace matching isn't required as long as it looks okay.
+    # We look for the start of the list, and match everything until the start of the CTA button or the closing div of nav-content
+    # This prevents short-circuiting on nested </ul>
     
-    # We'll try to detect indentation of the UL
-    nav_match = re.search(r'(\s*)<ul class="nav-links">.*?</ul>', content, re.DOTALL)
+    # Locate where the nav starts
+    # We expect: ... <div class="nav-content"> ... <a class="nav-logo">...</a> [TARGET AREA] <a class="nav-cta-desktop">...</a> </div>
     
-    if nav_match:
-        indent = nav_match.group(1)
-        # Construct new UL with correct indentation
-        new_nav = f'''<ul class="nav-links">
-{indent}	<li class="dropdown">
-{indent}		<a href="https://diigima.es/#our-services">OUR SERVICES</a>
-{indent}		<ul class="dropdown-menu">
-{indent}			<li><a href="/trailers">TRAILERS</a></li>
-{indent}			<li><a href="/films">FILMS</a></li>
-{indent}			<li><a href="/plays">PLAYS</a></li>
-{indent}			<li><a href="/events">EVENTS</a></li>
-{indent}			<li><a href="/interviews">INTERVIEWS</a></li>
-{indent}		</ul>
-{indent}	</li>
-{indent}	<li><a href="https://diigima.es/#success-stories">SUCCESS STORIES</a></li>
-{indent}	<li><a href="https://diigima.es/#how-we-work">HOW WE WORK</a></li>
-{indent}	<li><a href="https://diigima.es/#about-us">ABOUT DIIGIMA</a></li>
-{indent}	<li><a href="{contact_href}">CONTACT US</a></li>
-{indent}</ul>'''
-
-        # CTA
-        cta_html = f'\n{indent}<a href="{contact_href}" class="nav-cta-desktop">CONTACT</a>'
+    # This regex attempts to find the NAV LINKS block by looking for the logo before it, and the CTA or Div end after it.
+    desktop_regex = r'(<a href="[^"]+" class="nav-logo">.*?</a>\s*)(.*?)(?=\s*<a href="[^"]+"[^>]*class="nav-cta-desktop">)'
+    
+    desktop_match = re.search(desktop_regex, content, re.DOTALL)
+    
+    if desktop_match:
+        prefix = desktop_match.group(1) # The logo
         
-        # Determine replacement
-        # If CTA already exists, don't add it again to the replacement block if we are replacing UL
-        if 'class="nav-cta-desktop"' in content:
-            # CTA exists, assume we just update UL
-            replacement = new_nav
-        else:
-            replacement = new_nav + cta_html
+        # New Nav Content
+        new_nav = f'''<ul class="nav-links">
+	<li class="dropdown">
+		<a href="https://diigima.es/#our-services">OUR SERVICES</a>
+		<ul class="dropdown-menu">
+			<li><a href="/trailers">TRAILERS</a></li>
+			<li><a href="/films">FILMS</a></li>
+			<li><a href="/plays">PLAYS</a></li>
+			<li><a href="/events">EVENTS</a></li>
+			<li><a href="/interviews">INTERVIEWS</a></li>
+		</ul>
+	</li>
+	<li><a href="https://diigima.es/#success-stories">SUCCESS STORIES</a></li>
+	<li><a href="https://diigima.es/#how-we-work">HOW WE WORK</a></li>
+	<li><a href="https://diigima.es/#about-us">ABOUT DIIGIMA</a></li>
+	<li><a href="{contact_href}">CONTACT US</a></li>
+</ul>'''
+        # Replace the middle part (the old UL mess) with the new nav
+        replacement = prefix + "\n\t\t\t" + new_nav + "\n\t\t\t"
+        
+        # We replace the whole match
+        content = content.replace(desktop_match.group(0), replacement)
+    
+    else:
+        # Fallback if regex failed (maybe CTA is missing?)
+        # Try matching until </div>
+        desktop_regex_no_cta = r'(<a href="[^"]+" class="nav-logo">.*?</a>\s*)(.*?)(?=\s*</div>)'
+        # Caution: this might be too greedy if there are other divs, but nav-content usually closes soon.
+        # Let's try matching <ul class="nav-links"> explicitly if the above failed
+        # and match until the LAST </ul> before nav-cta or div end.
+        pass
 
-        content = content.replace(nav_match.group(0), replacement)
 
     # 2. Update Mobile Menu Toggle (Insert CTA)
-    if 'class="nav-cta-mobile"' not in content:
-        # Indentation guess
-        toggle_match = re.search(r'(\s*)<div id="mobile-menu-toggle">', content)
-        if toggle_match:
-            indent = toggle_match.group(1)
-            content = content.replace(toggle_match.group(0), f'{indent}<a href="{contact_href}" class="nav-cta-mobile">CONTACT</a>\n\n{indent}<div id="mobile-menu-toggle">')
+    # Check if CTA is there or needs update. 
+    # Current requirement: "remove the download brochure button on mobile navbar for now"
+    # User asked for this previously. CSS hides it (.nav-cta-mobile { display: none !important; }).
+    # But we can keep it in HTML or remove it. Let's start with cleaning the broken HTML.
     
     # 3. Update Mobile Menu Content
-    # Find UL inside mobile-menu-content.
-    # Regex: (<div class="mobile-menu-content">.*?<a href=.*?</a>\s*)(<ul>.*?</ul>)
-    mobile_match = re.search(r'(<div class="mobile-menu-content">.*?<a href=.*?</a>\s*)(<ul>.*?</ul>)', content, re.DOTALL)
+    # We look for the <div class="mobile-menu-content"> ... </div>
+    # Inside we want to replace the <ul>...</ul> block.
+    # The block is between the logo and "close-menu-bottom" (or end of div)
+    
+    mobile_content_regex = r'(<div class="mobile-menu-content">.*?<a href="[^"]+" class="mobile-nav-logo">.*?</a>\s*)(.*?)(?=\s*<div class="close-menu-bottom">)'
+    
+    mobile_match = re.search(mobile_content_regex, content, re.DOTALL)
     if mobile_match:
         prefix = mobile_match.group(1)
-        old_ul = mobile_match.group(2)
-        # Use same nav logic but for mobile
-        # Indentation from match
-        # We can just construct a simple UL
-        # Logic: 4 tabs indentation usually?
         
         new_mobile_ul = f'''<ul>
 				<li class="dropdown">
@@ -96,7 +101,8 @@ def update_file(filepath):
 				<li><a href="{contact_href}">CONTACT US</a></li>
 			</ul>'''
         
-        content = content.replace(mobile_match.group(0), prefix + new_mobile_ul)
+        content = content.replace(mobile_match.group(0), prefix + "\n\t\t\t" + new_mobile_ul + "\n\t\t\t")
+
 
     if content != original_content:
         with open(filepath, 'w', encoding='utf-8') as f:
