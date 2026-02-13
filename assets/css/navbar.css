@@ -350,7 +350,9 @@
         padding: 0.8rem 1rem;
     }
     #desktop-nav .nav-logo img {
-        height: 70px;
+        height: auto;
+        max-width: 140px;
+        max-height: 70px;
     }
     #desktop-nav ul {
         gap: 1rem;

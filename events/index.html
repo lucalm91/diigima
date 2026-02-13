@@ -263,6 +263,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 }, 100);
             });
 
+            // Transition effect when leaving the page (Fade out content)
+            $('a').on('click', function(e) {
+                var $t = $(this);
+                var href = $t.attr('href');
+                var target = $t.attr('target');
+
+                // Check if it's a valid link to another page
+                if (!href || href === '#' || href.startsWith('#') || href.startsWith('javascript:') || target === '_blank') {
+                    return;
+                }
+
+                // Prevent default navigation
+                e.preventDefault();
+
+                // Fade out content
+                $('#details').removeClass('active');
+                $('#contact').removeClass('active');
+
+                // Wait for transition (325ms) then navigate
+                window.setTimeout(function() {
+                    window.location.href = href;
+                }, 350);
+            });
+
             // Mobile Menu Logic
             var $menuToggle = $('#mobile-menu-toggle');
 			var $menuOverlay = $('#mobile-menu-overlay');
