@@ -43,7 +43,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .centered-btn-container { margin-top: 3rem; margin-bottom: 2rem; text-align: center; }
     </style>
 </head>
-<body class="is-preload no-fade-in">
+<body class="is-preload no-fade-in is-article-visible">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVF8S6FP"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -53,7 +53,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <nav id="desktop-nav" class="scrolled">
         <div class="nav-content">
-            <a href="https://diigima.es/" class="nav-logo"><img src="/images/logotype.webp" alt="Diigima"></a>
+            <a href="https://diigima.es/" class="nav-logo"><img src="/images/logotype-h.webp" alt="Diigima"></a>
 			
 			
 			<ul class="nav-links">
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- Main -->
 		<div id="main">
 
-            <article id="details" class="active" style="display:block">
+            <article id="details" style="display:block">
              <h2 class="major">Trailer Videography</h2>
              <p class="subtitle" style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; font-style: italic;">Hook Your Audience in Seconds.</p>
              <span class="image main"><img src="../images/your-stories-trailers.webp" alt="Trailer Videography" /></span>
@@ -260,6 +260,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             $window.on('load', function() {
                 window.setTimeout(function() {
                     $body.removeClass('is-preload');
+                    
+                    // Trigger active class on article for fade/slide up effect
+                    $('#details').addClass('active');
                 }, 100);
             });
 

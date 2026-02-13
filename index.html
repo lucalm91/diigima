@@ -144,7 +144,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- Desktop Top Bar -->
 	<nav id="desktop-nav">
 		<div class="nav-content">
-			<a href="#" class="nav-logo"><img src="/images/logotype.webp" alt="Diigima"></a>
+			<a href="#" class="nav-logo"><img src="/images/logotype-h.webp" alt="Diigima"></a>
 			<ul class="nav-links">
 				<li class="dropdown">
 					<a href="#our-services">OUR SERVICES</a>
@@ -776,6 +776,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<script src="assets/js/util.js?v=2026.12"></script>
 	<script src="assets/js/main.js?v=2026.12"></script>
 	<script src="assets/js/google-sheet.js?v=2026.12"> </script>
+    
+    <script>
+    // Smooth transition for desktop nav links
+    document.addEventListener('DOMContentLoaded', function() {
+        // Target specifically the dropdown menu links which are for sub-pages
+        var navLinks = document.querySelectorAll('#desktop-nav .dropdown-menu a'); 
+
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                var nav = document.getElementById('desktop-nav');
+                
+                // Ensure navbar exists and isn't already scrolled
+                if (nav && !nav.classList.contains('scrolled')) {
+                    var targetUrl = link.getAttribute('href');
+                    
+                    // Only apply if it's a valid link and not just a hash/empty
+                    if (targetUrl && targetUrl !== '#' && !targetUrl.startsWith('#')) {
+                        // Prevent immediate navigation
+                        e.preventDefault();
+                        
+                        // Add scrolled class to minimize navbar
+                        nav.classList.add('scrolled');
+                        
+                        // Wait for transition (CSS is 0.1s, let's wait 150ms to be safe)
+                        setTimeout(function() {
+                            window.location.href = link.href;
+                        }, 150);
+                    }
+                }
+            });
+        });
+    });
+    </script>
 
 
 	<script>
