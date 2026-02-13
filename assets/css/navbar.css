@@ -354,6 +354,12 @@
         max-width: 140px;
         max-height: 70px;
     }
+    
+    #desktop-nav.scrolled .nav-logo img {
+        height: auto;
+        max-height: 50px;
+    }
+
     #desktop-nav ul {
         gap: 1rem;
     }

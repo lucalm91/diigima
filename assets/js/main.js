@@ -485,7 +485,7 @@
 			// 1. An article is visible
 			// 2. User has scrolled down
 			// 3. There is a hash in the URL (implies we are navigating to/in an article)
-			if ($body.hasClass('is-article-visible') || $window.scrollTop() > 50 || (window.location.hash && window.location.hash !== '#' && window.location.hash !== '')) {
+			if ($body.hasClass('is-article-visible') || $window.scrollTop() > 10 || (window.location.hash && window.location.hash !== '#' && window.location.hash !== '')) {
 				$('#desktop-nav').addClass('scrolled');
 			} else {
 				$('#desktop-nav').removeClass('scrolled');
