@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVF8S6FP');</script>
+<!-- End Google Tag Manager -->
+	<title>Dashboard | Diigima Creative Studio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="description" content="Internal Dashboard for Diigima Creative Studio">
+	<meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="googlebot" content="noindex, nofollow">
+	<meta name="author" content="Diigima Creative Studio">
+
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/site.webmanifest" />
+	<link rel="stylesheet" href="../assets/css/main.css?v=2026.12" />
+	<link rel="stylesheet" href="../assets/css/navbar.css?v=2026.12" />
+	<link rel="stylesheet" href="../assets/css/custom.css?v=2026.12" />
+    <link href="../assets/css/fonts.css?v=2026.12" rel="stylesheet">
+	<noscript><link rel="stylesheet" href="../assets/css/noscript.css?v=2026.12" /></noscript>
+    
+    <style>
+        #main { padding-top: 2rem; max-width: 800px; margin: 0 auto; }
+        #wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+        @media screen and (min-width: 981px) {
+            #wrapper {
+                padding-top: 6rem !important;
+            }
+        }
+        #footer { 
+            margin-top: auto; 
+            padding-top: 4rem; 
+            padding-bottom: 2rem; 
+        }
+        .dashboard-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .dashboard-links li a {
+            display: block;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05); /* Subtle background */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff; /* Explicit color */
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+        .dashboard-links li a:hover {
+            background: #ffffff;
+            color: #1b1f22; /* Dark text on hover */
+            border-color: #ffffff;
+        }
+        /* Navbar overrides for dashboard only */
+        #desktop-nav .nav-content {
+            justify-content: center; /* Center the logo */
+        }
+        #desktop-nav .nav-logo {
+            margin: 0; /* Remove auto margin that pushes it left */
+        }
+        #desktop-nav.scrolled {
+            padding: 1rem 2rem; /* Bigger padding */
+        }
+        #desktop-nav .nav-logo img {
+            height: 120px; /* Bigger logo */
+        }
+        
+        /* Mobile Dashboard Header */
+        #mobile-dashboard-header {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10000;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            text-align: center;
+        }
+        #mobile-dashboard-header img {
+            height: 90px;
+            width: auto;
+            vertical-align: middle;
+        }
+
+        @media screen and (max-width: 980px) {
+            #mobile-dashboard-header {
+                display: block;   /* Show mobile header */
+                background: rgba(0, 0, 0, 0.95); /* Ensure visibility */
+                padding: 1rem;
+                text-align: center;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 10000;
+            }
+            #desktop-nav {
+                display: none;    /* Hide desktop nav */
+            }
+            #login-form {
+                margin: 20vh auto 0 auto;
+                width: 90%;
+            }
+            #dashboard-content {
+                padding-top: 10rem !important;
+            }
+            #main {
+                padding-top: 4rem;
+            }
+        }
+
+        #login-form {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            max-width: 400px;
+            margin: 10vh auto 0 auto;
+        }
+        #login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        #dashboard-content {
+            display: none;
+        }
+    </style>
+</head>
+<body class="is-preload no-fade-in">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVF8S6FP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!-- Desktop Navbar -->
+    <nav id="desktop-nav" class="scrolled">
+        <div class="nav-content">
+            <a href="https://diigima.es/" class="nav-logo"><img src="/images/logotype.webp" alt="Diigima"></a>
+        </div>
+    </nav>
+    
+    <!-- Mobile Dashboard Header -->
+    <div id="mobile-dashboard-header">
+        <a href="https://diigima.es/"><img src="/images/logotype.webp" alt="Diigima"></a>
+    </div>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+
+            <div id="login-form">
+                <h2 style="color:white; margin-bottom: 1rem;">Diigima Dashboard</h2>
+                <input type="password" id="password" placeholder="Enter Password" onkeydown="if(event.key === 'Enter') checkPassword()">
+                <button onclick="checkPassword()" class="button primary">Access</button>
+                <div id="error-msg" style="color: #ff6b6b; margin-top: 10px; display: none;">Incorrect password</div>
+            </div>
+
+            <article id="dashboard-content" class="active" style="display:none !important; opacity: 1 !important; transform: none !important;">
+                <header>
+                    <h2 class="major" style="text-align: center;">Diigima Dashboard</h2>
+                </header>
+                
+                <ul class="dashboard-links">
+                    <li><a href="https://privateemail.com/" target="_blank" rel="nofollow">Email Portal</a></li>
+                    <li><a href="https://lucanor.synology.me:5001/?launchApp=SYNO.SDS.Drive.Application" target="_blank" rel="nofollow">Diigima Drive</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1bY6psvt-WSN0t4crOzyVjg0XJR4ttRjo-4VHAA1bFR8/edit?usp=sharing" target="_blank" rel="nofollow">Sales Spreadsheet</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1qQ0qxUt-8ULYZ0DWc0yTYyr46D_bBXhmv3RN5c1CpiU/edit?usp=sharing" target="_blank" rel="nofollow">Lead Spreadsheet</a></li>
+                </ul>
+            </article>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="copyright">
+				<li>&copy; Diigima Creative Studio</li>
+			</ul>
+		</footer>
+
+	</div>
+
+	<div id="bg"></div>
+
+	<!-- Scripts -->
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+    <script>
+        function checkPassword() {
+            var input = document.getElementById('password').value;
+            var errorMsg = document.getElementById('error-msg');
+            var loginForm = document.getElementById('login-form');
+            var dashboard = document.getElementById('dashboard-content');
+
+            if (input === "Diigima") {
+                loginForm.style.display = 'none';
+                dashboard.style.display = 'block';
+                dashboard.style.setProperty('display', 'block', 'important');
+                localStorage.setItem('diigima_dashboard_auth', 'true');
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        }
+
+        // On page load check simple auth
+        document.addEventListener('DOMContentLoaded', function() {
+             var savedAuth = localStorage.getItem('diigima_dashboard_auth');
+             if (savedAuth === 'true') {
+                 var login = document.getElementById('login-form');
+                 if(login) login.style.display = 'none';
+                 
+                 var db = document.getElementById('dashboard-content');
+                 if(db) {
+                     db.style.display = 'block';
+                     db.style.setProperty('display', 'block', 'important');
+                 }
+             }
+        });
+
+        (function($) {
+            var $window = $(window),
+                $body = $('body');
+            
+            // Play initial animations on page load.
+            $window.on('load', function() {
+                window.setTimeout(function() {
+                    $body.removeClass('is-preload');
+                }, 100);
+            });
+
+        })(jQuery);
+    </script>
+</body>
+</html>
