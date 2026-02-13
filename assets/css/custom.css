@@ -625,3 +625,17 @@ h3 {
 body.no-fade-in.is-preload #bg:before {
     background-color: transparent !important;
 }
+
+/* Instant load helper: disable all transitions on #bg */
+body.instant-load #bg:before,
+body.instant-load #bg:after {
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
+    -moz-transition-delay: 0s !important;
+    -webkit-transition-delay: 0s !important;
+    -ms-transition-delay: 0s !important;
+    transition-delay: 0s !important;
+    background-color: transparent !important;
+}

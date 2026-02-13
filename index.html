@@ -799,10 +799,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         // Add scrolled class to minimize navbar
                         nav.classList.add('scrolled');
                         
-                        // Wait for transition (CSS is 0.1s, let's wait 150ms to be safe)
+                        // Add is-article-visible to blur the background
+                        document.body.classList.add('is-article-visible');
+                        
+                        // Wait for transition (CSS is 0.325s for background, 0.1s for navbar)
                         setTimeout(function() {
                             window.location.href = link.href;
-                        }, 150);
+                        }, 350);
                     }
                 }
             });

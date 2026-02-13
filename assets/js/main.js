@@ -37,9 +37,21 @@
 
 	// Play initial animations on page load.
 		$window.on('load', function() {
-			window.setTimeout(function() {
+			if (window.location.hash) {
+				// If there's a hash, use helper class to disable BG transitions
+				$body.addClass('instant-load');
 				$body.removeClass('is-preload');
-			}, 100);
+				
+				// Remove helper class shortly after so future updates (if any) animate normally
+				setTimeout(function() {
+					$body.removeClass('instant-load');
+				}, 100);
+			} else {
+				// Normal behavior for homepage: wait 100ms then animate fade-in
+				window.setTimeout(function() {
+					$body.removeClass('is-preload');
+				}, 100);
+			}
 
 			// Show delayed content on user interaction
 			var $delayedContent = $('#delayed-content');
