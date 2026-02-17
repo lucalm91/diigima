@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Email Template | Diigima Dashboard</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="description" content="Editable outreach email template for Diigima Dashboard">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="author" content="Diigima Creative Studio">
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="../assets/css/main.css?v=2026.12" />
+    <link rel="stylesheet" href="../assets/css/navbar.css?v=2026.12" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=2026.12" />
+    <link href="../assets/css/fonts.css?v=2026.12" rel="stylesheet">
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css?v=2026.12" /></noscript>
+
+    <style>
+        #main { padding-top: 2rem; max-width: 980px; margin: 0 auto; }
+        #wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+        #footer { margin-top: auto; padding-top: 4rem; padding-bottom: 2rem; }
+
+        #desktop-nav .nav-content { justify-content: center; }
+        #desktop-nav .nav-logo { margin: 0; }
+        #desktop-nav.scrolled { padding: 1rem 2rem; }
+        #desktop-nav .nav-logo img { height: 120px; }
+
+        #mobile-dashboard-header {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10000;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 1rem;
+            text-align: center;
+        }
+        #mobile-dashboard-header img {
+            height: 90px;
+            width: auto;
+            vertical-align: middle;
+        }
+
+        @media screen and (max-width: 980px) {
+            #mobile-dashboard-header { display: block; }
+            #desktop-nav { display: none; }
+            #main { padding-top: 4rem; }
+        }
+
+        .template-shell {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .control label {
+            display: block;
+            margin-bottom: 0.4rem;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+        .control input {
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            padding: 0.7rem 0.8rem;
+        }
+        #email-output {
+            width: 100%;
+            min-height: 520px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.35);
+            color: #ffffff;
+            padding: 1rem;
+            resize: vertical;
+            font-family: Arial, sans-serif;
+            line-height: 1.45;
+        }
+        .actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .status {
+            min-height: 1.2rem;
+            margin-top: 0.6rem;
+            color: #9fe9ad;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="is-preload no-fade-in">
+    <nav id="desktop-nav" class="scrolled">
+        <div class="nav-content">
+            <a href="https://diigima.es/" class="nav-logo"><img src="/images/logotype-h.webp" alt="Diigima"></a>
+        </div>
+    </nav>
+
+    <div id="mobile-dashboard-header">
+        <a href="https://diigima.es/"><img src="/images/logotype.webp" alt="Diigima"></a>
+    </div>
+
+    <div id="wrapper">
+        <div id="main">
+            <article class="template-shell active" style="opacity: 1 !important; transform: none !important;">
+                <header>
+                    <h2 class="major" style="text-align:center;">Email Template Builder</h2>
+                </header>
+
+                <div class="controls">
+                    <div class="control">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" value="First name">
+                    </div>
+                    <div class="control">
+                        <label for="companyType">Company Type</label>
+                        <input type="text" id="companyType" value="insert type of company">
+                    </div>
+                    <div class="control">
+                        <label for="nicheMarket">Niche Market</label>
+                        <input type="text" id="nicheMarket" value="insert">
+                    </div>
+                </div>
+
+                <textarea id="email-output" aria-label="Email output"></textarea>
+
+                <div class="actions">
+                    <button id="copyBtn" class="button primary">Copy Email</button>
+                    <a href="/dashboard/" class="button">Back to Dashboard</a>
+                </div>
+                <div id="copyStatus" class="status"></div>
+            </article>
+        </div>
+
+        <footer id="footer">
+            <ul class="copyright">
+                <li>&copy; Diigima Creative Studio</li>
+            </ul>
+        </footer>
+    </div>
+
+    <div id="bg"></div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script>
+        function buildEmailText() {
+            var firstName = document.getElementById('firstName').value.trim() || 'First name';
+            var companyType = document.getElementById('companyType').value.trim() || 'insert type of company';
+            var nicheMarket = document.getElementById('nicheMarket').value.trim() || 'insert';
+            var blankLine = '\u00A0';
+
+            return [
+                'Hi ' + firstName + ',',
+                blankLine,
+                "I hope you're having a creative-thinking day!",
+                blankLine,
+                "I'm Luma from Diigima Creative Studio, an audio-visual team based in Barcelona. We merge storytelling and digital technology to create video and podcast content that connects with each audience.",
+                blankLine,
+                "As you're " + companyType + ", we propose a collaboration where we will provide audio-video services to enhance your marketing strategy.",
+                blankLine,
+                'We specialize in:',
+                '- live events (full coverage + highlights)',
+                '- promo trailers and brand videos',
+                '- podcasts and interviews',
+                '- short films or narrative-led projects',
+                '- Using our video-making expertise, we offer you content that looks great, packs an emotional punch and is ready to go live as soon as your audience need it.',
+                blankLine,
+                'We handle everything from pre-production to post-production and a final edit. We shape the story outline, plan the shoot, record, edit, and deliver final versions.',
+                blankLine,
+                "Since your niche market is " + nicheMarket + ", we suggest the best format for your audience - like a punchy 30-second vertical video for socials or longer horizontal video for website and YouTube - and put a production plan into action.",
+                blankLine,
+                "Our promotional Flyer is attached and I'd love to see how we can help you with our video services, so would it make sense to schedule a quick call this week or next?",
+                blankLine,
+                'You can contact me by Whatsapp or email and we can get started on a fantastic collaboration.',
+                blankLine,
+                'Best,',
+                'Luma Freitas',
+                blankLine,
+                'Sales Manager, Diigima Creative Studio',
+                '+34 608 752 897',
+                'diigima.es',
+                blankLine,
+                "P.S. It's a crazy world out there, so if you'd like to escape for 15 minutes, watch our dystopian romantic thriller The Death of Us (https://www.youtube.com/watch?si=jq3AxD4QUhAG2ilX&v=069L0dbH_AI&feature=youtu.be)."
+            ].join('\n');
+        }
+
+        function renderOutput() {
+            document.getElementById('email-output').value = buildEmailText();
+        }
+
+        function copyEmail() {
+            var output = document.getElementById('email-output');
+            var text = output.value;
+            var status = document.getElementById('copyStatus');
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    status.textContent = 'Email copied. Paste it directly into your inbox.';
+                }).catch(function() {
+                    output.select();
+                    document.execCommand('copy');
+                    status.textContent = 'Email copied. Paste it directly into your inbox.';
+                });
+            } else {
+                output.select();
+                document.execCommand('copy');
+                status.textContent = 'Email copied. Paste it directly into your inbox.';
+            }
+        }
+
+        function checkDashboardAuth() {
+            var savedAuth = localStorage.getItem('diigima_dashboard_auth');
+            if (savedAuth !== 'true') {
+                window.location.href = '/dashboard/';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            checkDashboardAuth();
+            renderOutput();
+
+            document.getElementById('firstName').addEventListener('input', renderOutput);
+            document.getElementById('companyType').addEventListener('input', renderOutput);
+            document.getElementById('nicheMarket').addEventListener('input', renderOutput);
+            document.getElementById('copyBtn').addEventListener('click', copyEmail);
+        });
+
+        (function($) {
+            var $window = $(window),
+                $body = $('body');
+
+            $window.on('load', function() {
+                window.setTimeout(function() {
+                    $body.removeClass('is-preload');
+                }, 100);
+            });
+        })(jQuery);
+    </script>
+</body>
+</html>

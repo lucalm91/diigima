@@ -1,13 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TVF8S6FP');</script>
-<!-- End Google Tag Manager -->
 	<title>Dashboard | Diigima Creative Studio</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
@@ -148,11 +141,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </style>
 </head>
 <body class="is-preload no-fade-in">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVF8S6FP"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
     <!-- Desktop Navbar -->
     <nav id="desktop-nav" class="scrolled">
         <div class="nav-content">
@@ -184,8 +172,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </header>
                 
                 <ul class="dashboard-links">
+                    <li><a href="https://crm.diigima.es/" target="_blank" rel="nofollow">CRM</a></li>
                     <li><a href="https://privateemail.com/" target="_blank" rel="nofollow">Email Portal</a></li>
-                    <li><a href="https://lucanor.synology.me:5001/?launchApp=SYNO.SDS.Drive.Application" target="_blank" rel="nofollow">Diigima Drive</a></li>
+                    <li><a href="/dashboard/email-template.html" rel="nofollow">Email Template Builder</a></li>
+                    <li><a href="https://lucanor.synology.me:5001/?launchApp=SYNO.SDS.Drive.Application#file_id=929455258856371904" target="_blank" rel="nofollow">Diigima Drive</a></li>
                     <li><a href="https://docs.google.com/spreadsheets/d/1bY6psvt-WSN0t4crOzyVjg0XJR4ttRjo-4VHAA1bFR8/edit?usp=sharing" target="_blank" rel="nofollow">Sales Spreadsheet</a></li>
                     <li><a href="https://docs.google.com/spreadsheets/d/1qQ0qxUt-8ULYZ0DWc0yTYyr46D_bBXhmv3RN5c1CpiU/edit?usp=sharing" target="_blank" rel="nofollow">Lead Spreadsheet</a></li>
                 </ul>
@@ -216,7 +206,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             var loginForm = document.getElementById('login-form');
             var dashboard = document.getElementById('dashboard-content');
 
-            if (input === "Diigima") {
+            if (input === "Diigim@26") {
                 loginForm.style.display = 'none';
                 dashboard.style.display = 'block';
                 dashboard.style.setProperty('display', 'block', 'important');
@@ -232,7 +222,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              if (savedAuth === 'true') {
                  var login = document.getElementById('login-form');
                  if(login) login.style.display = 'none';
-                 
+
                  var db = document.getElementById('dashboard-content');
                  if(db) {
                      db.style.display = 'block';
