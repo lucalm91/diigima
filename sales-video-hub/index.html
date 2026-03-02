@@ -1,0 +1,420 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diigima Sales Video Hub</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #171a21;
+      --panel-2: #202532;
+      --text: #edf1f7;
+      --muted: #aeb6c5;
+      --brand: #48d1cc;
+      --brand-2: #2ab0ab;
+      --stroke: #2a3142;
+      --ok: #57d68d;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "M PLUS Rounded 1c", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 5% -15%, #243246 0%, transparent 60%),
+        radial-gradient(800px 420px at 100% 0%, #223426 0%, transparent 55%),
+        var(--bg);
+      min-height: 100vh;
+      line-height: 1.4;
+    }
+
+    .container {
+      width: min(1200px, 92vw);
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .home-link {
+      color: var(--muted);
+      text-decoration: none;
+      border: 1px solid var(--stroke);
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .home-link:hover { color: var(--text); }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      letter-spacing: 0.01em;
+    }
+
+    .intro {
+      margin: 0 0 26px;
+      color: var(--muted);
+      max-width: 860px;
+    }
+
+    .section {
+      background: linear-gradient(170deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(2px);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0 0 4px;
+    }
+
+    .section-url {
+      margin: 0;
+      font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    .section-url a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.35);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .video-card {
+      background: var(--panel);
+      border: 1px solid var(--stroke);
+      border-radius: 12px;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-height: 100%;
+    }
+
+    .thumb {
+      display: block;
+      aspect-ratio: 16 / 9;
+      background: #0c0e12;
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .video-title {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.3;
+      min-height: 2.4em;
+    }
+
+    .status {
+      display: inline-block;
+      width: fit-content;
+      font-size: 0.7rem;
+      color: #ffe5a3;
+      border: 1px solid #6f5a25;
+      background: rgba(255, 204, 102, 0.12);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .actions {
+      margin-top: auto;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 1px solid var(--stroke);
+      background: var(--panel-2);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 100ms ease, background 120ms ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn.primary {
+      border-color: #2a5f66;
+      background: linear-gradient(180deg, var(--brand), var(--brand-2));
+      color: #052324;
+      font-weight: 700;
+    }
+
+    .btn.copied {
+      border-color: #1f5838;
+      background: rgba(87, 214, 141, 0.2);
+      color: var(--ok);
+    }
+
+    @media (max-width: 700px) {
+      .container { width: min(1200px, 94vw); }
+      .section { padding: 12px; }
+      .btn { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="topbar">
+      <a class="home-link" href="/">Back to website</a>
+      <a class="home-link" href="/links/">Legacy links</a>
+    </div>
+
+    <h1>Sales Video Hub</h1>
+    <p class="intro">Use this page to copy service URLs and per-video URLs fast. Each video points to a dedicated subpage.</p>
+
+    <div id="app"></div>
+  </main>
+
+  <script>
+    const BASE_URL = "https://diigima.es";
+
+    const sections = [
+      {
+        name: "Trailers",
+        url: "https://diigima.es/trailers/",
+        videos: [
+          {
+            title: "The Motherfucker with the Hat",
+            page: "https://diigima.es/the-motherfucker-with-the-hat/",
+            thumb: "/images/The%20motherfucker%20with%20the%20hat.webp"
+          },
+          {
+            title: "Virtuality",
+            page: "https://diigima.es/virtuality/",
+            thumb: "/images/cover-virtuality.webp"
+          }
+        ]
+      },
+      {
+        name: "Films",
+        url: "https://diigima.es/films/",
+        videos: [
+          {
+            title: "The Death of Us",
+            page: "https://diigima.es/the-death-of-us-video/",
+            thumb: "/images/the-death-of-us-cover.jpg"
+          }
+        ]
+      },
+      {
+        name: "Plays",
+        url: "https://diigima.es/plays/",
+        videos: [
+          {
+            title: "The Motherfucker with the Hat",
+            page: "https://diigima.es/the-motherfucker-with-the-hat/",
+            thumb: "/images/The%20motherfucker%20with%20the%20hat.webp"
+          }
+        ]
+      },
+      {
+        name: "Events",
+        url: "https://diigima.es/events/",
+        videos: [
+          {
+            title: "Norrsken",
+            page: "https://diigima.es/norrsken/",
+            thumb: "/images/norrksen.webp"
+          },
+          {
+            title: "Tech Spirit",
+            page: "https://diigima.es/tech-spirit/",
+            thumb: "/images/tech-bcn-santjordi.webp"
+          },
+          {
+            title: "Aura",
+            page: "https://diigima.es/aura-video/",
+            thumb: "/images/silent-disco.webp"
+          }
+        ]
+      },
+      {
+        name: "Brand",
+        url: "https://diigima.es/brand/",
+        videos: [
+          {
+            title: "Aura",
+            page: "https://diigima.es/aura-video/",
+            thumb: "/images/silent-disco.webp"
+          },
+          {
+            title: "Verucci",
+            page: "https://diigima.es/verucci/",
+            thumb: "/images/verucci.webp"
+          }
+        ]
+      },
+      {
+        name: "Podcasts",
+        url: "https://diigima.es/podcasts/",
+        videos: [
+          {
+            title: "Octaedro",
+            page: "https://diigima.es/octaedro/",
+            thumb: "/images/podcasts.webp",
+            pending: true
+          }
+        ]
+      },
+      {
+        name: "Interviews",
+        url: "https://diigima.es/interviews/",
+        videos: [
+          {
+            title: "WFS",
+            page: "https://diigima.es/wfs/",
+            thumb: "/images/wfs.webp"
+          },
+          {
+            title: "Let Them Eat Pizza",
+            page: "https://diigima.es/let-them-eat-pizza/",
+            thumb: "/images/the-marketing-meetup-pizza.webp"
+          }
+        ]
+      }
+    ];
+
+    function copyText(value, button) {
+      const previous = button.textContent;
+      const setCopied = () => {
+        button.textContent = "Copied";
+        button.classList.add("copied");
+        setTimeout(() => {
+          button.textContent = previous;
+          button.classList.remove("copied");
+        }, 1200);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(setCopied).catch(() => fallbackCopy(value, setCopied));
+        return;
+      }
+
+      fallbackCopy(value, setCopied);
+    }
+
+    function fallbackCopy(value, onSuccess) {
+      const temp = document.createElement("textarea");
+      temp.value = value;
+      temp.setAttribute("readonly", "");
+      temp.style.position = "absolute";
+      temp.style.left = "-9999px";
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand("copy");
+      document.body.removeChild(temp);
+      onSuccess();
+    }
+
+    function render() {
+      const app = document.getElementById("app");
+
+      sections.forEach((section) => {
+        const wrapper = document.createElement("section");
+        wrapper.className = "section";
+
+        const cards = section.videos.map((video) => {
+          const pending = video.pending ? '<span class="status">Pending edit</span>' : "";
+
+          return `
+            <article class="video-card">
+              <a class="thumb" href="${video.page}" target="_blank" rel="noopener noreferrer">
+                <img loading="lazy" src="${video.thumb}" alt="${video.title}">
+              </a>
+              <div class="card-body">
+                <h3 class="video-title">${video.title}</h3>
+                ${pending}
+                <div class="actions">
+                  <a class="btn" href="${video.page}" target="_blank" rel="noopener noreferrer">Open</a>
+                  <button class="btn primary copy-video" data-copy="${video.page}">Copy Video Link</button>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join("");
+
+        wrapper.innerHTML = `
+          <div class="section-head">
+            <div>
+              <p class="section-label">${section.name}</p>
+              <p class="section-url"><a href="${section.url}" target="_blank" rel="noopener noreferrer">${section.url}</a></p>
+            </div>
+            <button class="btn primary copy-section" data-copy="${section.url}">Copy URL</button>
+          </div>
+          <div class="video-grid">${cards}</div>
+        `;
+
+        app.appendChild(wrapper);
+      });
+
+      document.querySelectorAll("[data-copy]").forEach((button) => {
+        button.addEventListener("click", () => copyText(button.getAttribute("data-copy"), button));
+      });
+    }
+
+    render();
+  </script>
+</body>
+</html>
+
+
