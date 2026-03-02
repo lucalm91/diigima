@@ -93,9 +93,10 @@
     }
 
     .section-label {
-      font-size: 0.75rem;
-      color: var(--muted);
-      letter-spacing: 0.12em;
+      font-size: 2rem;
+      color: var(--brand);
+      font-weight: 600;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       margin: 0 0 4px;
     }
@@ -105,6 +106,13 @@
       font-size: clamp(0.9rem, 1.6vw, 1.05rem);
       font-weight: 700;
       word-break: break-all;
+    }
+
+    .section-link-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .section-url a {
@@ -215,7 +223,7 @@
 <body>
   <main class="container">
     <div class="topbar">
-      <a class="home-link" href="/">Back to website</a>
+      <a class="home-link" href="/dashboard/">Back to website</a>
       <a class="home-link" href="/links/">Legacy links</a>
     </div>
 
@@ -396,10 +404,12 @@
         wrapper.innerHTML = `
           <div class="section-head">
             <div>
-              <p class="section-label">${section.name}</p>
-              <p class="section-url"><a href="${section.url}" target="_blank" rel="noopener noreferrer">${section.url}</a></p>
+              <p class="section-label">${section.name.toUpperCase()}</p>
+              <div class="section-link-row">
+                <p class="section-url"><a href="${section.url}" target="_blank" rel="noopener noreferrer">${section.url}</a></p>
+                <button class="btn primary copy-section" data-copy="${section.url}">Copy URL</button>
+              </div>
             </div>
-            <button class="btn primary copy-section" data-copy="${section.url}">Copy URL</button>
           </div>
           <div class="video-grid">${cards}</div>
         `;
@@ -416,6 +426,4 @@
   </script>
 </body>
 </html>
-
-
 
