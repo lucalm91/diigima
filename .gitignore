@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+
+.env
+.env.*
+!.env.example
+
+.venv/
+node_modules/
+.vscode/
+
+*.log
+*.tmp
+*.bak

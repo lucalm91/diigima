@@ -4,11 +4,13 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /private/
+Disallow: /_archive/
+Disallow: /_docs/
+Disallow: /_tools/
 
 # Block specific files (e.g., private scripts or configuration files)
 Disallow: /config.php
 Disallow: /private-data.json
-Disallow: /elements.html
 
 # Allow indexing of all other content
 Allow: /

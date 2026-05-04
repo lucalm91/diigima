@@ -1,4 +1,7 @@
 ErrorDocument 404 /404/
+Options -Indexes
+
+RedirectMatch 404 "^/(?:_archive|_docs|_tools)(?:/|$)"
 
 <IfModule mod_headers.c>
 	Header always set X-Frame-Options "DENY"
